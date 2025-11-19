@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Siticone.Desktop.UI.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Siticone.Desktop.UI.WinForms;
 
 namespace OneShotPOS
 {
@@ -62,7 +62,11 @@ namespace OneShotPOS
             // 🔑 Add to your panel instead of the UserControl
             InventoryPanel.Controls.Clear(); // optional: clears old controls
             InventoryPanel.Controls.Add(dgvInventory);
+
+            
+
         }
+       
 
 
 
