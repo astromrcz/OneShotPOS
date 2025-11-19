@@ -91,7 +91,15 @@ namespace OneShotPOS
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
+            panelMain.Padding = new Padding(0); // Remove container padding
+            panelMain.Controls.Clear();
 
+            UC_Products products = new UC_Products();
+            products.Dock = DockStyle.Fill;
+            products.Margin = new Padding(0);
+            products.Padding = new Padding(0);
+
+            panelMain.Controls.Add(products);
         }
     }
 }
