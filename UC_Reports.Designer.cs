@@ -34,27 +34,27 @@
             label2 = new Label();
             label1 = new Label();
             siticoneAdvancedPanel1 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            siticoneAdvancedPanel2 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            siticoneAdvancedPanel3 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            siticoneAdvancedPanel4 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            lblActivityTimeline = new Label();
-            lblTotalRevenue = new Label();
             lblRevenueComparisonPercentage = new Label();
-            label3 = new Label();
-            lblTotalOrders = new Label();
+            lblTotalRevenue = new Label();
+            lblActivityTimeline = new Label();
+            siticoneAdvancedPanel2 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             lblOrderComparison = new Label();
-            label4 = new Label();
-            lblAvgOrderVal = new Label();
+            lblTotalOrders = new Label();
+            label3 = new Label();
+            siticoneAdvancedPanel3 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             lblAvgOrdComparison = new Label();
-            label5 = new Label();
-            lblTotalCustomers = new Label();
+            lblAvgOrderVal = new Label();
+            label4 = new Label();
+            siticoneAdvancedPanel4 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             lblTotalCust = new Label();
+            lblTotalCustomers = new Label();
+            label5 = new Label();
             WeeklySalesPanel = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             label8 = new Label();
             bcDailyTrend = new SiticoneNetCoreUI.SiticoneBarChart();
             siticoneAdvancedPanel5 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            label6 = new Label();
             pcRevCat = new SiticoneNetCoreUI.SiticonePieChart();
+            label6 = new Label();
             siticoneAdvancedPanel1.SuspendLayout();
             siticoneAdvancedPanel2.SuspendLayout();
             siticoneAdvancedPanel3.SuspendLayout();
@@ -148,6 +148,36 @@
             siticoneAdvancedPanel1.TopLeftRadius = 5;
             siticoneAdvancedPanel1.TopRightRadius = 5;
             // 
+            // lblRevenueComparisonPercentage
+            // 
+            lblRevenueComparisonPercentage.AutoSize = true;
+            lblRevenueComparisonPercentage.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRevenueComparisonPercentage.Location = new Point(13, 130);
+            lblRevenueComparisonPercentage.Name = "lblRevenueComparisonPercentage";
+            lblRevenueComparisonPercentage.Size = new Size(206, 25);
+            lblRevenueComparisonPercentage.TabIndex = 4;
+            lblRevenueComparisonPercentage.Text = "lblRevenueComparison\r\n";
+            // 
+            // lblTotalRevenue
+            // 
+            lblTotalRevenue.AutoSize = true;
+            lblTotalRevenue.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalRevenue.Location = new Point(13, 105);
+            lblTotalRevenue.Name = "lblTotalRevenue";
+            lblTotalRevenue.Size = new Size(144, 25);
+            lblTotalRevenue.TabIndex = 3;
+            lblTotalRevenue.Text = "lblTotalRevenue";
+            // 
+            // lblActivityTimeline
+            // 
+            lblActivityTimeline.AutoSize = true;
+            lblActivityTimeline.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblActivityTimeline.Location = new Point(13, 26);
+            lblActivityTimeline.Name = "lblActivityTimeline";
+            lblActivityTimeline.Size = new Size(128, 25);
+            lblActivityTimeline.TabIndex = 2;
+            lblActivityTimeline.Text = "Total Revenue";
+            // 
             // siticoneAdvancedPanel2
             // 
             siticoneAdvancedPanel2.ActiveBackColor = Color.Empty;
@@ -212,6 +242,36 @@
             siticoneAdvancedPanel2.TabIndex = 15;
             siticoneAdvancedPanel2.TopLeftRadius = 5;
             siticoneAdvancedPanel2.TopRightRadius = 5;
+            // 
+            // lblOrderComparison
+            // 
+            lblOrderComparison.AutoSize = true;
+            lblOrderComparison.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblOrderComparison.Location = new Point(24, 130);
+            lblOrderComparison.Name = "lblOrderComparison";
+            lblOrderComparison.Size = new Size(184, 25);
+            lblOrderComparison.TabIndex = 6;
+            lblOrderComparison.Text = "lblOrderComparison";
+            // 
+            // lblTotalOrders
+            // 
+            lblTotalOrders.AutoSize = true;
+            lblTotalOrders.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalOrders.Location = new Point(24, 105);
+            lblTotalOrders.Name = "lblTotalOrders";
+            lblTotalOrders.Size = new Size(130, 25);
+            lblTotalOrders.TabIndex = 5;
+            lblTotalOrders.Text = "lblTotalOrders";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(24, 26);
+            label3.Name = "label3";
+            label3.Size = new Size(114, 25);
+            label3.TabIndex = 5;
+            label3.Text = "Total Orders";
             // 
             // siticoneAdvancedPanel3
             // 
@@ -278,6 +338,36 @@
             siticoneAdvancedPanel3.TopLeftRadius = 5;
             siticoneAdvancedPanel3.TopRightRadius = 5;
             // 
+            // lblAvgOrdComparison
+            // 
+            lblAvgOrdComparison.AutoSize = true;
+            lblAvgOrdComparison.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAvgOrdComparison.Location = new Point(13, 140);
+            lblAvgOrdComparison.Name = "lblAvgOrdComparison";
+            lblAvgOrdComparison.Size = new Size(199, 25);
+            lblAvgOrdComparison.TabIndex = 8;
+            lblAvgOrdComparison.Text = "lblAvgOrdComparison";
+            // 
+            // lblAvgOrderVal
+            // 
+            lblAvgOrderVal.AutoSize = true;
+            lblAvgOrderVal.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAvgOrderVal.Location = new Point(13, 115);
+            lblAvgOrderVal.Name = "lblAvgOrderVal";
+            lblAvgOrderVal.Size = new Size(140, 25);
+            lblAvgOrderVal.TabIndex = 7;
+            lblAvgOrderVal.Text = "lblAvgOrderVal";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(13, 26);
+            label4.Name = "label4";
+            label4.Size = new Size(154, 25);
+            label4.TabIndex = 6;
+            label4.Text = "Avg. Order Value";
+            // 
             // siticoneAdvancedPanel4
             // 
             siticoneAdvancedPanel4.ActiveBackColor = Color.Empty;
@@ -343,105 +433,15 @@
             siticoneAdvancedPanel4.TopLeftRadius = 5;
             siticoneAdvancedPanel4.TopRightRadius = 5;
             // 
-            // lblActivityTimeline
+            // lblTotalCust
             // 
-            lblActivityTimeline.AutoSize = true;
-            lblActivityTimeline.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblActivityTimeline.Location = new Point(13, 26);
-            lblActivityTimeline.Name = "lblActivityTimeline";
-            lblActivityTimeline.Size = new Size(128, 25);
-            lblActivityTimeline.TabIndex = 2;
-            lblActivityTimeline.Text = "Total Revenue";
-            // 
-            // lblTotalRevenue
-            // 
-            lblTotalRevenue.AutoSize = true;
-            lblTotalRevenue.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotalRevenue.Location = new Point(13, 105);
-            lblTotalRevenue.Name = "lblTotalRevenue";
-            lblTotalRevenue.Size = new Size(144, 25);
-            lblTotalRevenue.TabIndex = 3;
-            lblTotalRevenue.Text = "lblTotalRevenue";
-            // 
-            // lblRevenueComparisonPercentage
-            // 
-            lblRevenueComparisonPercentage.AutoSize = true;
-            lblRevenueComparisonPercentage.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblRevenueComparisonPercentage.Location = new Point(13, 130);
-            lblRevenueComparisonPercentage.Name = "lblRevenueComparisonPercentage";
-            lblRevenueComparisonPercentage.Size = new Size(206, 25);
-            lblRevenueComparisonPercentage.TabIndex = 4;
-            lblRevenueComparisonPercentage.Text = "lblRevenueComparison\r\n";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(24, 26);
-            label3.Name = "label3";
-            label3.Size = new Size(114, 25);
-            label3.TabIndex = 5;
-            label3.Text = "Total Orders";
-            // 
-            // lblTotalOrders
-            // 
-            lblTotalOrders.AutoSize = true;
-            lblTotalOrders.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotalOrders.Location = new Point(24, 105);
-            lblTotalOrders.Name = "lblTotalOrders";
-            lblTotalOrders.Size = new Size(130, 25);
-            lblTotalOrders.TabIndex = 5;
-            lblTotalOrders.Text = "lblTotalOrders";
-            // 
-            // lblOrderComparison
-            // 
-            lblOrderComparison.AutoSize = true;
-            lblOrderComparison.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblOrderComparison.Location = new Point(24, 130);
-            lblOrderComparison.Name = "lblOrderComparison";
-            lblOrderComparison.Size = new Size(184, 25);
-            lblOrderComparison.TabIndex = 6;
-            lblOrderComparison.Text = "lblOrderComparison";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(13, 26);
-            label4.Name = "label4";
-            label4.Size = new Size(154, 25);
-            label4.TabIndex = 6;
-            label4.Text = "Avg. Order Value";
-            // 
-            // lblAvgOrderVal
-            // 
-            lblAvgOrderVal.AutoSize = true;
-            lblAvgOrderVal.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAvgOrderVal.Location = new Point(13, 115);
-            lblAvgOrderVal.Name = "lblAvgOrderVal";
-            lblAvgOrderVal.Size = new Size(140, 25);
-            lblAvgOrderVal.TabIndex = 7;
-            lblAvgOrderVal.Text = "lblAvgOrderVal";
-            // 
-            // lblAvgOrdComparison
-            // 
-            lblAvgOrdComparison.AutoSize = true;
-            lblAvgOrdComparison.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAvgOrdComparison.Location = new Point(13, 140);
-            lblAvgOrdComparison.Name = "lblAvgOrdComparison";
-            lblAvgOrdComparison.Size = new Size(199, 25);
-            lblAvgOrdComparison.TabIndex = 8;
-            lblAvgOrdComparison.Text = "lblAvgOrdComparison";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(13, 26);
-            label5.Name = "label5";
-            label5.Size = new Size(146, 25);
-            label5.TabIndex = 7;
-            label5.Text = "Total Customers";
+            lblTotalCust.AutoSize = true;
+            lblTotalCust.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalCust.Location = new Point(13, 149);
+            lblTotalCust.Name = "lblTotalCust";
+            lblTotalCust.Size = new Size(110, 25);
+            lblTotalCust.TabIndex = 9;
+            lblTotalCust.Text = "lblTotalCust";
             // 
             // lblTotalCustomers
             // 
@@ -453,15 +453,15 @@
             lblTotalCustomers.TabIndex = 8;
             lblTotalCustomers.Text = "lblTotalCustomers";
             // 
-            // lblTotalCust
+            // label5
             // 
-            lblTotalCust.AutoSize = true;
-            lblTotalCust.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotalCust.Location = new Point(13, 149);
-            lblTotalCust.Name = "lblTotalCust";
-            lblTotalCust.Size = new Size(110, 25);
-            lblTotalCust.TabIndex = 9;
-            lblTotalCust.Text = "lblTotalCust";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(13, 26);
+            label5.Name = "label5";
+            label5.Size = new Size(146, 25);
+            label5.TabIndex = 7;
+            label5.Text = "Total Customers";
             // 
             // WeeklySalesPanel
             // 
@@ -620,16 +620,6 @@
             siticoneAdvancedPanel5.TopLeftRadius = 5;
             siticoneAdvancedPanel5.TopRightRadius = 5;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(13, 20);
-            label6.Name = "label6";
-            label6.Size = new Size(189, 25);
-            label6.TabIndex = 3;
-            label6.Text = "Revenue By Category";
-            // 
             // pcRevCat
             // 
             pcRevCat.BackColor = Color.Transparent;
@@ -646,6 +636,16 @@
             pieChartTheme1.TextColor = Color.Black;
             pcRevCat.Theme = pieChartTheme1;
             pcRevCat.ValueMember = "Amount";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(13, 20);
+            label6.Name = "label6";
+            label6.Size = new Size(189, 25);
+            label6.TabIndex = 3;
+            label6.Text = "Revenue By Category";
             // 
             // UC_Reports
             // 

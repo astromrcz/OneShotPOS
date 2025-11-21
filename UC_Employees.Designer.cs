@@ -32,20 +32,20 @@
             label2 = new Label();
             label1 = new Label();
             siticoneAdvancedPanel4 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
+            label8 = new Label();
             lblActiveReceptionist = new Label();
             label5 = new Label();
             siticoneAdvancedPanel3 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
+            AdminAcc = new Label();
             lblActiveAdmins = new Label();
             label4 = new Label();
             siticoneAdvancedPanel1 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
+            label6 = new Label();
             lvlRevenue = new Label();
             label3 = new Label();
-            label6 = new Label();
-            AdminAcc = new Label();
-            label8 = new Label();
             siticoneAdvancedPanel2 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             txtSearchEmployee = new SiticoneNetCoreUI.SiticoneTextBox();
-            btnCreatePromo = new SiticoneNetCoreUI.SiticoneButton();
+            btnAddEmployee = new SiticoneNetCoreUI.SiticoneButton();
             siticoneAdvancedPanel4.SuspendLayout();
             siticoneAdvancedPanel3.SuspendLayout();
             siticoneAdvancedPanel1.SuspendLayout();
@@ -137,6 +137,16 @@
             siticoneAdvancedPanel4.TopLeftRadius = 5;
             siticoneAdvancedPanel4.TopRightRadius = 5;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semilight", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(13, 121);
+            label8.Name = "label8";
+            label8.Size = new Size(141, 25);
+            label8.TabIndex = 4;
+            label8.Text = "Front Desk Staff";
+            // 
             // lblActiveReceptionist
             // 
             lblActiveReceptionist.AutoSize = true;
@@ -221,6 +231,16 @@
             siticoneAdvancedPanel3.TabIndex = 14;
             siticoneAdvancedPanel3.TopLeftRadius = 5;
             siticoneAdvancedPanel3.TopRightRadius = 5;
+            // 
+            // AdminAcc
+            // 
+            AdminAcc.AutoSize = true;
+            AdminAcc.Font = new Font("Segoe UI Semilight", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AdminAcc.Location = new Point(31, 121);
+            AdminAcc.Name = "AdminAcc";
+            AdminAcc.Size = new Size(126, 25);
+            AdminAcc.TabIndex = 3;
+            AdminAcc.Text = "Admin Access";
             // 
             // lblActiveAdmins
             // 
@@ -307,6 +327,16 @@
             siticoneAdvancedPanel1.TopLeftRadius = 5;
             siticoneAdvancedPanel1.TopRightRadius = 5;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semilight", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(14, 121);
+            label6.Name = "label6";
+            label6.Size = new Size(186, 25);
+            label6.TabIndex = 2;
+            label6.Text = "Active Staff Members";
+            // 
             // lvlRevenue
             // 
             lvlRevenue.AutoSize = true;
@@ -326,36 +356,6 @@
             label3.Size = new Size(147, 25);
             label3.TabIndex = 0;
             label3.Text = "Total Employees\r\n";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semilight", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(14, 121);
-            label6.Name = "label6";
-            label6.Size = new Size(186, 25);
-            label6.TabIndex = 2;
-            label6.Text = "Active Staff Members";
-            // 
-            // AdminAcc
-            // 
-            AdminAcc.AutoSize = true;
-            AdminAcc.Font = new Font("Segoe UI Semilight", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AdminAcc.Location = new Point(31, 121);
-            AdminAcc.Name = "AdminAcc";
-            AdminAcc.Size = new Size(126, 25);
-            AdminAcc.TabIndex = 3;
-            AdminAcc.Text = "Admin Access";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semilight", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(13, 121);
-            label8.Name = "label8";
-            label8.Size = new Size(141, 25);
-            label8.TabIndex = 4;
-            label8.Text = "Front Desk Staff";
             // 
             // siticoneAdvancedPanel2
             // 
@@ -478,86 +478,87 @@
             txtSearchEmployee.ValidationErrorMessage = "Invalid input.";
             txtSearchEmployee.ValidationFunction = null;
             // 
-            // btnCreatePromo
+            // btnAddEmployee
             // 
-            btnCreatePromo.AccessibleDescription = "The default button control that accept input though the mouse, touch and keyboard";
-            btnCreatePromo.AccessibleName = "+   Add Employee";
-            btnCreatePromo.AutoSizeBasedOnText = false;
-            btnCreatePromo.BackColor = Color.Transparent;
-            btnCreatePromo.BadgeBackColor = Color.Black;
-            btnCreatePromo.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
-            btnCreatePromo.BadgeValue = 0;
-            btnCreatePromo.BadgeValueForeColor = Color.White;
-            btnCreatePromo.BorderColor = Color.FromArgb(213, 216, 220);
-            btnCreatePromo.BorderWidth = 1;
-            btnCreatePromo.ButtonBackColor = Color.Black;
-            btnCreatePromo.ButtonImage = null;
-            btnCreatePromo.ButtonTextLeftPadding = 0;
-            btnCreatePromo.CanBeep = true;
-            btnCreatePromo.CanGlow = false;
-            btnCreatePromo.CanShake = true;
-            btnCreatePromo.ContextMenuStripEx = null;
-            btnCreatePromo.CornerRadiusBottomLeft = 14;
-            btnCreatePromo.CornerRadiusBottomRight = 14;
-            btnCreatePromo.CornerRadiusTopLeft = 14;
-            btnCreatePromo.CornerRadiusTopRight = 14;
-            btnCreatePromo.CustomCursor = Cursors.Default;
-            btnCreatePromo.DisabledTextColor = Color.FromArgb(150, 150, 150);
-            btnCreatePromo.EnableLongPress = false;
-            btnCreatePromo.EnableRippleEffect = true;
-            btnCreatePromo.EnableShadow = false;
-            btnCreatePromo.EnableTextWrapping = false;
-            btnCreatePromo.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCreatePromo.GlowColor = Color.FromArgb(100, 255, 255, 255);
-            btnCreatePromo.GlowIntensity = 100;
-            btnCreatePromo.GlowRadius = 20F;
-            btnCreatePromo.GradientBackground = false;
-            btnCreatePromo.GradientColor = Color.FromArgb(0, 227, 64);
-            btnCreatePromo.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            btnCreatePromo.HintText = null;
-            btnCreatePromo.HoverBackColor = Color.FromArgb(240, 240, 240);
-            btnCreatePromo.HoverFontStyle = FontStyle.Regular;
-            btnCreatePromo.HoverTextColor = Color.FromArgb(0, 0, 0);
-            btnCreatePromo.HoverTransitionDuration = 250;
-            btnCreatePromo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCreatePromo.ImagePadding = 5;
-            btnCreatePromo.ImageSize = new Size(16, 16);
-            btnCreatePromo.IsRadial = false;
-            btnCreatePromo.IsReadOnly = false;
-            btnCreatePromo.IsToggleButton = false;
-            btnCreatePromo.IsToggled = false;
-            btnCreatePromo.Location = new Point(1494, 33);
-            btnCreatePromo.LongPressDurationMS = 1000;
-            btnCreatePromo.Name = "btnCreatePromo";
-            btnCreatePromo.NormalFontStyle = FontStyle.Regular;
-            btnCreatePromo.ParticleColor = Color.FromArgb(200, 200, 200);
-            btnCreatePromo.ParticleCount = 15;
-            btnCreatePromo.PressAnimationScale = 0.97F;
-            btnCreatePromo.PressedBackColor = Color.FromArgb(225, 227, 230);
-            btnCreatePromo.PressedFontStyle = FontStyle.Regular;
-            btnCreatePromo.PressTransitionDuration = 150;
-            btnCreatePromo.ReadOnlyTextColor = Color.FromArgb(100, 100, 100);
-            btnCreatePromo.RippleColor = Color.White;
-            btnCreatePromo.RippleRadiusMultiplier = 0.6F;
-            btnCreatePromo.ShadowBlur = 5;
-            btnCreatePromo.ShadowColor = Color.FromArgb(30, 0, 0, 0);
-            btnCreatePromo.ShadowOffset = new Point(0, 2);
-            btnCreatePromo.ShakeDuration = 500;
-            btnCreatePromo.ShakeIntensity = 5;
-            btnCreatePromo.Size = new Size(156, 48);
-            btnCreatePromo.TabIndex = 17;
-            btnCreatePromo.Text = "+   Add Employee";
-            btnCreatePromo.TextAlign = ContentAlignment.MiddleCenter;
-            btnCreatePromo.TextColor = Color.White;
-            btnCreatePromo.TooltipText = null;
-            btnCreatePromo.UseAdvancedRendering = true;
-            btnCreatePromo.UseParticles = false;
+            btnAddEmployee.AccessibleDescription = "The default button control that accept input though the mouse, touch and keyboard";
+            btnAddEmployee.AccessibleName = "+   Add Employee";
+            btnAddEmployee.AutoSizeBasedOnText = false;
+            btnAddEmployee.BackColor = Color.Transparent;
+            btnAddEmployee.BadgeBackColor = Color.Black;
+            btnAddEmployee.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
+            btnAddEmployee.BadgeValue = 0;
+            btnAddEmployee.BadgeValueForeColor = Color.White;
+            btnAddEmployee.BorderColor = Color.FromArgb(213, 216, 220);
+            btnAddEmployee.BorderWidth = 1;
+            btnAddEmployee.ButtonBackColor = Color.Black;
+            btnAddEmployee.ButtonImage = null;
+            btnAddEmployee.ButtonTextLeftPadding = 0;
+            btnAddEmployee.CanBeep = true;
+            btnAddEmployee.CanGlow = false;
+            btnAddEmployee.CanShake = true;
+            btnAddEmployee.ContextMenuStripEx = null;
+            btnAddEmployee.CornerRadiusBottomLeft = 14;
+            btnAddEmployee.CornerRadiusBottomRight = 14;
+            btnAddEmployee.CornerRadiusTopLeft = 14;
+            btnAddEmployee.CornerRadiusTopRight = 14;
+            btnAddEmployee.CustomCursor = Cursors.Default;
+            btnAddEmployee.DisabledTextColor = Color.FromArgb(150, 150, 150);
+            btnAddEmployee.EnableLongPress = false;
+            btnAddEmployee.EnableRippleEffect = true;
+            btnAddEmployee.EnableShadow = false;
+            btnAddEmployee.EnableTextWrapping = false;
+            btnAddEmployee.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddEmployee.GlowColor = Color.FromArgb(100, 255, 255, 255);
+            btnAddEmployee.GlowIntensity = 100;
+            btnAddEmployee.GlowRadius = 20F;
+            btnAddEmployee.GradientBackground = false;
+            btnAddEmployee.GradientColor = Color.FromArgb(0, 227, 64);
+            btnAddEmployee.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            btnAddEmployee.HintText = null;
+            btnAddEmployee.HoverBackColor = Color.FromArgb(240, 240, 240);
+            btnAddEmployee.HoverFontStyle = FontStyle.Regular;
+            btnAddEmployee.HoverTextColor = Color.FromArgb(0, 0, 0);
+            btnAddEmployee.HoverTransitionDuration = 250;
+            btnAddEmployee.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAddEmployee.ImagePadding = 5;
+            btnAddEmployee.ImageSize = new Size(16, 16);
+            btnAddEmployee.IsRadial = false;
+            btnAddEmployee.IsReadOnly = false;
+            btnAddEmployee.IsToggleButton = false;
+            btnAddEmployee.IsToggled = false;
+            btnAddEmployee.Location = new Point(1494, 33);
+            btnAddEmployee.LongPressDurationMS = 1000;
+            btnAddEmployee.Name = "btnAddEmployee";
+            btnAddEmployee.NormalFontStyle = FontStyle.Regular;
+            btnAddEmployee.ParticleColor = Color.FromArgb(200, 200, 200);
+            btnAddEmployee.ParticleCount = 15;
+            btnAddEmployee.PressAnimationScale = 0.97F;
+            btnAddEmployee.PressedBackColor = Color.FromArgb(225, 227, 230);
+            btnAddEmployee.PressedFontStyle = FontStyle.Regular;
+            btnAddEmployee.PressTransitionDuration = 150;
+            btnAddEmployee.ReadOnlyTextColor = Color.FromArgb(100, 100, 100);
+            btnAddEmployee.RippleColor = Color.White;
+            btnAddEmployee.RippleRadiusMultiplier = 0.6F;
+            btnAddEmployee.ShadowBlur = 5;
+            btnAddEmployee.ShadowColor = Color.FromArgb(30, 0, 0, 0);
+            btnAddEmployee.ShadowOffset = new Point(0, 2);
+            btnAddEmployee.ShakeDuration = 500;
+            btnAddEmployee.ShakeIntensity = 5;
+            btnAddEmployee.Size = new Size(156, 48);
+            btnAddEmployee.TabIndex = 17;
+            btnAddEmployee.Text = "+   Add Employee";
+            btnAddEmployee.TextAlign = ContentAlignment.MiddleCenter;
+            btnAddEmployee.TextColor = Color.White;
+            btnAddEmployee.TooltipText = null;
+            btnAddEmployee.UseAdvancedRendering = true;
+            btnAddEmployee.UseParticles = false;
+            btnAddEmployee.Click += btnAddEmployee_Click;
             // 
             // UC_Employees
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(btnCreatePromo);
+            Controls.Add(btnAddEmployee);
             Controls.Add(siticoneAdvancedPanel2);
             Controls.Add(siticoneAdvancedPanel4);
             Controls.Add(siticoneAdvancedPanel3);
@@ -595,6 +596,6 @@
         private Label label6;
         private SiticoneNetCoreUI.SiticoneAdvancedPanel siticoneAdvancedPanel2;
         private SiticoneNetCoreUI.SiticoneTextBox txtSearchEmployee;
-        private SiticoneNetCoreUI.SiticoneButton btnCreatePromo;
+        private SiticoneNetCoreUI.SiticoneButton btnAddEmployee;
     }
 }

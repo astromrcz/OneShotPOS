@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SiticoneNetCoreUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,20 +9,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace OneShotPOS
 {
-    public partial class UC_Employees : UserControl
+    public partial class AddEmployee : Form
     {
-        public UC_Employees()
+        public AddEmployee()
         {
             InitializeComponent();
         }
 
-        private void btnAddEmployee_Click(object sender, EventArgs e)
+        private void AddEmployee_Load(object sender, EventArgs e)
         {
-            AddEmployee employee = new AddEmployee();
-            employee.Show();
 
+        }
+
+        private void siticoneCloseButton1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

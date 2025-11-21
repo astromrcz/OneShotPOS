@@ -13,8 +13,14 @@
     <PackageReference Include="MaterialSkin" Version="0.2.1" />
     <PackageReference Include="Siticone.Desktop.UI" Version="2.1.1" />
     <PackageReference Include="Siticone.NetCore.UI" Version="2025.10.21" />
-    <PackageReference Include="SQLite" Version="3.13.0" />
     <PackageReference Include="SQLitePCLRaw.core" Version="3.0.2" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>
