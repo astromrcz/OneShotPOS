@@ -1,6 +1,6 @@
 ﻿namespace OneShotPOS
 {
-    partial class AddProduct
+    partial class EditProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProduct));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProduct));
             siticoneAdvancedPanel1 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             btnCancel = new SiticoneNetCoreUI.SiticoneButton();
-            btnAddProduct = new SiticoneNetCoreUI.SiticoneButton();
+            btnSaveChanges = new SiticoneNetCoreUI.SiticoneButton();
             txtDescription = new SiticoneNetCoreUI.SiticoneTextBoxAdvanced();
             label6 = new Label();
             txtPrice = new SiticoneNetCoreUI.SiticoneTextBox();
@@ -66,7 +66,7 @@
             siticoneAdvancedPanel1.BottomRightRadius = 5;
             siticoneAdvancedPanel1.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
             siticoneAdvancedPanel1.Controls.Add(btnCancel);
-            siticoneAdvancedPanel1.Controls.Add(btnAddProduct);
+            siticoneAdvancedPanel1.Controls.Add(btnSaveChanges);
             siticoneAdvancedPanel1.Controls.Add(txtDescription);
             siticoneAdvancedPanel1.Controls.Add(label6);
             siticoneAdvancedPanel1.Controls.Add(txtPrice);
@@ -196,82 +196,82 @@
             btnCancel.UseParticles = false;
             btnCancel.Click += btnCancel_Click;
             // 
-            // btnAddProduct
+            // btnSaveChanges
             // 
-            btnAddProduct.AccessibleDescription = "The default button control that accept input though the mouse, touch and keyboard";
-            btnAddProduct.AccessibleName = "Add Product";
-            btnAddProduct.AutoSizeBasedOnText = false;
-            btnAddProduct.BackColor = Color.Transparent;
-            btnAddProduct.BadgeBackColor = Color.Black;
-            btnAddProduct.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
-            btnAddProduct.BadgeValue = 0;
-            btnAddProduct.BadgeValueForeColor = Color.White;
-            btnAddProduct.BorderColor = Color.FromArgb(60, 60, 60);
-            btnAddProduct.BorderWidth = 2;
-            btnAddProduct.ButtonBackColor = Color.FromArgb(30, 30, 30);
-            btnAddProduct.ButtonImage = null;
-            btnAddProduct.ButtonTextLeftPadding = 0;
-            btnAddProduct.CanBeep = true;
-            btnAddProduct.CanGlow = false;
-            btnAddProduct.CanShake = true;
-            btnAddProduct.ContextMenuStripEx = null;
-            btnAddProduct.CornerRadiusBottomLeft = 6;
-            btnAddProduct.CornerRadiusBottomRight = 6;
-            btnAddProduct.CornerRadiusTopLeft = 6;
-            btnAddProduct.CornerRadiusTopRight = 6;
-            btnAddProduct.CustomCursor = Cursors.Default;
-            btnAddProduct.DisabledTextColor = Color.FromArgb(150, 150, 150);
-            btnAddProduct.EnableLongPress = false;
-            btnAddProduct.EnableRippleEffect = true;
-            btnAddProduct.EnableShadow = true;
-            btnAddProduct.EnableTextWrapping = false;
-            btnAddProduct.Font = new Font("Segoe UI Emoji", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddProduct.GlowColor = Color.FromArgb(30, 255, 255, 255);
-            btnAddProduct.GlowIntensity = 100;
-            btnAddProduct.GlowRadius = 20F;
-            btnAddProduct.GradientBackground = false;
-            btnAddProduct.GradientColor = Color.FromArgb(0, 227, 64);
-            btnAddProduct.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            btnAddProduct.HintText = null;
-            btnAddProduct.HoverBackColor = Color.FromArgb(50, 50, 50);
-            btnAddProduct.HoverFontStyle = FontStyle.Regular;
-            btnAddProduct.HoverTextColor = Color.White;
-            btnAddProduct.HoverTransitionDuration = 250;
-            btnAddProduct.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddProduct.ImagePadding = 5;
-            btnAddProduct.ImageSize = new Size(16, 16);
-            btnAddProduct.IsRadial = false;
-            btnAddProduct.IsReadOnly = false;
-            btnAddProduct.IsToggleButton = false;
-            btnAddProduct.IsToggled = false;
-            btnAddProduct.Location = new Point(13, 511);
-            btnAddProduct.LongPressDurationMS = 1000;
-            btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.NormalFontStyle = FontStyle.Regular;
-            btnAddProduct.ParticleColor = Color.FromArgb(200, 200, 200);
-            btnAddProduct.ParticleCount = 15;
-            btnAddProduct.PressAnimationScale = 0.97F;
-            btnAddProduct.PressedBackColor = Color.FromArgb(40, 40, 40);
-            btnAddProduct.PressedFontStyle = FontStyle.Regular;
-            btnAddProduct.PressTransitionDuration = 150;
-            btnAddProduct.ReadOnlyTextColor = Color.FromArgb(100, 100, 100);
-            btnAddProduct.RippleColor = Color.FromArgb(100, 100, 100);
-            btnAddProduct.RippleOpacity = 0.3F;
-            btnAddProduct.RippleRadiusMultiplier = 0.6F;
-            btnAddProduct.ShadowBlur = 6;
-            btnAddProduct.ShadowColor = Color.FromArgb(60, 0, 0, 0);
-            btnAddProduct.ShadowOffset = new Point(0, 2);
-            btnAddProduct.ShakeDuration = 500;
-            btnAddProduct.ShakeIntensity = 5;
-            btnAddProduct.Size = new Size(332, 44);
-            btnAddProduct.TabIndex = 13;
-            btnAddProduct.Text = "Add Product";
-            btnAddProduct.TextAlign = ContentAlignment.MiddleCenter;
-            btnAddProduct.TextColor = Color.White;
-            btnAddProduct.TooltipText = null;
-            btnAddProduct.UseAdvancedRendering = true;
-            btnAddProduct.UseParticles = false;
-            btnAddProduct.Click += btnAddProduct_Click;
+            btnSaveChanges.AccessibleDescription = "The default button control that accept input though the mouse, touch and keyboard";
+            btnSaveChanges.AccessibleName = "Save Changes";
+            btnSaveChanges.AutoSizeBasedOnText = false;
+            btnSaveChanges.BackColor = Color.Transparent;
+            btnSaveChanges.BadgeBackColor = Color.Black;
+            btnSaveChanges.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
+            btnSaveChanges.BadgeValue = 0;
+            btnSaveChanges.BadgeValueForeColor = Color.White;
+            btnSaveChanges.BorderColor = Color.FromArgb(60, 60, 60);
+            btnSaveChanges.BorderWidth = 2;
+            btnSaveChanges.ButtonBackColor = Color.FromArgb(30, 30, 30);
+            btnSaveChanges.ButtonImage = null;
+            btnSaveChanges.ButtonTextLeftPadding = 0;
+            btnSaveChanges.CanBeep = true;
+            btnSaveChanges.CanGlow = false;
+            btnSaveChanges.CanShake = true;
+            btnSaveChanges.ContextMenuStripEx = null;
+            btnSaveChanges.CornerRadiusBottomLeft = 6;
+            btnSaveChanges.CornerRadiusBottomRight = 6;
+            btnSaveChanges.CornerRadiusTopLeft = 6;
+            btnSaveChanges.CornerRadiusTopRight = 6;
+            btnSaveChanges.CustomCursor = Cursors.Default;
+            btnSaveChanges.DisabledTextColor = Color.FromArgb(150, 150, 150);
+            btnSaveChanges.EnableLongPress = false;
+            btnSaveChanges.EnableRippleEffect = true;
+            btnSaveChanges.EnableShadow = true;
+            btnSaveChanges.EnableTextWrapping = false;
+            btnSaveChanges.Font = new Font("Segoe UI Emoji", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSaveChanges.GlowColor = Color.FromArgb(30, 255, 255, 255);
+            btnSaveChanges.GlowIntensity = 100;
+            btnSaveChanges.GlowRadius = 20F;
+            btnSaveChanges.GradientBackground = false;
+            btnSaveChanges.GradientColor = Color.FromArgb(0, 227, 64);
+            btnSaveChanges.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            btnSaveChanges.HintText = null;
+            btnSaveChanges.HoverBackColor = Color.FromArgb(50, 50, 50);
+            btnSaveChanges.HoverFontStyle = FontStyle.Regular;
+            btnSaveChanges.HoverTextColor = Color.White;
+            btnSaveChanges.HoverTransitionDuration = 250;
+            btnSaveChanges.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSaveChanges.ImagePadding = 5;
+            btnSaveChanges.ImageSize = new Size(16, 16);
+            btnSaveChanges.IsRadial = false;
+            btnSaveChanges.IsReadOnly = false;
+            btnSaveChanges.IsToggleButton = false;
+            btnSaveChanges.IsToggled = false;
+            btnSaveChanges.Location = new Point(13, 511);
+            btnSaveChanges.LongPressDurationMS = 1000;
+            btnSaveChanges.Name = "btnSaveChanges";
+            btnSaveChanges.NormalFontStyle = FontStyle.Regular;
+            btnSaveChanges.ParticleColor = Color.FromArgb(200, 200, 200);
+            btnSaveChanges.ParticleCount = 15;
+            btnSaveChanges.PressAnimationScale = 0.97F;
+            btnSaveChanges.PressedBackColor = Color.FromArgb(40, 40, 40);
+            btnSaveChanges.PressedFontStyle = FontStyle.Regular;
+            btnSaveChanges.PressTransitionDuration = 150;
+            btnSaveChanges.ReadOnlyTextColor = Color.FromArgb(100, 100, 100);
+            btnSaveChanges.RippleColor = Color.FromArgb(100, 100, 100);
+            btnSaveChanges.RippleOpacity = 0.3F;
+            btnSaveChanges.RippleRadiusMultiplier = 0.6F;
+            btnSaveChanges.ShadowBlur = 6;
+            btnSaveChanges.ShadowColor = Color.FromArgb(60, 0, 0, 0);
+            btnSaveChanges.ShadowOffset = new Point(0, 2);
+            btnSaveChanges.ShakeDuration = 500;
+            btnSaveChanges.ShakeIntensity = 5;
+            btnSaveChanges.Size = new Size(332, 44);
+            btnSaveChanges.TabIndex = 13;
+            btnSaveChanges.Text = "Save Changes";
+            btnSaveChanges.TextAlign = ContentAlignment.MiddleCenter;
+            btnSaveChanges.TextColor = Color.White;
+            btnSaveChanges.TooltipText = null;
+            btnSaveChanges.UseAdvancedRendering = true;
+            btnSaveChanges.UseParticles = false;
+            btnSaveChanges.Click += btnSaveChanges_Click;
             // 
             // txtDescription
             // 
@@ -499,9 +499,9 @@
             label2.Font = new Font("Segoe UI Light", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(8, 44);
             label2.Name = "label2";
-            label2.Size = new Size(241, 21);
+            label2.Size = new Size(197, 21);
             label2.TabIndex = 4;
-            label2.Text = "Create a new menu item or service";
+            label2.Text = "Update product information";
             // 
             // label1
             // 
@@ -509,11 +509,11 @@
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             label1.Location = new Point(8, 19);
             label1.Name = "label1";
-            label1.Size = new Size(171, 25);
+            label1.Size = new Size(123, 25);
             label1.TabIndex = 0;
-            label1.Text = "Add New Product";
+            label1.Text = "Edit Product";
             // 
-            // AddProduct
+            // EditProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -521,9 +521,9 @@
             Controls.Add(siticoneAdvancedPanel1);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "AddProduct";
+            Name = "EditProduct";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AddProduct";
+            Text = "Edit Product";
             Load += AddProduct_Load;
             siticoneAdvancedPanel1.ResumeLayout(false);
             siticoneAdvancedPanel1.PerformLayout();
@@ -544,6 +544,6 @@
         private SiticoneNetCoreUI.SiticoneDropdown dropCategory;
         private Label label4;
         private SiticoneNetCoreUI.SiticoneButton btnCancel;
-        private SiticoneNetCoreUI.SiticoneButton btnAddProduct;
+        private SiticoneNetCoreUI.SiticoneButton btnSaveChanges;
     }
 }

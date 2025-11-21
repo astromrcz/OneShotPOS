@@ -28,5 +28,15 @@ namespace OneShotPOS
         {
             Close();
         }
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
