@@ -2,12 +2,12 @@
 {
     partial class UC_Overview
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -22,22 +22,19 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Overview));
-            SiticoneNetCoreUI.SiticoneBarChart.BarChartTheme barChartTheme1 = new SiticoneNetCoreUI.SiticoneBarChart.BarChartTheme();
             label1 = new Label();
             label2 = new Label();
             WeeklySalesPanel = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             label8 = new Label();
-            bcWeeklySales = new SiticoneNetCoreUI.SiticoneBarChart();
-            siticoneAdvancedPanel6 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            lcRevenueTrend = new SiticoneNetCoreUI.SiticoneAdvancedLineChart();
-            siticoneWaterfallChart1 = new SiticoneNetCoreUI.SiticoneWaterfallChart();
+            RevenueTrendPanel = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
+            label7 = new Label();
             panelRecentActivities = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             label9 = new Label();
             siticoneAdvancedPanel1 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
@@ -45,11 +42,11 @@
             lblRevenue = new Label();
             label3 = new Label();
             siticoneAdvancedPanel2 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            label7 = new Label();
+            lblOccupancyRate = new Label();
             lblActiveTables = new Label();
             label4 = new Label();
             siticoneAdvancedPanel3 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            lblRequireOrder = new Label();
+            lblRequireReorder = new Label();
             lblLowStockItems = new Label();
             label5 = new Label();
             siticoneAdvancedPanel4 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
@@ -57,7 +54,7 @@
             lblCurrentQueue = new Label();
             label6 = new Label();
             WeeklySalesPanel.SuspendLayout();
-            siticoneAdvancedPanel6.SuspendLayout();
+            RevenueTrendPanel.SuspendLayout();
             panelRecentActivities.SuspendLayout();
             siticoneAdvancedPanel1.SuspendLayout();
             siticoneAdvancedPanel2.SuspendLayout();
@@ -106,7 +103,6 @@
             WeeklySalesPanel.BottomRightRadius = 5;
             WeeklySalesPanel.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
             WeeklySalesPanel.Controls.Add(label8);
-            WeeklySalesPanel.Controls.Add(bcWeeklySales);
             WeeklySalesPanel.CornerPadding = new Padding(5);
             WeeklySalesPanel.DisabledBackColor = Color.Empty;
             WeeklySalesPanel.DisabledBorderColor = Color.Empty;
@@ -159,209 +155,78 @@
             label8.TabIndex = 3;
             label8.Text = "Weekly Sales";
             // 
-            // bcWeeklySales
+            // RevenueTrendPanel
             // 
-            bcWeeklySales.BackColor = Color.Transparent;
-            bcWeeklySales.Font = new Font("Segoe UI", 9F);
-            bcWeeklySales.Location = new Point(13, 50);
-            bcWeeklySales.Name = "bcWeeklySales";
-            bcWeeklySales.Size = new Size(739, 292);
-            bcWeeklySales.TabIndex = 1;
-            barChartTheme1.AxisLabelColor = Color.FromArgb(100, 100, 100);
-            barChartTheme1.BackColor = SystemColors.Control;
-            barChartTheme1.BarColor = Color.FromArgb(0, 122, 204);
-            barChartTheme1.BarHighlightColor = Color.FromArgb(100, 181, 246);
-            barChartTheme1.GridColor = Color.FromArgb(224, 224, 224);
-            barChartTheme1.Name = "Default Blue";
-            barChartTheme1.ValueLabelColor = Color.Black;
-            bcWeeklySales.Theme = barChartTheme1;
+            RevenueTrendPanel.ActiveBackColor = Color.Empty;
+            RevenueTrendPanel.ActiveBorderColor = Color.Empty;
+            RevenueTrendPanel.AdvancedBorderStyle = SiticoneNetCoreUI.SiticoneAdvancedPanel.BorderStyleEx.Solid;
+            RevenueTrendPanel.AnimationDuration = 500;
+            RevenueTrendPanel.AnimationType = SiticoneNetCoreUI.SiticoneAdvancedPanel.AnimationTypeEx.Fade;
+            RevenueTrendPanel.BackColor = Color.White;
+            RevenueTrendPanel.BackgroundImageCustom = null;
+            RevenueTrendPanel.BackgroundImageOpacity = 1F;
+            RevenueTrendPanel.BackgroundImageSizeMode = SiticoneNetCoreUI.SiticoneAdvancedPanel.ImageSizeModeEx.Stretch;
+            RevenueTrendPanel.BackgroundOverlayColor = Color.FromArgb(0, 0, 0, 0);
+            RevenueTrendPanel.BorderColor = Color.Gray;
+            RevenueTrendPanel.BorderDashPattern = null;
+            RevenueTrendPanel.BorderGlowColor = Color.Cyan;
+            RevenueTrendPanel.BorderGlowSize = 3F;
+            RevenueTrendPanel.BorderWidth = 1F;
+            RevenueTrendPanel.BottomLeftRadius = 5;
+            RevenueTrendPanel.BottomRightRadius = 5;
+            RevenueTrendPanel.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
+            RevenueTrendPanel.Controls.Add(label7);
+            RevenueTrendPanel.CornerPadding = new Padding(5);
+            RevenueTrendPanel.DisabledBackColor = Color.Empty;
+            RevenueTrendPanel.DisabledBorderColor = Color.Empty;
+            RevenueTrendPanel.DoubleBorderSpacing = 2F;
+            RevenueTrendPanel.EasingType = SiticoneNetCoreUI.SiticoneAdvancedPanel.EasingTypeEx.Linear;
+            RevenueTrendPanel.EnableAnimation = false;
+            RevenueTrendPanel.EnableBackgroundImage = false;
+            RevenueTrendPanel.EnableBorderGlow = false;
+            RevenueTrendPanel.EnableDoubleBorder = false;
+            RevenueTrendPanel.EnableGradient = false;
+            RevenueTrendPanel.EnableInnerShadow = false;
+            RevenueTrendPanel.EnableShadow = false;
+            RevenueTrendPanel.EnableSmartPadding = true;
+            RevenueTrendPanel.EnableStateStyles = false;
+            RevenueTrendPanel.FlowDirectionCustom = FlowDirection.LeftToRight;
+            RevenueTrendPanel.GradientAngle = 90F;
+            RevenueTrendPanel.GradientEndColor = Color.LightGray;
+            RevenueTrendPanel.GradientStartColor = Color.White;
+            RevenueTrendPanel.GradientType = SiticoneNetCoreUI.SiticoneAdvancedPanel.GradientTypeEx.Linear;
+            RevenueTrendPanel.HoverBackColor = Color.Empty;
+            RevenueTrendPanel.HoverBorderColor = Color.Empty;
+            RevenueTrendPanel.InnerShadowColor = Color.Black;
+            RevenueTrendPanel.InnerShadowDepth = 3;
+            RevenueTrendPanel.InnerShadowOpacity = 0.2F;
+            RevenueTrendPanel.Location = new Point(869, 331);
+            RevenueTrendPanel.Name = "RevenueTrendPanel";
+            RevenueTrendPanel.Padding = new Padding(10);
+            RevenueTrendPanel.RadialGradientCenter = (PointF)resources.GetObject("RevenueTrendPanel.RadialGradientCenter");
+            RevenueTrendPanel.RadialGradientRadius = 1F;
+            RevenueTrendPanel.ScaleRatio = 0.8F;
+            RevenueTrendPanel.SecondaryBorderColor = Color.DarkGray;
+            RevenueTrendPanel.ShadowBlur = 10;
+            RevenueTrendPanel.ShadowColor = Color.Black;
+            RevenueTrendPanel.ShadowDepth = 5;
+            RevenueTrendPanel.ShadowOffset = new Point(2, 2);
+            RevenueTrendPanel.ShadowOpacity = 0.3F;
+            RevenueTrendPanel.Size = new Size(789, 355);
+            RevenueTrendPanel.SlideDirection = new Point(0, -30);
+            RevenueTrendPanel.TabIndex = 4;
+            RevenueTrendPanel.TopLeftRadius = 5;
+            RevenueTrendPanel.TopRightRadius = 5;
             // 
-            // siticoneAdvancedPanel6
+            // label7
             // 
-            siticoneAdvancedPanel6.ActiveBackColor = Color.Empty;
-            siticoneAdvancedPanel6.ActiveBorderColor = Color.Empty;
-            siticoneAdvancedPanel6.AdvancedBorderStyle = SiticoneNetCoreUI.SiticoneAdvancedPanel.BorderStyleEx.Solid;
-            siticoneAdvancedPanel6.AnimationDuration = 500;
-            siticoneAdvancedPanel6.AnimationType = SiticoneNetCoreUI.SiticoneAdvancedPanel.AnimationTypeEx.Fade;
-            siticoneAdvancedPanel6.BackColor = Color.White;
-            siticoneAdvancedPanel6.BackgroundImageCustom = null;
-            siticoneAdvancedPanel6.BackgroundImageOpacity = 1F;
-            siticoneAdvancedPanel6.BackgroundImageSizeMode = SiticoneNetCoreUI.SiticoneAdvancedPanel.ImageSizeModeEx.Stretch;
-            siticoneAdvancedPanel6.BackgroundOverlayColor = Color.FromArgb(0, 0, 0, 0);
-            siticoneAdvancedPanel6.BorderColor = Color.Gray;
-            siticoneAdvancedPanel6.BorderDashPattern = null;
-            siticoneAdvancedPanel6.BorderGlowColor = Color.Cyan;
-            siticoneAdvancedPanel6.BorderGlowSize = 3F;
-            siticoneAdvancedPanel6.BorderWidth = 1F;
-            siticoneAdvancedPanel6.BottomLeftRadius = 5;
-            siticoneAdvancedPanel6.BottomRightRadius = 5;
-            siticoneAdvancedPanel6.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
-            siticoneAdvancedPanel6.Controls.Add(lcRevenueTrend);
-            siticoneAdvancedPanel6.Controls.Add(siticoneWaterfallChart1);
-            siticoneAdvancedPanel6.CornerPadding = new Padding(5);
-            siticoneAdvancedPanel6.DisabledBackColor = Color.Empty;
-            siticoneAdvancedPanel6.DisabledBorderColor = Color.Empty;
-            siticoneAdvancedPanel6.DoubleBorderSpacing = 2F;
-            siticoneAdvancedPanel6.EasingType = SiticoneNetCoreUI.SiticoneAdvancedPanel.EasingTypeEx.Linear;
-            siticoneAdvancedPanel6.EnableAnimation = false;
-            siticoneAdvancedPanel6.EnableBackgroundImage = false;
-            siticoneAdvancedPanel6.EnableBorderGlow = false;
-            siticoneAdvancedPanel6.EnableDoubleBorder = false;
-            siticoneAdvancedPanel6.EnableGradient = false;
-            siticoneAdvancedPanel6.EnableInnerShadow = false;
-            siticoneAdvancedPanel6.EnableShadow = false;
-            siticoneAdvancedPanel6.EnableSmartPadding = true;
-            siticoneAdvancedPanel6.EnableStateStyles = false;
-            siticoneAdvancedPanel6.FlowDirectionCustom = FlowDirection.LeftToRight;
-            siticoneAdvancedPanel6.GradientAngle = 90F;
-            siticoneAdvancedPanel6.GradientEndColor = Color.LightGray;
-            siticoneAdvancedPanel6.GradientStartColor = Color.White;
-            siticoneAdvancedPanel6.GradientType = SiticoneNetCoreUI.SiticoneAdvancedPanel.GradientTypeEx.Linear;
-            siticoneAdvancedPanel6.HoverBackColor = Color.Empty;
-            siticoneAdvancedPanel6.HoverBorderColor = Color.Empty;
-            siticoneAdvancedPanel6.InnerShadowColor = Color.Black;
-            siticoneAdvancedPanel6.InnerShadowDepth = 3;
-            siticoneAdvancedPanel6.InnerShadowOpacity = 0.2F;
-            siticoneAdvancedPanel6.Location = new Point(869, 331);
-            siticoneAdvancedPanel6.Name = "siticoneAdvancedPanel6";
-            siticoneAdvancedPanel6.Padding = new Padding(10);
-            siticoneAdvancedPanel6.RadialGradientCenter = (PointF)resources.GetObject("siticoneAdvancedPanel6.RadialGradientCenter");
-            siticoneAdvancedPanel6.RadialGradientRadius = 1F;
-            siticoneAdvancedPanel6.ScaleRatio = 0.8F;
-            siticoneAdvancedPanel6.SecondaryBorderColor = Color.DarkGray;
-            siticoneAdvancedPanel6.ShadowBlur = 10;
-            siticoneAdvancedPanel6.ShadowColor = Color.Black;
-            siticoneAdvancedPanel6.ShadowDepth = 5;
-            siticoneAdvancedPanel6.ShadowOffset = new Point(2, 2);
-            siticoneAdvancedPanel6.ShadowOpacity = 0.3F;
-            siticoneAdvancedPanel6.Size = new Size(789, 355);
-            siticoneAdvancedPanel6.SlideDirection = new Point(0, -30);
-            siticoneAdvancedPanel6.TabIndex = 4;
-            siticoneAdvancedPanel6.TopLeftRadius = 5;
-            siticoneAdvancedPanel6.TopRightRadius = 5;
-            // 
-            // lcRevenueTrend
-            // 
-            lcRevenueTrend.AnimateOnDataChange = true;
-            lcRevenueTrend.AnimateOnStartup = true;
-            lcRevenueTrend.AnimationDuration = 1000;
-            lcRevenueTrend.AnimationType = SiticoneNetCoreUI.SiticoneLineChartAnimationType.FadeIn;
-            lcRevenueTrend.AntiAlias = true;
-            lcRevenueTrend.AutoScaleAxes = true;
-            lcRevenueTrend.BackgroundGradientEnd = Color.WhiteSmoke;
-            lcRevenueTrend.BackgroundGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            lcRevenueTrend.BackgroundGradientStart = Color.White;
-            lcRevenueTrend.CornerRadius = 5;
-            lcRevenueTrend.DefaultLineStyle = SiticoneNetCoreUI.SiticoneLineChartLineStyle.Dash;
-            lcRevenueTrend.EnablePanning = false;
-            lcRevenueTrend.EnablePointHighlight = true;
-            lcRevenueTrend.EnableSelection = false;
-            lcRevenueTrend.EnableZooming = true;
-            lcRevenueTrend.ExtraBottomPadding = new Padding(0, 0, 0, 25);
-            lcRevenueTrend.ExtraRightMargin = 40;
-            lcRevenueTrend.ForceIntegerScale = false;
-            lcRevenueTrend.HighQuality = false;
-            lcRevenueTrend.LegendBackColor = Color.FromArgb(240, 240, 240);
-            lcRevenueTrend.LegendBorderColor = Color.LightGray;
-            lcRevenueTrend.LegendFont = new Font("Segoe UI", 8F);
-            lcRevenueTrend.LegendItemSpacing = 5;
-            lcRevenueTrend.LegendMargin = 10;
-            lcRevenueTrend.LegendPadding = 5;
-            lcRevenueTrend.LegendPosition = SiticoneNetCoreUI.AdvancedLineLegendPosition.Right;
-            lcRevenueTrend.LegendSymbolSize = new Size(12, 12);
-            lcRevenueTrend.Location = new Point(9, 13);
-            lcRevenueTrend.MarkerQuality = 8;
-            lcRevenueTrend.Name = "lcRevenueTrend";
-            lcRevenueTrend.PlotAreaBackColor = Color.White;
-            lcRevenueTrend.PlotAreaBorderColor = Color.LightGray;
-            lcRevenueTrend.PlotAreaBorderThickness = 1F;
-            lcRevenueTrend.PlotAreaGradientEnd = Color.WhiteSmoke;
-            lcRevenueTrend.PlotAreaGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            lcRevenueTrend.PlotAreaGradientStart = Color.White;
-            lcRevenueTrend.PointHighlightBorderThickness = 2F;
-            lcRevenueTrend.PointHighlightColor = Color.Red;
-            lcRevenueTrend.PointHighlightSize = 10;
-            lcRevenueTrend.RoundedCorners = false;
-            lcRevenueTrend.ShadowColor = Color.FromArgb(64, 0, 0, 0);
-            lcRevenueTrend.ShadowDepth = 0F;
-            lcRevenueTrend.ShowAdvancedToolTip = true;
-            lcRevenueTrend.ShowLegend = true;
-            lcRevenueTrend.ShowToolTip = true;
-            lcRevenueTrend.Size = new Size(767, 329);
-            lcRevenueTrend.TabIndex = 0;
-            lcRevenueTrend.Text = "Weekly Sales";
-            lcRevenueTrend.TitleAlignment = ContentAlignment.TopCenter;
-            lcRevenueTrend.TitleColor = Color.Black;
-            lcRevenueTrend.TitleFont = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lcRevenueTrend.TitlePadding = 5;
-            lcRevenueTrend.ToolTipBackColor = Color.FromArgb(245, 245, 245);
-            lcRevenueTrend.ToolTipDelay = 500;
-            lcRevenueTrend.ToolTipFont = new Font("Segoe UI", 8F);
-            lcRevenueTrend.ToolTipForeColor = Color.Black;
-            lcRevenueTrend.ToolTipFormat = "{0}: ({1}, {2})";
-            lcRevenueTrend.UseGradientBackground = false;
-            lcRevenueTrend.UsePlotAreaGradient = false;
-            lcRevenueTrend.XAxis.AutoRange = true;
-            lcRevenueTrend.XAxis.ExtraLabelPadding = 0;
-            lcRevenueTrend.XAxis.GridColor = Color.LightGray;
-            lcRevenueTrend.XAxis.GridDashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            lcRevenueTrend.XAxis.GridThickness = 1F;
-            lcRevenueTrend.XAxis.Interval = 0D;
-            lcRevenueTrend.XAxis.IsDateTimeAxis = false;
-            lcRevenueTrend.XAxis.IsVisible = true;
-            lcRevenueTrend.XAxis.LabelAngle = 0;
-            lcRevenueTrend.XAxis.LabelColor = Color.Black;
-            lcRevenueTrend.XAxis.LabelFont = new Font("Segoe UI", 8F);
-            lcRevenueTrend.XAxis.LabelFormat = "{0}";
-            lcRevenueTrend.XAxis.LabelPadding = 5;
-            lcRevenueTrend.XAxis.LineColor = Color.Black;
-            lcRevenueTrend.XAxis.LineThickness = 1F;
-            lcRevenueTrend.XAxis.Maximum = 100D;
-            lcRevenueTrend.XAxis.Minimum = 0D;
-            lcRevenueTrend.XAxis.Orientation = SiticoneNetCoreUI.AxisOrientation.Horizontal;
-            lcRevenueTrend.XAxis.Position = SiticoneNetCoreUI.AxisPosition.Bottom;
-            lcRevenueTrend.XAxis.ShowGrid = true;
-            lcRevenueTrend.XAxis.ShowLabels = true;
-            lcRevenueTrend.XAxis.Title = "X Axis";
-            lcRevenueTrend.XAxis.TitleColor = Color.Black;
-            lcRevenueTrend.XAxis.TitleFont = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lcRevenueTrend.XAxis.TitlePadding = 5;
-            lcRevenueTrend.YAxis.AutoRange = true;
-            lcRevenueTrend.YAxis.ExtraLabelPadding = 0;
-            lcRevenueTrend.YAxis.GridColor = Color.LightGray;
-            lcRevenueTrend.YAxis.GridDashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            lcRevenueTrend.YAxis.GridThickness = 1F;
-            lcRevenueTrend.YAxis.Interval = 0D;
-            lcRevenueTrend.YAxis.IsDateTimeAxis = false;
-            lcRevenueTrend.YAxis.IsVisible = true;
-            lcRevenueTrend.YAxis.LabelAngle = 0;
-            lcRevenueTrend.YAxis.LabelColor = Color.Black;
-            lcRevenueTrend.YAxis.LabelFont = new Font("Segoe UI", 8F);
-            lcRevenueTrend.YAxis.LabelFormat = "{0}";
-            lcRevenueTrend.YAxis.LabelPadding = 5;
-            lcRevenueTrend.YAxis.LineColor = Color.Black;
-            lcRevenueTrend.YAxis.LineThickness = 1F;
-            lcRevenueTrend.YAxis.Maximum = 100D;
-            lcRevenueTrend.YAxis.Minimum = 0D;
-            lcRevenueTrend.YAxis.Orientation = SiticoneNetCoreUI.AxisOrientation.Vertical;
-            lcRevenueTrend.YAxis.Position = SiticoneNetCoreUI.AxisPosition.Left;
-            lcRevenueTrend.YAxis.ShowGrid = true;
-            lcRevenueTrend.YAxis.ShowLabels = true;
-            lcRevenueTrend.YAxis.Title = "Y Axis";
-            lcRevenueTrend.YAxis.TitleColor = Color.Black;
-            lcRevenueTrend.YAxis.TitleFont = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lcRevenueTrend.YAxis.TitlePadding = 5;
-            lcRevenueTrend.YAxisExtraLeftMargin = 15;
-            // 
-            // siticoneWaterfallChart1
-            // 
-            siticoneWaterfallChart1.Font = new Font("Segoe UI", 9F);
-            siticoneWaterfallChart1.Location = new Point(107, 96);
-            siticoneWaterfallChart1.Name = "siticoneWaterfallChart1";
-            siticoneWaterfallChart1.Padding = new Padding(50, 20, 20, 30);
-            siticoneWaterfallChart1.Size = new Size(75, 23);
-            siticoneWaterfallChart1.TabIndex = 0;
-            siticoneWaterfallChart1.Text = "siticoneWaterfallChart1";
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(21, 20);
+            label7.Name = "label7";
+            label7.Size = new Size(135, 25);
+            label7.TabIndex = 4;
+            label7.Text = "Revenue Trend";
             // 
             // panelRecentActivities
             // 
@@ -552,7 +417,7 @@
             siticoneAdvancedPanel2.BottomLeftRadius = 5;
             siticoneAdvancedPanel2.BottomRightRadius = 5;
             siticoneAdvancedPanel2.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
-            siticoneAdvancedPanel2.Controls.Add(label7);
+            siticoneAdvancedPanel2.Controls.Add(lblOccupancyRate);
             siticoneAdvancedPanel2.Controls.Add(lblActiveTables);
             siticoneAdvancedPanel2.Controls.Add(label4);
             siticoneAdvancedPanel2.CornerPadding = new Padding(5);
@@ -597,15 +462,15 @@
             siticoneAdvancedPanel2.TopLeftRadius = 5;
             siticoneAdvancedPanel2.TopRightRadius = 5;
             // 
-            // label7
+            // lblOccupancyRate
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(22, 129);
-            label7.Name = "label7";
-            label7.Size = new Size(163, 25);
-            label7.TabIndex = 3;
-            label7.Text = "lblOccupancyRate";
+            lblOccupancyRate.AutoSize = true;
+            lblOccupancyRate.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblOccupancyRate.Location = new Point(22, 129);
+            lblOccupancyRate.Name = "lblOccupancyRate";
+            lblOccupancyRate.Size = new Size(163, 25);
+            lblOccupancyRate.TabIndex = 3;
+            lblOccupancyRate.Text = "lblOccupancyRate";
             // 
             // lblActiveTables
             // 
@@ -647,7 +512,7 @@
             siticoneAdvancedPanel3.BottomLeftRadius = 5;
             siticoneAdvancedPanel3.BottomRightRadius = 5;
             siticoneAdvancedPanel3.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
-            siticoneAdvancedPanel3.Controls.Add(lblRequireOrder);
+            siticoneAdvancedPanel3.Controls.Add(lblRequireReorder);
             siticoneAdvancedPanel3.Controls.Add(lblLowStockItems);
             siticoneAdvancedPanel3.Controls.Add(label5);
             siticoneAdvancedPanel3.CornerPadding = new Padding(5);
@@ -692,35 +557,35 @@
             siticoneAdvancedPanel3.TopLeftRadius = 5;
             siticoneAdvancedPanel3.TopRightRadius = 5;
             // 
-            // lblRequireOrder
+            // lblRequireReorder
             // 
-            lblRequireOrder.AutoSize = true;
-            lblRequireOrder.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblRequireOrder.Location = new Point(22, 129);
-            lblRequireOrder.Name = "lblRequireOrder";
-            lblRequireOrder.Size = new Size(163, 25);
-            lblRequireOrder.TabIndex = 4;
-            lblRequireOrder.Text = "lblRequireReorder";
+            lblRequireReorder.AutoSize = true;
+            lblRequireReorder.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRequireReorder.Location = new Point(16, 129);
+            lblRequireReorder.Name = "lblRequireReorder";
+            lblRequireReorder.Size = new Size(137, 21);
+            lblRequireReorder.TabIndex = 3;
+            lblRequireReorder.Text = "lblRequireReorder";
             // 
             // lblLowStockItems
             // 
             lblLowStockItems.AutoSize = true;
             lblLowStockItems.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLowStockItems.Location = new Point(22, 104);
+            lblLowStockItems.Location = new Point(16, 104);
             lblLowStockItems.Name = "lblLowStockItems";
             lblLowStockItems.Size = new Size(156, 25);
-            lblLowStockItems.TabIndex = 3;
+            lblLowStockItems.TabIndex = 2;
             lblLowStockItems.Text = "lblLowStockItems";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(22, 33);
+            label5.Location = new Point(16, 33);
             label5.Name = "label5";
-            label5.Size = new Size(145, 25);
-            label5.TabIndex = 2;
-            label5.Text = "Low Stock Items";
+            label5.Size = new Size(140, 25);
+            label5.TabIndex = 1;
+            label5.Text = "Low Stock Alert";
             // 
             // siticoneAdvancedPanel4
             // 
@@ -783,60 +648,61 @@
             siticoneAdvancedPanel4.ShadowOpacity = 0.3F;
             siticoneAdvancedPanel4.Size = new Size(381, 192);
             siticoneAdvancedPanel4.SlideDirection = new Point(0, -30);
-            siticoneAdvancedPanel4.TabIndex = 4;
+            siticoneAdvancedPanel4.TabIndex = 5;
             siticoneAdvancedPanel4.TopLeftRadius = 5;
             siticoneAdvancedPanel4.TopRightRadius = 5;
             // 
             // lblAvgWaitTime
             // 
             lblAvgWaitTime.AutoSize = true;
-            lblAvgWaitTime.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAvgWaitTime.Location = new Point(22, 129);
+            lblAvgWaitTime.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAvgWaitTime.Location = new Point(16, 129);
             lblAvgWaitTime.Name = "lblAvgWaitTime";
-            lblAvgWaitTime.Size = new Size(144, 25);
-            lblAvgWaitTime.TabIndex = 5;
+            lblAvgWaitTime.Size = new Size(119, 21);
+            lblAvgWaitTime.TabIndex = 3;
             lblAvgWaitTime.Text = "lblAvgWaitTime";
             // 
             // lblCurrentQueue
             // 
             lblCurrentQueue.AutoSize = true;
             lblCurrentQueue.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCurrentQueue.Location = new Point(22, 104);
+            lblCurrentQueue.Location = new Point(16, 104);
             lblCurrentQueue.Name = "lblCurrentQueue";
             lblCurrentQueue.Size = new Size(153, 25);
-            lblCurrentQueue.TabIndex = 4;
+            lblCurrentQueue.TabIndex = 2;
             lblCurrentQueue.Text = "lblCurrentQueue";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(22, 33);
+            label6.Location = new Point(16, 33);
             label6.Name = "label6";
-            label6.Size = new Size(68, 25);
+            label6.Size = new Size(137, 25);
             label6.TabIndex = 1;
-            label6.Text = "Queue";
+            label6.Text = "Current Queue";
             // 
             // UC_Overview
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(236, 240, 241);
             Controls.Add(siticoneAdvancedPanel4);
             Controls.Add(siticoneAdvancedPanel3);
             Controls.Add(siticoneAdvancedPanel2);
-            Controls.Add(panelRecentActivities);
-            Controls.Add(siticoneAdvancedPanel6);
-            Controls.Add(WeeklySalesPanel);
             Controls.Add(siticoneAdvancedPanel1);
+            Controls.Add(panelRecentActivities);
+            Controls.Add(RevenueTrendPanel);
+            Controls.Add(WeeklySalesPanel);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(0);
             Name = "UC_Overview";
-            Size = new Size(1700, 1041);
+            Size = new Size(1700, 1047);
             Load += UC_Overview_Load;
             WeeklySalesPanel.ResumeLayout(false);
             WeeklySalesPanel.PerformLayout();
-            siticoneAdvancedPanel6.ResumeLayout(false);
+            RevenueTrendPanel.ResumeLayout(false);
+            RevenueTrendPanel.PerformLayout();
             panelRecentActivities.ResumeLayout(false);
             panelRecentActivities.PerformLayout();
             siticoneAdvancedPanel1.ResumeLayout(false);
@@ -855,29 +721,29 @@
 
         private Label label1;
         private Label label2;
-        private SiticoneNetCoreUI.SiticoneAdvancedPanel WeeklySalesPanel;
-        private SiticoneNetCoreUI.SiticoneAdvancedPanel siticoneAdvancedPanel6;
-        private SiticoneNetCoreUI.SiticoneAdvancedPanel panelRecentActivities;
         private SiticoneNetCoreUI.SiticoneAdvancedPanel siticoneAdvancedPanel1;
-        private SiticoneNetCoreUI.SiticoneAdvancedPanel siticoneAdvancedPanel2;
-        private SiticoneNetCoreUI.SiticoneAdvancedPanel siticoneAdvancedPanel3;
-        private SiticoneNetCoreUI.SiticoneAdvancedPanel siticoneAdvancedPanel4;
         private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label lblRevenue;
-        private Label lblActiveTables;
-        private Label lblLowStockItems;
-        private SiticoneNetCoreUI.SiticoneAdvancedLineChart lcRevenueTrend;
         private Label lblPercentage;
-        private Label label7;
-        private Label lblRequireOrder;
+        private Label lblRevenue;
+        private SiticoneNetCoreUI.SiticoneAdvancedPanel siticoneAdvancedPanel2;
+        private Label label4;
+        private Label lblOccupancyRate;
+        private Label lblActiveTables;
+        private SiticoneNetCoreUI.SiticoneAdvancedPanel siticoneAdvancedPanel3;
+        private Label lblRequireReorder;
+        private Label lblLowStockItems;
+        private Label label5;
+        private SiticoneNetCoreUI.SiticoneAdvancedPanel siticoneAdvancedPanel4;
         private Label lblAvgWaitTime;
         private Label lblCurrentQueue;
-        private SiticoneNetCoreUI.SiticoneBarChart bcWeeklySales;
-        private SiticoneNetCoreUI.SiticoneWaterfallChart siticoneWaterfallChart1;
+        private Label label6;
+        private SiticoneNetCoreUI.SiticoneAdvancedPanel WeeklySalesPanel;
         private Label label8;
+        private SiticoneNetCoreUI.SiticoneAdvancedPanel RevenueTrendPanel;
+        private Label label7;
+        private SiticoneNetCoreUI.SiticoneAdvancedPanel panelRecentActivities;
         private Label label9;
+
+        // ❌ The old declarations that caused the ambiguity were removed from here.
     }
 }
