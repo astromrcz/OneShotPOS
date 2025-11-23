@@ -9,6 +9,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="AddProduct.Designer.cs" />
+    <Compile Remove="EditProduct.Designer.cs" />
+    <Compile Remove="UC_Products.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="AddProduct.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EditProduct.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.66" />
     <PackageReference Include="MaterialSkin" Version="0.2.1" />
     <PackageReference Include="Siticone.Desktop.UI" Version="2.1.1" />
@@ -24,6 +38,12 @@
     </Compile>
     <Compile Update="EditProduct.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ReceptionistDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UC_Inventory.cs">
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 

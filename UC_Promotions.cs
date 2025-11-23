@@ -16,5 +16,10 @@ namespace OneShotPOS
         {
             InitializeComponent();
         }
+
+        private void UC_Promotions_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

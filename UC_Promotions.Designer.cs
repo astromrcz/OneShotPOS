@@ -32,17 +32,17 @@
             label2 = new Label();
             label1 = new Label();
             siticoneAdvancedPanel1 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            siticoneAdvancedPanel2 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            siticoneAdvancedPanel3 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            label3 = new Label();
-            lblRunningPromos = new Label();
             label5 = new Label();
-            label4 = new Label();
-            label6 = new Label();
-            label7 = new Label();
+            lblRunningPromos = new Label();
+            label3 = new Label();
+            siticoneAdvancedPanel2 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             label8 = new Label();
-            lblAvgDiscount = new Label();
+            label7 = new Label();
+            label4 = new Label();
+            siticoneAdvancedPanel3 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             label9 = new Label();
+            lblAvgDiscount = new Label();
+            label6 = new Label();
             btnCreatePromo = new SiticoneNetCoreUI.SiticoneButton();
             siticoneAdvancedPanel1.SuspendLayout();
             siticoneAdvancedPanel2.SuspendLayout();
@@ -53,7 +53,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Light", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(44, 65);
+            label2.Location = new Point(44, 56);
             label2.Name = "label2";
             label2.Size = new Size(269, 21);
             label2.TabIndex = 5;
@@ -134,6 +134,36 @@
             siticoneAdvancedPanel1.TopLeftRadius = 5;
             siticoneAdvancedPanel1.TopRightRadius = 5;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.ControlDarkDark;
+            label5.Location = new Point(22, 118);
+            label5.Name = "label5";
+            label5.Size = new Size(138, 21);
+            label5.TabIndex = 2;
+            label5.Text = "Currently Running";
+            // 
+            // lblRunningPromos
+            // 
+            lblRunningPromos.AutoSize = true;
+            lblRunningPromos.Location = new Point(22, 103);
+            lblRunningPromos.Name = "lblRunningPromos";
+            lblRunningPromos.Size = new Size(106, 15);
+            lblRunningPromos.TabIndex = 1;
+            lblRunningPromos.Text = "lblRunningPromos";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(22, 34);
+            label3.Name = "label3";
+            label3.Size = new Size(132, 25);
+            label3.TabIndex = 0;
+            label3.Text = "Active Promos";
+            // 
             // siticoneAdvancedPanel2
             // 
             siticoneAdvancedPanel2.ActiveBackColor = Color.Empty;
@@ -198,6 +228,36 @@
             siticoneAdvancedPanel2.TabIndex = 7;
             siticoneAdvancedPanel2.TopLeftRadius = 5;
             siticoneAdvancedPanel2.TopRightRadius = 5;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.ControlDarkDark;
+            label8.Location = new Point(29, 128);
+            label8.Name = "label8";
+            label8.Size = new Size(124, 21);
+            label8.TabIndex = 3;
+            label8.Text = "All Time Created";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(29, 103);
+            label7.Name = "label7";
+            label7.Size = new Size(87, 15);
+            label7.TabIndex = 3;
+            label7.Text = "lblTotalPromos";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(29, 34);
+            label4.Name = "label4";
+            label4.Size = new Size(121, 25);
+            label4.TabIndex = 3;
+            label4.Text = "Total Promos";
             // 
             // siticoneAdvancedPanel3
             // 
@@ -264,85 +324,6 @@
             siticoneAdvancedPanel3.TopLeftRadius = 5;
             siticoneAdvancedPanel3.TopRightRadius = 5;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(22, 34);
-            label3.Name = "label3";
-            label3.Size = new Size(132, 25);
-            label3.TabIndex = 0;
-            label3.Text = "Active Promos";
-            // 
-            // lblRunningPromos
-            // 
-            lblRunningPromos.AutoSize = true;
-            lblRunningPromos.Location = new Point(22, 103);
-            lblRunningPromos.Name = "lblRunningPromos";
-            lblRunningPromos.Size = new Size(106, 15);
-            lblRunningPromos.TabIndex = 1;
-            lblRunningPromos.Text = "lblRunningPromos";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.ControlDarkDark;
-            label5.Location = new Point(22, 118);
-            label5.Name = "label5";
-            label5.Size = new Size(138, 21);
-            label5.TabIndex = 2;
-            label5.Text = "Currently Running";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(29, 34);
-            label4.Name = "label4";
-            label4.Size = new Size(121, 25);
-            label4.TabIndex = 3;
-            label4.Text = "Total Promos";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(22, 34);
-            label6.Name = "label6";
-            label6.Size = new Size(127, 25);
-            label6.TabIndex = 4;
-            label6.Text = "Avg. Discount";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(29, 103);
-            label7.Name = "label7";
-            label7.Size = new Size(87, 15);
-            label7.TabIndex = 3;
-            label7.Text = "lblTotalPromos";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = SystemColors.ControlDarkDark;
-            label8.Location = new Point(29, 128);
-            label8.Name = "label8";
-            label8.Size = new Size(124, 21);
-            label8.TabIndex = 3;
-            label8.Text = "All Time Created";
-            // 
-            // lblAvgDiscount
-            // 
-            lblAvgDiscount.AutoSize = true;
-            lblAvgDiscount.Location = new Point(22, 118);
-            lblAvgDiscount.Name = "lblAvgDiscount";
-            lblAvgDiscount.Size = new Size(88, 15);
-            lblAvgDiscount.TabIndex = 4;
-            lblAvgDiscount.Text = "lblAvgDiscount";
-            // 
             // label9
             // 
             label9.AutoSize = true;
@@ -353,6 +334,25 @@
             label9.Size = new Size(134, 21);
             label9.TabIndex = 4;
             label9.Text = "Across all promos";
+            // 
+            // lblAvgDiscount
+            // 
+            lblAvgDiscount.AutoSize = true;
+            lblAvgDiscount.Location = new Point(22, 118);
+            lblAvgDiscount.Name = "lblAvgDiscount";
+            lblAvgDiscount.Size = new Size(88, 15);
+            lblAvgDiscount.TabIndex = 4;
+            lblAvgDiscount.Text = "lblAvgDiscount";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(22, 34);
+            label6.Name = "label6";
+            label6.Size = new Size(127, 25);
+            label6.TabIndex = 4;
+            label6.Text = "Avg. Discount";
             // 
             // btnCreatePromo
             // 
@@ -441,6 +441,7 @@
             Controls.Add(label1);
             Name = "UC_Promotions";
             Size = new Size(1700, 1041);
+            Load += UC_Promotions_Load;
             siticoneAdvancedPanel1.ResumeLayout(false);
             siticoneAdvancedPanel1.PerformLayout();
             siticoneAdvancedPanel2.ResumeLayout(false);

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace OneShotPOS
 {
-    public partial class MainDashboard : Form
+    public partial class ReceptionistDashboard : Form
     {
-        public MainDashboard()
+        public ReceptionistDashboard()
         {
             InitializeComponent();
             panelMain.BringToFront();
@@ -55,19 +55,25 @@ namespace OneShotPOS
             panelMain.Controls.Add(overview);
         }
 
-        
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            panelMain.Padding = new Padding(0); // Remove container padding
+            panelMain.Controls.Clear();
+
+           
+        }
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
             panelMain.Padding = new Padding(0); // Remove container padding
             panelMain.Controls.Clear();
 
-            UC_Inventory inventory = new UC_Inventory();
-            inventory.Dock = DockStyle.Fill;
-            inventory.Margin = new Padding(0);
-            inventory.Padding = new Padding(0);
+            UC_Inventory products = new UC_Inventory();
+            products.Dock = DockStyle.Fill;
+            products.Margin = new Padding(0);
+            products.Padding = new Padding(0);
 
-            panelMain.Controls.Add(inventory);
+            panelMain.Controls.Add(products);
         }
 
         private void btnPromotions_Click(object sender, EventArgs e)

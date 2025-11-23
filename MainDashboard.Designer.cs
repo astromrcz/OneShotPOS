@@ -38,7 +38,6 @@
             label2 = new Label();
             btnPromotions = new SiticoneNetCoreUI.SiticoneButton();
             btnProducts = new SiticoneNetCoreUI.SiticoneButton();
-            btnInventory = new SiticoneNetCoreUI.SiticoneButton();
             btnOverview = new SiticoneNetCoreUI.SiticoneButton();
             siticonePanel1 = new SiticoneNetCoreUI.SiticonePanel();
             label1 = new Label();
@@ -62,7 +61,6 @@
             panelSidebar.Controls.Add(label2);
             panelSidebar.Controls.Add(btnPromotions);
             panelSidebar.Controls.Add(btnProducts);
-            panelSidebar.Controls.Add(btnInventory);
             panelSidebar.Controls.Add(btnOverview);
             panelSidebar.Controls.Add(siticonePanel1);
             panelSidebar.Controls.Add(btnLogout);
@@ -136,7 +134,7 @@
             btnActivityLog.IsReadOnly = false;
             btnActivityLog.IsToggleButton = false;
             btnActivityLog.IsToggled = false;
-            btnActivityLog.Location = new Point(11, 694);
+            btnActivityLog.Location = new Point(12, 574);
             btnActivityLog.LongPressDurationMS = 1000;
             btnActivityLog.Name = "btnActivityLog";
             btnActivityLog.NormalFontStyle = FontStyle.Regular;
@@ -213,7 +211,7 @@
             btnEmployees.IsReadOnly = false;
             btnEmployees.IsToggleButton = false;
             btnEmployees.IsToggled = false;
-            btnEmployees.Location = new Point(11, 632);
+            btnEmployees.Location = new Point(12, 525);
             btnEmployees.LongPressDurationMS = 1000;
             btnEmployees.Name = "btnEmployees";
             btnEmployees.NormalFontStyle = FontStyle.Regular;
@@ -290,7 +288,7 @@
             btnReports.IsReadOnly = false;
             btnReports.IsToggleButton = false;
             btnReports.IsToggled = false;
-            btnReports.Location = new Point(12, 573);
+            btnReports.Location = new Point(12, 476);
             btnReports.LongPressDurationMS = 1000;
             btnReports.Name = "btnReports";
             btnReports.NormalFontStyle = FontStyle.Regular;
@@ -367,7 +365,7 @@
             btnSalesHistory.IsReadOnly = false;
             btnSalesHistory.IsToggleButton = false;
             btnSalesHistory.IsToggled = false;
-            btnSalesHistory.Location = new Point(12, 513);
+            btnSalesHistory.Location = new Point(12, 427);
             btnSalesHistory.LongPressDurationMS = 1000;
             btnSalesHistory.Name = "btnSalesHistory";
             btnSalesHistory.NormalFontStyle = FontStyle.Regular;
@@ -464,7 +462,7 @@
             btnPromotions.IsReadOnly = false;
             btnPromotions.IsToggleButton = false;
             btnPromotions.IsToggled = false;
-            btnPromotions.Location = new Point(13, 455);
+            btnPromotions.Location = new Point(13, 378);
             btnPromotions.LongPressDurationMS = 1000;
             btnPromotions.Name = "btnPromotions";
             btnPromotions.NormalFontStyle = FontStyle.Regular;
@@ -496,7 +494,7 @@
             // btnProducts
             // 
             btnProducts.AccessibleDescription = "The default button control that accept input though the mouse, touch and keyboard";
-            btnProducts.AccessibleName = "Products";
+            btnProducts.AccessibleName = "Inventory";
             btnProducts.AutoSizeBasedOnText = false;
             btnProducts.BackColor = Color.Transparent;
             btnProducts.BadgeBackColor = Color.Black;
@@ -541,7 +539,7 @@
             btnProducts.IsReadOnly = false;
             btnProducts.IsToggleButton = false;
             btnProducts.IsToggled = false;
-            btnProducts.Location = new Point(13, 397);
+            btnProducts.Location = new Point(13, 329);
             btnProducts.LongPressDurationMS = 1000;
             btnProducts.Name = "btnProducts";
             btnProducts.NormalFontStyle = FontStyle.Regular;
@@ -562,90 +560,13 @@
             btnProducts.ShakeIntensity = 5;
             btnProducts.Size = new Size(180, 43);
             btnProducts.TabIndex = 5;
-            btnProducts.Text = "Products";
+            btnProducts.Text = "Inventory";
             btnProducts.TextAlign = ContentAlignment.MiddleCenter;
             btnProducts.TextColor = Color.White;
             btnProducts.TooltipText = null;
             btnProducts.UseAdvancedRendering = true;
             btnProducts.UseParticles = false;
             btnProducts.Click += btnProducts_Click;
-            // 
-            // btnInventory
-            // 
-            btnInventory.AccessibleDescription = "The default button control that accept input though the mouse, touch and keyboard";
-            btnInventory.AccessibleName = "Inventory";
-            btnInventory.AutoSizeBasedOnText = false;
-            btnInventory.BackColor = Color.Transparent;
-            btnInventory.BadgeBackColor = Color.Black;
-            btnInventory.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
-            btnInventory.BadgeValue = 0;
-            btnInventory.BadgeValueForeColor = Color.White;
-            btnInventory.BorderColor = Color.FromArgb(60, 60, 60);
-            btnInventory.BorderWidth = 2;
-            btnInventory.ButtonBackColor = Color.FromArgb(30, 30, 30);
-            btnInventory.ButtonImage = null;
-            btnInventory.ButtonTextLeftPadding = 0;
-            btnInventory.CanBeep = true;
-            btnInventory.CanGlow = false;
-            btnInventory.CanShake = true;
-            btnInventory.ContextMenuStripEx = null;
-            btnInventory.CornerRadiusBottomLeft = 6;
-            btnInventory.CornerRadiusBottomRight = 6;
-            btnInventory.CornerRadiusTopLeft = 6;
-            btnInventory.CornerRadiusTopRight = 6;
-            btnInventory.CustomCursor = Cursors.Default;
-            btnInventory.DisabledTextColor = Color.FromArgb(150, 150, 150);
-            btnInventory.EnableLongPress = false;
-            btnInventory.EnableRippleEffect = true;
-            btnInventory.EnableShadow = true;
-            btnInventory.EnableTextWrapping = false;
-            btnInventory.Font = new Font("Segoe UI Emoji", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInventory.GlowColor = Color.FromArgb(30, 255, 255, 255);
-            btnInventory.GlowIntensity = 100;
-            btnInventory.GlowRadius = 20F;
-            btnInventory.GradientBackground = false;
-            btnInventory.GradientColor = Color.FromArgb(0, 227, 64);
-            btnInventory.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            btnInventory.HintText = null;
-            btnInventory.HoverBackColor = Color.FromArgb(50, 50, 50);
-            btnInventory.HoverFontStyle = FontStyle.Regular;
-            btnInventory.HoverTextColor = Color.White;
-            btnInventory.HoverTransitionDuration = 250;
-            btnInventory.ImageAlign = ContentAlignment.MiddleLeft;
-            btnInventory.ImagePadding = 5;
-            btnInventory.ImageSize = new Size(16, 16);
-            btnInventory.IsRadial = false;
-            btnInventory.IsReadOnly = false;
-            btnInventory.IsToggleButton = false;
-            btnInventory.IsToggled = false;
-            btnInventory.Location = new Point(12, 340);
-            btnInventory.LongPressDurationMS = 1000;
-            btnInventory.Name = "btnInventory";
-            btnInventory.NormalFontStyle = FontStyle.Regular;
-            btnInventory.ParticleColor = Color.FromArgb(200, 200, 200);
-            btnInventory.ParticleCount = 15;
-            btnInventory.PressAnimationScale = 0.97F;
-            btnInventory.PressedBackColor = Color.FromArgb(40, 40, 40);
-            btnInventory.PressedFontStyle = FontStyle.Regular;
-            btnInventory.PressTransitionDuration = 150;
-            btnInventory.ReadOnlyTextColor = Color.FromArgb(100, 100, 100);
-            btnInventory.RippleColor = Color.FromArgb(100, 100, 100);
-            btnInventory.RippleOpacity = 0.3F;
-            btnInventory.RippleRadiusMultiplier = 0.6F;
-            btnInventory.ShadowBlur = 6;
-            btnInventory.ShadowColor = Color.FromArgb(60, 0, 0, 0);
-            btnInventory.ShadowOffset = new Point(0, 2);
-            btnInventory.ShakeDuration = 500;
-            btnInventory.ShakeIntensity = 5;
-            btnInventory.Size = new Size(180, 43);
-            btnInventory.TabIndex = 4;
-            btnInventory.Text = "Inventory";
-            btnInventory.TextAlign = ContentAlignment.MiddleCenter;
-            btnInventory.TextColor = Color.White;
-            btnInventory.TooltipText = null;
-            btnInventory.UseAdvancedRendering = true;
-            btnInventory.UseParticles = false;
-            btnInventory.Click += btnInventory_Click;
             // 
             // btnOverview
             // 
@@ -928,7 +849,6 @@
         private SiticoneNetCoreUI.SiticonePinnablePanel panelMain;
         private SiticoneNetCoreUI.SiticoneButton btnOverview;
         private Label label1;
-        private SiticoneNetCoreUI.SiticoneButton btnInventory;
         private SiticoneNetCoreUI.SiticoneButton btnProducts;
         private SiticoneNetCoreUI.SiticoneButton btnPromotions;
         private SiticoneNetCoreUI.SiticoneButton btnSalesHistory;
