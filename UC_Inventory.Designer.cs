@@ -33,24 +33,30 @@
             label1 = new Label();
             btnAddItem = new SiticoneNetCoreUI.SiticoneButton();
             pnlLowProductsStockAlert = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
+            lblLowStkPrd = new Label();
+            lblPrdRq = new Label();
+            label5 = new Label();
             drpProductCategory = new SiticoneNetCoreUI.SiticoneDropdown();
             txtSearchProduct = new SiticoneNetCoreUI.SiticoneTextBox();
             pnlProducts = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
+            dgvProd = new DataGridView();
             lblProducts = new Label();
             pnlInventory = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
+            dgvInv = new DataGridView();
             drpInventoryCategory = new SiticoneNetCoreUI.SiticoneDropdown();
             txtSearchInventory = new SiticoneNetCoreUI.SiticoneTextBox();
             lblInventory = new Label();
             pnlLowInventoryStockAlert = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            lblRequireReorder = new Label();
-            lblLowStockItems = new Label();
-            label5 = new Label();
-            label3 = new Label();
+            lblLowStockItem = new Label();
+            lblRqItm = new Label();
             label4 = new Label();
-            label6 = new Label();
+            lblLowStkItem = new Label();
+            btnRefresh = new SiticoneNetCoreUI.SiticoneButton();
             pnlLowProductsStockAlert.SuspendLayout();
             pnlProducts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProd).BeginInit();
             pnlInventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvInv).BeginInit();
             pnlLowInventoryStockAlert.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,6 +69,7 @@
             label2.Size = new Size(304, 21);
             label2.TabIndex = 5;
             label2.Text = "Track/Manage Products and Inventory items";
+            label2.Click += label2_Click;
             // 
             // label1
             // 
@@ -170,9 +177,9 @@
             pnlLowProductsStockAlert.BottomLeftRadius = 5;
             pnlLowProductsStockAlert.BottomRightRadius = 5;
             pnlLowProductsStockAlert.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
-            pnlLowProductsStockAlert.Controls.Add(lblRequireReorder);
+            pnlLowProductsStockAlert.Controls.Add(lblLowStkPrd);
+            pnlLowProductsStockAlert.Controls.Add(lblPrdRq);
             pnlLowProductsStockAlert.Controls.Add(label5);
-            pnlLowProductsStockAlert.Controls.Add(lblLowStockItems);
             pnlLowProductsStockAlert.CornerPadding = new Padding(5);
             pnlLowProductsStockAlert.DisabledBackColor = Color.Empty;
             pnlLowProductsStockAlert.DisabledBorderColor = Color.Empty;
@@ -197,7 +204,7 @@
             pnlLowProductsStockAlert.InnerShadowColor = Color.Black;
             pnlLowProductsStockAlert.InnerShadowDepth = 3;
             pnlLowProductsStockAlert.InnerShadowOpacity = 0.2F;
-            pnlLowProductsStockAlert.Location = new Point(46, 87);
+            pnlLowProductsStockAlert.Location = new Point(44, 111);
             pnlLowProductsStockAlert.Name = "pnlLowProductsStockAlert";
             pnlLowProductsStockAlert.Padding = new Padding(10);
             pnlLowProductsStockAlert.RadialGradientCenter = (PointF)resources.GetObject("pnlLowProductsStockAlert.RadialGradientCenter");
@@ -214,6 +221,36 @@
             pnlLowProductsStockAlert.TabIndex = 11;
             pnlLowProductsStockAlert.TopLeftRadius = 5;
             pnlLowProductsStockAlert.TopRightRadius = 5;
+            // 
+            // lblLowStkPrd
+            // 
+            lblLowStkPrd.AutoSize = true;
+            lblLowStkPrd.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLowStkPrd.Location = new Point(14, 35);
+            lblLowStkPrd.Name = "lblLowStkPrd";
+            lblLowStkPrd.Size = new Size(120, 25);
+            lblLowStkPrd.TabIndex = 11;
+            lblLowStkPrd.Text = "lblLowStkPrd";
+            // 
+            // lblPrdRq
+            // 
+            lblPrdRq.AutoSize = true;
+            lblPrdRq.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPrdRq.Location = new Point(14, 60);
+            lblPrdRq.Name = "lblPrdRq";
+            lblPrdRq.Size = new Size(70, 21);
+            lblPrdRq.TabIndex = 10;
+            lblPrdRq.Text = "lblPrdRq";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(14, 10);
+            label5.Name = "label5";
+            label5.Size = new Size(219, 25);
+            label5.TabIndex = 4;
+            label5.Text = "Products Low Stock Alert";
             // 
             // drpProductCategory
             // 
@@ -234,7 +271,7 @@
             drpProductCategory.HoveredItemTextColor = Color.FromArgb(40, 40, 100);
             drpProductCategory.IsReadonly = false;
             drpProductCategory.ItemHeight = 30;
-            drpProductCategory.Location = new Point(576, 83);
+            drpProductCategory.Location = new Point(575, 55);
             drpProductCategory.MaxDropDownItems = 8;
             drpProductCategory.Name = "drpProductCategory";
             drpProductCategory.PlaceholderColor = Color.FromArgb(150, 170, 200);
@@ -286,7 +323,7 @@
             txtSearchProduct.HoverBorderColor1 = Color.Gray;
             txtSearchProduct.HoverBorderColor2 = Color.Gray;
             txtSearchProduct.IsEnabled = true;
-            txtSearchProduct.Location = new Point(14, 83);
+            txtSearchProduct.Location = new Point(13, 55);
             txtSearchProduct.Name = "txtSearchProduct";
             txtSearchProduct.PlaceholderColor = Color.Gray;
             txtSearchProduct.PlaceholderText = "Search Transactions...";
@@ -329,6 +366,7 @@
             pnlProducts.BottomLeftRadius = 5;
             pnlProducts.BottomRightRadius = 5;
             pnlProducts.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
+            pnlProducts.Controls.Add(dgvProd);
             pnlProducts.Controls.Add(drpProductCategory);
             pnlProducts.Controls.Add(lblProducts);
             pnlProducts.Controls.Add(txtSearchProduct);
@@ -356,7 +394,7 @@
             pnlProducts.InnerShadowColor = Color.Black;
             pnlProducts.InnerShadowDepth = 3;
             pnlProducts.InnerShadowOpacity = 0.2F;
-            pnlProducts.Location = new Point(46, 193);
+            pnlProducts.Location = new Point(44, 217);
             pnlProducts.Name = "pnlProducts";
             pnlProducts.Padding = new Padding(10);
             pnlProducts.RadialGradientCenter = (PointF)resources.GetObject("pnlProducts.RadialGradientCenter");
@@ -368,21 +406,35 @@
             pnlProducts.ShadowDepth = 5;
             pnlProducts.ShadowOffset = new Point(2, 2);
             pnlProducts.ShadowOpacity = 0.3F;
-            pnlProducts.Size = new Size(784, 835);
+            pnlProducts.Size = new Size(784, 725);
             pnlProducts.SlideDirection = new Point(0, -30);
             pnlProducts.TabIndex = 15;
             pnlProducts.TopLeftRadius = 5;
             pnlProducts.TopRightRadius = 5;
             // 
+            // dgvProd
+            // 
+            dgvProd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvProd.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvProd.BackgroundColor = Color.White;
+            dgvProd.BorderStyle = BorderStyle.Fixed3D;
+            dgvProd.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
+            dgvProd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProd.GridColor = Color.White;
+            dgvProd.Location = new Point(0, 113);
+            dgvProd.Name = "dgvProd";
+            dgvProd.Size = new Size(784, 612);
+            dgvProd.TabIndex = 2;
+            // 
             // lblProducts
             // 
             lblProducts.AutoSize = true;
             lblProducts.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblProducts.Location = new Point(14, 38);
+            lblProducts.Location = new Point(13, 10);
             lblProducts.Name = "lblProducts";
-            lblProducts.Size = new Size(166, 25);
+            lblProducts.Size = new Size(107, 25);
             lblProducts.TabIndex = 1;
-            lblProducts.Text = "lblActivityTimeline";
+            lblProducts.Text = "lblProducts";
             // 
             // pnlInventory
             // 
@@ -404,6 +456,7 @@
             pnlInventory.BottomLeftRadius = 5;
             pnlInventory.BottomRightRadius = 5;
             pnlInventory.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
+            pnlInventory.Controls.Add(dgvInv);
             pnlInventory.Controls.Add(drpInventoryCategory);
             pnlInventory.Controls.Add(txtSearchInventory);
             pnlInventory.Controls.Add(lblInventory);
@@ -431,7 +484,7 @@
             pnlInventory.InnerShadowColor = Color.Black;
             pnlInventory.InnerShadowDepth = 3;
             pnlInventory.InnerShadowOpacity = 0.2F;
-            pnlInventory.Location = new Point(873, 193);
+            pnlInventory.Location = new Point(871, 217);
             pnlInventory.Name = "pnlInventory";
             pnlInventory.Padding = new Padding(10);
             pnlInventory.RadialGradientCenter = (PointF)resources.GetObject("pnlInventory.RadialGradientCenter");
@@ -443,11 +496,26 @@
             pnlInventory.ShadowDepth = 5;
             pnlInventory.ShadowOffset = new Point(2, 2);
             pnlInventory.ShadowOpacity = 0.3F;
-            pnlInventory.Size = new Size(777, 835);
+            pnlInventory.Size = new Size(784, 725);
             pnlInventory.SlideDirection = new Point(0, -30);
             pnlInventory.TabIndex = 16;
             pnlInventory.TopLeftRadius = 5;
             pnlInventory.TopRightRadius = 5;
+            pnlInventory.Paint += pnlInventory_Paint;
+            // 
+            // dgvInv
+            // 
+            dgvInv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvInv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvInv.BackgroundColor = Color.White;
+            dgvInv.BorderStyle = BorderStyle.Fixed3D;
+            dgvInv.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
+            dgvInv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInv.GridColor = Color.White;
+            dgvInv.Location = new Point(0, 113);
+            dgvInv.Name = "dgvInv";
+            dgvInv.Size = new Size(784, 612);
+            dgvInv.TabIndex = 4;
             // 
             // drpInventoryCategory
             // 
@@ -468,7 +536,7 @@
             drpInventoryCategory.HoveredItemTextColor = Color.FromArgb(40, 40, 100);
             drpInventoryCategory.IsReadonly = false;
             drpInventoryCategory.ItemHeight = 30;
-            drpInventoryCategory.Location = new Point(572, 83);
+            drpInventoryCategory.Location = new Point(572, 55);
             drpInventoryCategory.MaxDropDownItems = 8;
             drpInventoryCategory.Name = "drpInventoryCategory";
             drpInventoryCategory.PlaceholderColor = Color.FromArgb(150, 170, 200);
@@ -520,7 +588,7 @@
             txtSearchInventory.HoverBorderColor1 = Color.Gray;
             txtSearchInventory.HoverBorderColor2 = Color.Gray;
             txtSearchInventory.IsEnabled = true;
-            txtSearchInventory.Location = new Point(14, 83);
+            txtSearchInventory.Location = new Point(14, 55);
             txtSearchInventory.Name = "txtSearchInventory";
             txtSearchInventory.PlaceholderColor = Color.Gray;
             txtSearchInventory.PlaceholderText = "Search Transactions...";
@@ -547,7 +615,7 @@
             // 
             lblInventory.AutoSize = true;
             lblInventory.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblInventory.Location = new Point(14, 38);
+            lblInventory.Location = new Point(14, 10);
             lblInventory.Name = "lblInventory";
             lblInventory.Size = new Size(112, 25);
             lblInventory.TabIndex = 1;
@@ -573,9 +641,9 @@
             pnlLowInventoryStockAlert.BottomLeftRadius = 5;
             pnlLowInventoryStockAlert.BottomRightRadius = 5;
             pnlLowInventoryStockAlert.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
-            pnlLowInventoryStockAlert.Controls.Add(label3);
+            pnlLowInventoryStockAlert.Controls.Add(lblLowStockItem);
+            pnlLowInventoryStockAlert.Controls.Add(lblRqItm);
             pnlLowInventoryStockAlert.Controls.Add(label4);
-            pnlLowInventoryStockAlert.Controls.Add(label6);
             pnlLowInventoryStockAlert.CornerPadding = new Padding(5);
             pnlLowInventoryStockAlert.DisabledBackColor = Color.Empty;
             pnlLowInventoryStockAlert.DisabledBorderColor = Color.Empty;
@@ -600,7 +668,7 @@
             pnlLowInventoryStockAlert.InnerShadowColor = Color.Black;
             pnlLowInventoryStockAlert.InnerShadowDepth = 3;
             pnlLowInventoryStockAlert.InnerShadowOpacity = 0.2F;
-            pnlLowInventoryStockAlert.Location = new Point(873, 87);
+            pnlLowInventoryStockAlert.Location = new Point(871, 111);
             pnlLowInventoryStockAlert.Name = "pnlLowInventoryStockAlert";
             pnlLowInventoryStockAlert.Padding = new Padding(10);
             pnlLowInventoryStockAlert.RadialGradientCenter = (PointF)resources.GetObject("pnlLowInventoryStockAlert.RadialGradientCenter");
@@ -618,45 +686,25 @@
             pnlLowInventoryStockAlert.TopLeftRadius = 5;
             pnlLowInventoryStockAlert.TopRightRadius = 5;
             // 
-            // lblRequireReorder
+            // lblLowStockItem
             // 
-            lblRequireReorder.AutoSize = true;
-            lblRequireReorder.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblRequireReorder.Location = new Point(13, 60);
-            lblRequireReorder.Name = "lblRequireReorder";
-            lblRequireReorder.Size = new Size(137, 21);
-            lblRequireReorder.TabIndex = 6;
-            lblRequireReorder.Text = "lblRequireReorder";
+            lblLowStockItem.AutoSize = true;
+            lblLowStockItem.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLowStockItem.Location = new Point(14, 35);
+            lblLowStockItem.Name = "lblLowStockItem";
+            lblLowStockItem.Size = new Size(128, 25);
+            lblLowStockItem.TabIndex = 12;
+            lblLowStockItem.Text = "lblLowStkItem";
             // 
-            // lblLowStockItems
+            // lblRqItm
             // 
-            lblLowStockItems.AutoSize = true;
-            lblLowStockItems.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLowStockItems.Location = new Point(13, 35);
-            lblLowStockItems.Name = "lblLowStockItems";
-            lblLowStockItems.Size = new Size(156, 25);
-            lblLowStockItems.TabIndex = 5;
-            lblLowStockItems.Text = "lblLowStockItems";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(14, 10);
-            label5.Name = "label5";
-            label5.Size = new Size(140, 25);
-            label5.TabIndex = 4;
-            label5.Text = "Low Stock Alert";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(13, 60);
-            label3.Name = "label3";
-            label3.Size = new Size(137, 21);
-            label3.TabIndex = 9;
-            label3.Text = "lblRequireReorder";
+            lblRqItm.AutoSize = true;
+            lblRqItm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRqItm.Location = new Point(13, 60);
+            lblRqItm.Name = "lblRqItm";
+            lblRqItm.Size = new Size(69, 21);
+            lblRqItm.TabIndex = 9;
+            lblRqItm.Text = "lblRqItm";
             // 
             // label4
             // 
@@ -664,24 +712,98 @@
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(13, 10);
             label4.Name = "label4";
-            label4.Size = new Size(140, 25);
+            label4.Size = new Size(224, 25);
             label4.TabIndex = 7;
-            label4.Text = "Low Stock Alert";
+            label4.Text = "Inventory Low Stock Alert";
             // 
-            // label6
+            // lblLowStkItem
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(13, 35);
-            label6.Name = "label6";
-            label6.Size = new Size(156, 25);
-            label6.TabIndex = 8;
-            label6.Text = "lblLowStockItems";
+            lblLowStkItem.Location = new Point(0, 0);
+            lblLowStkItem.Name = "lblLowStkItem";
+            lblLowStkItem.Size = new Size(100, 23);
+            lblLowStkItem.TabIndex = 0;
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.AccessibleDescription = "The default button control that accept input though the mouse, touch and keyboard";
+            btnRefresh.AccessibleName = "Refresh";
+            btnRefresh.AutoSizeBasedOnText = false;
+            btnRefresh.BackColor = Color.Transparent;
+            btnRefresh.BadgeBackColor = Color.Black;
+            btnRefresh.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
+            btnRefresh.BadgeValue = 0;
+            btnRefresh.BadgeValueForeColor = Color.White;
+            btnRefresh.BorderColor = Color.FromArgb(213, 216, 220);
+            btnRefresh.BorderWidth = 2;
+            btnRefresh.ButtonBackColor = Color.Black;
+            btnRefresh.ButtonImage = null;
+            btnRefresh.ButtonTextLeftPadding = 0;
+            btnRefresh.CanBeep = true;
+            btnRefresh.CanGlow = false;
+            btnRefresh.CanShake = true;
+            btnRefresh.ContextMenuStripEx = null;
+            btnRefresh.CornerRadiusBottomLeft = 14;
+            btnRefresh.CornerRadiusBottomRight = 14;
+            btnRefresh.CornerRadiusTopLeft = 14;
+            btnRefresh.CornerRadiusTopRight = 14;
+            btnRefresh.CustomCursor = Cursors.Default;
+            btnRefresh.DisabledTextColor = Color.FromArgb(150, 150, 150);
+            btnRefresh.EnableLongPress = false;
+            btnRefresh.EnableRippleEffect = true;
+            btnRefresh.EnableShadow = false;
+            btnRefresh.EnableTextWrapping = false;
+            btnRefresh.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRefresh.GlowColor = Color.FromArgb(100, 255, 255, 255);
+            btnRefresh.GlowIntensity = 100;
+            btnRefresh.GlowRadius = 20F;
+            btnRefresh.GradientBackground = false;
+            btnRefresh.GradientColor = Color.FromArgb(0, 227, 64);
+            btnRefresh.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            btnRefresh.HintText = null;
+            btnRefresh.HoverBackColor = Color.FromArgb(240, 240, 240);
+            btnRefresh.HoverFontStyle = FontStyle.Regular;
+            btnRefresh.HoverTextColor = Color.FromArgb(0, 0, 0);
+            btnRefresh.HoverTransitionDuration = 250;
+            btnRefresh.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRefresh.ImagePadding = 5;
+            btnRefresh.ImageSize = new Size(16, 16);
+            btnRefresh.IsRadial = false;
+            btnRefresh.IsReadOnly = false;
+            btnRefresh.IsToggleButton = false;
+            btnRefresh.IsToggled = false;
+            btnRefresh.Location = new Point(1386, 33);
+            btnRefresh.LongPressDurationMS = 1000;
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.NormalFontStyle = FontStyle.Regular;
+            btnRefresh.ParticleColor = Color.FromArgb(200, 200, 200);
+            btnRefresh.ParticleCount = 15;
+            btnRefresh.PressAnimationScale = 0.97F;
+            btnRefresh.PressedBackColor = Color.FromArgb(225, 227, 230);
+            btnRefresh.PressedFontStyle = FontStyle.Regular;
+            btnRefresh.PressTransitionDuration = 150;
+            btnRefresh.ReadOnlyTextColor = Color.FromArgb(100, 100, 100);
+            btnRefresh.RippleColor = Color.White;
+            btnRefresh.RippleRadiusMultiplier = 0.6F;
+            btnRefresh.ShadowBlur = 5;
+            btnRefresh.ShadowColor = Color.FromArgb(30, 0, 0, 0);
+            btnRefresh.ShadowOffset = new Point(0, 2);
+            btnRefresh.ShakeDuration = 500;
+            btnRefresh.ShakeIntensity = 5;
+            btnRefresh.Size = new Size(102, 48);
+            btnRefresh.TabIndex = 17;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.TextAlign = ContentAlignment.MiddleCenter;
+            btnRefresh.TextColor = Color.White;
+            btnRefresh.TooltipText = null;
+            btnRefresh.UseAdvancedRendering = true;
+            btnRefresh.UseParticles = false;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // UC_Inventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnRefresh);
             Controls.Add(pnlLowInventoryStockAlert);
             Controls.Add(pnlInventory);
             Controls.Add(pnlProducts);
@@ -696,8 +818,10 @@
             pnlLowProductsStockAlert.PerformLayout();
             pnlProducts.ResumeLayout(false);
             pnlProducts.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProd).EndInit();
             pnlInventory.ResumeLayout(false);
             pnlInventory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvInv).EndInit();
             pnlLowInventoryStockAlert.ResumeLayout(false);
             pnlLowInventoryStockAlert.PerformLayout();
             ResumeLayout(false);
@@ -719,11 +843,17 @@
         private SiticoneNetCoreUI.SiticoneAdvancedPanel pnlLowInventoryStockAlert;
         private SiticoneNetCoreUI.SiticoneDropdown drpInventoryCategory;
         private SiticoneNetCoreUI.SiticoneTextBox txtSearchInventory;
-        private Label lblRequireReorder;
         private Label label5;
-        private Label lblLowStockItems;
-        private Label label3;
+        private Label lblRqItm;
         private Label label4;
-        private Label label6;
+        private Label lblLowStkItem;
+        private SiticoneNetCoreUI.SiticoneButton btnRefresh;
+        private Siticone.Desktop.UI.WinForms.SiticoneDataGridView dgvInventory;
+        private Siticone.Desktop.UI.WinForms.SiticoneDataGridView dgvProducts;
+        private Label lblLowStkPrd;
+        private Label lblPrdRq;
+        private Label lblLowStockItem;
+        private DataGridView dgvProd;
+        private DataGridView dgvInv;
     }
 }
