@@ -28,9 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Inventory));
             label2 = new Label();
             label1 = new Label();
             btnAddItem = new SiticoneNetCoreUI.SiticoneButton();
+            pnlLowProductsStockAlert = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
+            drpProductCategory = new SiticoneNetCoreUI.SiticoneDropdown();
+            txtSearchProduct = new SiticoneNetCoreUI.SiticoneTextBox();
+            pnlProducts = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
+            lblProducts = new Label();
+            pnlInventory = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
+            drpInventoryCategory = new SiticoneNetCoreUI.SiticoneDropdown();
+            txtSearchInventory = new SiticoneNetCoreUI.SiticoneTextBox();
+            lblInventory = new Label();
+            pnlLowInventoryStockAlert = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
+            lblRequireReorder = new Label();
+            lblLowStockItems = new Label();
+            label5 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label6 = new Label();
+            pnlLowProductsStockAlert.SuspendLayout();
+            pnlProducts.SuspendLayout();
+            pnlInventory.SuspendLayout();
+            pnlLowInventoryStockAlert.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -129,16 +150,556 @@
             btnAddItem.UseParticles = false;
             btnAddItem.Click += btnAddItem_Click;
             // 
+            // pnlLowProductsStockAlert
+            // 
+            pnlLowProductsStockAlert.ActiveBackColor = Color.Empty;
+            pnlLowProductsStockAlert.ActiveBorderColor = Color.Empty;
+            pnlLowProductsStockAlert.AdvancedBorderStyle = SiticoneNetCoreUI.SiticoneAdvancedPanel.BorderStyleEx.Solid;
+            pnlLowProductsStockAlert.AnimationDuration = 500;
+            pnlLowProductsStockAlert.AnimationType = SiticoneNetCoreUI.SiticoneAdvancedPanel.AnimationTypeEx.Fade;
+            pnlLowProductsStockAlert.BackColor = Color.White;
+            pnlLowProductsStockAlert.BackgroundImageCustom = null;
+            pnlLowProductsStockAlert.BackgroundImageOpacity = 1F;
+            pnlLowProductsStockAlert.BackgroundImageSizeMode = SiticoneNetCoreUI.SiticoneAdvancedPanel.ImageSizeModeEx.Stretch;
+            pnlLowProductsStockAlert.BackgroundOverlayColor = Color.FromArgb(0, 0, 0, 0);
+            pnlLowProductsStockAlert.BorderColor = Color.Gray;
+            pnlLowProductsStockAlert.BorderDashPattern = null;
+            pnlLowProductsStockAlert.BorderGlowColor = Color.Cyan;
+            pnlLowProductsStockAlert.BorderGlowSize = 3F;
+            pnlLowProductsStockAlert.BorderWidth = 1F;
+            pnlLowProductsStockAlert.BottomLeftRadius = 5;
+            pnlLowProductsStockAlert.BottomRightRadius = 5;
+            pnlLowProductsStockAlert.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
+            pnlLowProductsStockAlert.Controls.Add(lblRequireReorder);
+            pnlLowProductsStockAlert.Controls.Add(label5);
+            pnlLowProductsStockAlert.Controls.Add(lblLowStockItems);
+            pnlLowProductsStockAlert.CornerPadding = new Padding(5);
+            pnlLowProductsStockAlert.DisabledBackColor = Color.Empty;
+            pnlLowProductsStockAlert.DisabledBorderColor = Color.Empty;
+            pnlLowProductsStockAlert.DoubleBorderSpacing = 2F;
+            pnlLowProductsStockAlert.EasingType = SiticoneNetCoreUI.SiticoneAdvancedPanel.EasingTypeEx.Linear;
+            pnlLowProductsStockAlert.EnableAnimation = false;
+            pnlLowProductsStockAlert.EnableBackgroundImage = false;
+            pnlLowProductsStockAlert.EnableBorderGlow = false;
+            pnlLowProductsStockAlert.EnableDoubleBorder = false;
+            pnlLowProductsStockAlert.EnableGradient = false;
+            pnlLowProductsStockAlert.EnableInnerShadow = false;
+            pnlLowProductsStockAlert.EnableShadow = false;
+            pnlLowProductsStockAlert.EnableSmartPadding = true;
+            pnlLowProductsStockAlert.EnableStateStyles = false;
+            pnlLowProductsStockAlert.FlowDirectionCustom = FlowDirection.LeftToRight;
+            pnlLowProductsStockAlert.GradientAngle = 90F;
+            pnlLowProductsStockAlert.GradientEndColor = Color.LightGray;
+            pnlLowProductsStockAlert.GradientStartColor = Color.White;
+            pnlLowProductsStockAlert.GradientType = SiticoneNetCoreUI.SiticoneAdvancedPanel.GradientTypeEx.Linear;
+            pnlLowProductsStockAlert.HoverBackColor = Color.Empty;
+            pnlLowProductsStockAlert.HoverBorderColor = Color.Empty;
+            pnlLowProductsStockAlert.InnerShadowColor = Color.Black;
+            pnlLowProductsStockAlert.InnerShadowDepth = 3;
+            pnlLowProductsStockAlert.InnerShadowOpacity = 0.2F;
+            pnlLowProductsStockAlert.Location = new Point(46, 87);
+            pnlLowProductsStockAlert.Name = "pnlLowProductsStockAlert";
+            pnlLowProductsStockAlert.Padding = new Padding(10);
+            pnlLowProductsStockAlert.RadialGradientCenter = (PointF)resources.GetObject("pnlLowProductsStockAlert.RadialGradientCenter");
+            pnlLowProductsStockAlert.RadialGradientRadius = 1F;
+            pnlLowProductsStockAlert.ScaleRatio = 0.8F;
+            pnlLowProductsStockAlert.SecondaryBorderColor = Color.DarkGray;
+            pnlLowProductsStockAlert.ShadowBlur = 10;
+            pnlLowProductsStockAlert.ShadowColor = Color.Black;
+            pnlLowProductsStockAlert.ShadowDepth = 5;
+            pnlLowProductsStockAlert.ShadowOffset = new Point(2, 2);
+            pnlLowProductsStockAlert.ShadowOpacity = 0.3F;
+            pnlLowProductsStockAlert.Size = new Size(784, 87);
+            pnlLowProductsStockAlert.SlideDirection = new Point(0, -30);
+            pnlLowProductsStockAlert.TabIndex = 11;
+            pnlLowProductsStockAlert.TopLeftRadius = 5;
+            pnlLowProductsStockAlert.TopRightRadius = 5;
+            // 
+            // drpProductCategory
+            // 
+            drpProductCategory.AllowMultipleSelection = false;
+            drpProductCategory.BackColor = Color.FromArgb(240, 245, 255);
+            drpProductCategory.BorderColor = Color.FromArgb(100, 150, 220);
+            drpProductCategory.CanBeep = false;
+            drpProductCategory.CanShake = true;
+            drpProductCategory.CornerRadius = 13;
+            drpProductCategory.DataSource = null;
+            drpProductCategory.DisplayMember = null;
+            drpProductCategory.DropdownBackColor = Color.FromArgb(245, 250, 255);
+            drpProductCategory.DropdownWidth = 0;
+            drpProductCategory.DropShadowEnabled = false;
+            drpProductCategory.Font = new Font("Segoe UI", 10F);
+            drpProductCategory.ForeColor = Color.FromArgb(40, 40, 100);
+            drpProductCategory.HoveredItemBackColor = Color.FromArgb(220, 235, 255);
+            drpProductCategory.HoveredItemTextColor = Color.FromArgb(40, 40, 100);
+            drpProductCategory.IsReadonly = false;
+            drpProductCategory.ItemHeight = 30;
+            drpProductCategory.Location = new Point(576, 83);
+            drpProductCategory.MaxDropDownItems = 8;
+            drpProductCategory.Name = "drpProductCategory";
+            drpProductCategory.PlaceholderColor = Color.FromArgb(150, 170, 200);
+            drpProductCategory.PlaceholderDisappearsOnFocus = false;
+            drpProductCategory.PlaceholderText = "Select an option";
+            drpProductCategory.SelectedIndex = -1;
+            drpProductCategory.SelectedItem = null;
+            drpProductCategory.SelectedItemBackColor = Color.Black;
+            drpProductCategory.SelectedItemTextColor = Color.White;
+            drpProductCategory.SelectedValue = null;
+            drpProductCategory.Size = new Size(199, 40);
+            drpProductCategory.TabIndex = 1;
+            drpProductCategory.Text = "siticoneDropdown1";
+            drpProductCategory.UnselectedItemTextColor = Color.FromArgb(40, 40, 100);
+            drpProductCategory.ValueMember = null;
+            // 
+            // txtSearchProduct
+            // 
+            txtSearchProduct.AccessibleDescription = "A customizable text input field.";
+            txtSearchProduct.AccessibleName = "Text Box";
+            txtSearchProduct.AccessibleRole = AccessibleRole.Text;
+            txtSearchProduct.BackColor = Color.Transparent;
+            txtSearchProduct.BlinkCount = 3;
+            txtSearchProduct.BlinkShadow = false;
+            txtSearchProduct.BorderColor1 = Color.LightSlateGray;
+            txtSearchProduct.BorderColor2 = Color.LightSlateGray;
+            txtSearchProduct.BorderFocusColor1 = Color.FromArgb(77, 77, 255);
+            txtSearchProduct.BorderFocusColor2 = Color.FromArgb(77, 77, 255);
+            txtSearchProduct.CanShake = true;
+            txtSearchProduct.ContinuousBlink = false;
+            txtSearchProduct.CornerRadiusBottomLeft = 13;
+            txtSearchProduct.CornerRadiusBottomRight = 13;
+            txtSearchProduct.CornerRadiusTopLeft = 13;
+            txtSearchProduct.CornerRadiusTopRight = 13;
+            txtSearchProduct.CursorBlinkRate = 500;
+            txtSearchProduct.CursorColor = Color.Black;
+            txtSearchProduct.CursorHeight = 26;
+            txtSearchProduct.CursorOffset = 0;
+            txtSearchProduct.CursorStyle = SiticoneNetCoreUI.Helpers.DrawingStyle.SiticoneDrawingStyle.Solid;
+            txtSearchProduct.CursorWidth = 1;
+            txtSearchProduct.DisabledBackColor = Color.WhiteSmoke;
+            txtSearchProduct.DisabledBorderColor = Color.LightGray;
+            txtSearchProduct.DisabledTextColor = Color.Gray;
+            txtSearchProduct.EnableDropShadow = false;
+            txtSearchProduct.FillColor1 = Color.White;
+            txtSearchProduct.FillColor2 = Color.White;
+            txtSearchProduct.Font = new Font("Segoe UI", 9.5F);
+            txtSearchProduct.ForeColor = Color.DimGray;
+            txtSearchProduct.HoverBorderColor1 = Color.Gray;
+            txtSearchProduct.HoverBorderColor2 = Color.Gray;
+            txtSearchProduct.IsEnabled = true;
+            txtSearchProduct.Location = new Point(14, 83);
+            txtSearchProduct.Name = "txtSearchProduct";
+            txtSearchProduct.PlaceholderColor = Color.Gray;
+            txtSearchProduct.PlaceholderText = "Search Transactions...";
+            txtSearchProduct.ReadOnlyBorderColor1 = Color.LightGray;
+            txtSearchProduct.ReadOnlyBorderColor2 = Color.LightGray;
+            txtSearchProduct.ReadOnlyFillColor1 = Color.WhiteSmoke;
+            txtSearchProduct.ReadOnlyFillColor2 = Color.WhiteSmoke;
+            txtSearchProduct.ReadOnlyPlaceholderColor = Color.DarkGray;
+            txtSearchProduct.SelectionBackColor = Color.FromArgb(77, 77, 255);
+            txtSearchProduct.ShadowAnimationDuration = 1;
+            txtSearchProduct.ShadowBlur = 10;
+            txtSearchProduct.ShadowColor = Color.FromArgb(15, 0, 0, 0);
+            txtSearchProduct.Size = new Size(552, 40);
+            txtSearchProduct.SolidBorderColor = Color.LightSlateGray;
+            txtSearchProduct.SolidBorderFocusColor = Color.FromArgb(77, 77, 255);
+            txtSearchProduct.SolidBorderHoverColor = Color.Gray;
+            txtSearchProduct.SolidFillColor = Color.White;
+            txtSearchProduct.TabIndex = 0;
+            txtSearchProduct.TextPadding = new Padding(16, 0, 6, 0);
+            txtSearchProduct.ValidationErrorMessage = "Invalid input.";
+            txtSearchProduct.ValidationFunction = null;
+            // 
+            // pnlProducts
+            // 
+            pnlProducts.ActiveBackColor = Color.Empty;
+            pnlProducts.ActiveBorderColor = Color.Empty;
+            pnlProducts.AdvancedBorderStyle = SiticoneNetCoreUI.SiticoneAdvancedPanel.BorderStyleEx.Solid;
+            pnlProducts.AnimationDuration = 500;
+            pnlProducts.AnimationType = SiticoneNetCoreUI.SiticoneAdvancedPanel.AnimationTypeEx.Fade;
+            pnlProducts.BackColor = Color.White;
+            pnlProducts.BackgroundImageCustom = null;
+            pnlProducts.BackgroundImageOpacity = 1F;
+            pnlProducts.BackgroundImageSizeMode = SiticoneNetCoreUI.SiticoneAdvancedPanel.ImageSizeModeEx.Stretch;
+            pnlProducts.BackgroundOverlayColor = Color.FromArgb(0, 0, 0, 0);
+            pnlProducts.BorderColor = Color.Gray;
+            pnlProducts.BorderDashPattern = null;
+            pnlProducts.BorderGlowColor = Color.Cyan;
+            pnlProducts.BorderGlowSize = 3F;
+            pnlProducts.BorderWidth = 1F;
+            pnlProducts.BottomLeftRadius = 5;
+            pnlProducts.BottomRightRadius = 5;
+            pnlProducts.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
+            pnlProducts.Controls.Add(drpProductCategory);
+            pnlProducts.Controls.Add(lblProducts);
+            pnlProducts.Controls.Add(txtSearchProduct);
+            pnlProducts.CornerPadding = new Padding(5);
+            pnlProducts.DisabledBackColor = Color.Empty;
+            pnlProducts.DisabledBorderColor = Color.Empty;
+            pnlProducts.DoubleBorderSpacing = 2F;
+            pnlProducts.EasingType = SiticoneNetCoreUI.SiticoneAdvancedPanel.EasingTypeEx.Linear;
+            pnlProducts.EnableAnimation = false;
+            pnlProducts.EnableBackgroundImage = false;
+            pnlProducts.EnableBorderGlow = false;
+            pnlProducts.EnableDoubleBorder = false;
+            pnlProducts.EnableGradient = false;
+            pnlProducts.EnableInnerShadow = false;
+            pnlProducts.EnableShadow = false;
+            pnlProducts.EnableSmartPadding = true;
+            pnlProducts.EnableStateStyles = false;
+            pnlProducts.FlowDirectionCustom = FlowDirection.LeftToRight;
+            pnlProducts.GradientAngle = 90F;
+            pnlProducts.GradientEndColor = Color.LightGray;
+            pnlProducts.GradientStartColor = Color.White;
+            pnlProducts.GradientType = SiticoneNetCoreUI.SiticoneAdvancedPanel.GradientTypeEx.Linear;
+            pnlProducts.HoverBackColor = Color.Empty;
+            pnlProducts.HoverBorderColor = Color.Empty;
+            pnlProducts.InnerShadowColor = Color.Black;
+            pnlProducts.InnerShadowDepth = 3;
+            pnlProducts.InnerShadowOpacity = 0.2F;
+            pnlProducts.Location = new Point(46, 193);
+            pnlProducts.Name = "pnlProducts";
+            pnlProducts.Padding = new Padding(10);
+            pnlProducts.RadialGradientCenter = (PointF)resources.GetObject("pnlProducts.RadialGradientCenter");
+            pnlProducts.RadialGradientRadius = 1F;
+            pnlProducts.ScaleRatio = 0.8F;
+            pnlProducts.SecondaryBorderColor = Color.DarkGray;
+            pnlProducts.ShadowBlur = 10;
+            pnlProducts.ShadowColor = Color.Black;
+            pnlProducts.ShadowDepth = 5;
+            pnlProducts.ShadowOffset = new Point(2, 2);
+            pnlProducts.ShadowOpacity = 0.3F;
+            pnlProducts.Size = new Size(784, 835);
+            pnlProducts.SlideDirection = new Point(0, -30);
+            pnlProducts.TabIndex = 15;
+            pnlProducts.TopLeftRadius = 5;
+            pnlProducts.TopRightRadius = 5;
+            // 
+            // lblProducts
+            // 
+            lblProducts.AutoSize = true;
+            lblProducts.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblProducts.Location = new Point(14, 38);
+            lblProducts.Name = "lblProducts";
+            lblProducts.Size = new Size(166, 25);
+            lblProducts.TabIndex = 1;
+            lblProducts.Text = "lblActivityTimeline";
+            // 
+            // pnlInventory
+            // 
+            pnlInventory.ActiveBackColor = Color.Empty;
+            pnlInventory.ActiveBorderColor = Color.Empty;
+            pnlInventory.AdvancedBorderStyle = SiticoneNetCoreUI.SiticoneAdvancedPanel.BorderStyleEx.Solid;
+            pnlInventory.AnimationDuration = 500;
+            pnlInventory.AnimationType = SiticoneNetCoreUI.SiticoneAdvancedPanel.AnimationTypeEx.Fade;
+            pnlInventory.BackColor = Color.White;
+            pnlInventory.BackgroundImageCustom = null;
+            pnlInventory.BackgroundImageOpacity = 1F;
+            pnlInventory.BackgroundImageSizeMode = SiticoneNetCoreUI.SiticoneAdvancedPanel.ImageSizeModeEx.Stretch;
+            pnlInventory.BackgroundOverlayColor = Color.FromArgb(0, 0, 0, 0);
+            pnlInventory.BorderColor = Color.Gray;
+            pnlInventory.BorderDashPattern = null;
+            pnlInventory.BorderGlowColor = Color.Cyan;
+            pnlInventory.BorderGlowSize = 3F;
+            pnlInventory.BorderWidth = 1F;
+            pnlInventory.BottomLeftRadius = 5;
+            pnlInventory.BottomRightRadius = 5;
+            pnlInventory.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
+            pnlInventory.Controls.Add(drpInventoryCategory);
+            pnlInventory.Controls.Add(txtSearchInventory);
+            pnlInventory.Controls.Add(lblInventory);
+            pnlInventory.CornerPadding = new Padding(5);
+            pnlInventory.DisabledBackColor = Color.Empty;
+            pnlInventory.DisabledBorderColor = Color.Empty;
+            pnlInventory.DoubleBorderSpacing = 2F;
+            pnlInventory.EasingType = SiticoneNetCoreUI.SiticoneAdvancedPanel.EasingTypeEx.Linear;
+            pnlInventory.EnableAnimation = false;
+            pnlInventory.EnableBackgroundImage = false;
+            pnlInventory.EnableBorderGlow = false;
+            pnlInventory.EnableDoubleBorder = false;
+            pnlInventory.EnableGradient = false;
+            pnlInventory.EnableInnerShadow = false;
+            pnlInventory.EnableShadow = false;
+            pnlInventory.EnableSmartPadding = true;
+            pnlInventory.EnableStateStyles = false;
+            pnlInventory.FlowDirectionCustom = FlowDirection.LeftToRight;
+            pnlInventory.GradientAngle = 90F;
+            pnlInventory.GradientEndColor = Color.LightGray;
+            pnlInventory.GradientStartColor = Color.White;
+            pnlInventory.GradientType = SiticoneNetCoreUI.SiticoneAdvancedPanel.GradientTypeEx.Linear;
+            pnlInventory.HoverBackColor = Color.Empty;
+            pnlInventory.HoverBorderColor = Color.Empty;
+            pnlInventory.InnerShadowColor = Color.Black;
+            pnlInventory.InnerShadowDepth = 3;
+            pnlInventory.InnerShadowOpacity = 0.2F;
+            pnlInventory.Location = new Point(873, 193);
+            pnlInventory.Name = "pnlInventory";
+            pnlInventory.Padding = new Padding(10);
+            pnlInventory.RadialGradientCenter = (PointF)resources.GetObject("pnlInventory.RadialGradientCenter");
+            pnlInventory.RadialGradientRadius = 1F;
+            pnlInventory.ScaleRatio = 0.8F;
+            pnlInventory.SecondaryBorderColor = Color.DarkGray;
+            pnlInventory.ShadowBlur = 10;
+            pnlInventory.ShadowColor = Color.Black;
+            pnlInventory.ShadowDepth = 5;
+            pnlInventory.ShadowOffset = new Point(2, 2);
+            pnlInventory.ShadowOpacity = 0.3F;
+            pnlInventory.Size = new Size(777, 835);
+            pnlInventory.SlideDirection = new Point(0, -30);
+            pnlInventory.TabIndex = 16;
+            pnlInventory.TopLeftRadius = 5;
+            pnlInventory.TopRightRadius = 5;
+            // 
+            // drpInventoryCategory
+            // 
+            drpInventoryCategory.AllowMultipleSelection = false;
+            drpInventoryCategory.BackColor = Color.FromArgb(240, 245, 255);
+            drpInventoryCategory.BorderColor = Color.FromArgb(100, 150, 220);
+            drpInventoryCategory.CanBeep = false;
+            drpInventoryCategory.CanShake = true;
+            drpInventoryCategory.CornerRadius = 13;
+            drpInventoryCategory.DataSource = null;
+            drpInventoryCategory.DisplayMember = null;
+            drpInventoryCategory.DropdownBackColor = Color.FromArgb(245, 250, 255);
+            drpInventoryCategory.DropdownWidth = 0;
+            drpInventoryCategory.DropShadowEnabled = false;
+            drpInventoryCategory.Font = new Font("Segoe UI", 10F);
+            drpInventoryCategory.ForeColor = Color.FromArgb(40, 40, 100);
+            drpInventoryCategory.HoveredItemBackColor = Color.FromArgb(220, 235, 255);
+            drpInventoryCategory.HoveredItemTextColor = Color.FromArgb(40, 40, 100);
+            drpInventoryCategory.IsReadonly = false;
+            drpInventoryCategory.ItemHeight = 30;
+            drpInventoryCategory.Location = new Point(572, 83);
+            drpInventoryCategory.MaxDropDownItems = 8;
+            drpInventoryCategory.Name = "drpInventoryCategory";
+            drpInventoryCategory.PlaceholderColor = Color.FromArgb(150, 170, 200);
+            drpInventoryCategory.PlaceholderDisappearsOnFocus = false;
+            drpInventoryCategory.PlaceholderText = "Select an option";
+            drpInventoryCategory.SelectedIndex = -1;
+            drpInventoryCategory.SelectedItem = null;
+            drpInventoryCategory.SelectedItemBackColor = Color.Black;
+            drpInventoryCategory.SelectedItemTextColor = Color.White;
+            drpInventoryCategory.SelectedValue = null;
+            drpInventoryCategory.Size = new Size(199, 40);
+            drpInventoryCategory.TabIndex = 3;
+            drpInventoryCategory.Text = "siticoneDropdown1";
+            drpInventoryCategory.UnselectedItemTextColor = Color.FromArgb(40, 40, 100);
+            drpInventoryCategory.ValueMember = null;
+            // 
+            // txtSearchInventory
+            // 
+            txtSearchInventory.AccessibleDescription = "A customizable text input field.";
+            txtSearchInventory.AccessibleName = "Text Box";
+            txtSearchInventory.AccessibleRole = AccessibleRole.Text;
+            txtSearchInventory.BackColor = Color.Transparent;
+            txtSearchInventory.BlinkCount = 3;
+            txtSearchInventory.BlinkShadow = false;
+            txtSearchInventory.BorderColor1 = Color.LightSlateGray;
+            txtSearchInventory.BorderColor2 = Color.LightSlateGray;
+            txtSearchInventory.BorderFocusColor1 = Color.FromArgb(77, 77, 255);
+            txtSearchInventory.BorderFocusColor2 = Color.FromArgb(77, 77, 255);
+            txtSearchInventory.CanShake = true;
+            txtSearchInventory.ContinuousBlink = false;
+            txtSearchInventory.CornerRadiusBottomLeft = 13;
+            txtSearchInventory.CornerRadiusBottomRight = 13;
+            txtSearchInventory.CornerRadiusTopLeft = 13;
+            txtSearchInventory.CornerRadiusTopRight = 13;
+            txtSearchInventory.CursorBlinkRate = 500;
+            txtSearchInventory.CursorColor = Color.Black;
+            txtSearchInventory.CursorHeight = 26;
+            txtSearchInventory.CursorOffset = 0;
+            txtSearchInventory.CursorStyle = SiticoneNetCoreUI.Helpers.DrawingStyle.SiticoneDrawingStyle.Solid;
+            txtSearchInventory.CursorWidth = 1;
+            txtSearchInventory.DisabledBackColor = Color.WhiteSmoke;
+            txtSearchInventory.DisabledBorderColor = Color.LightGray;
+            txtSearchInventory.DisabledTextColor = Color.Gray;
+            txtSearchInventory.EnableDropShadow = false;
+            txtSearchInventory.FillColor1 = Color.White;
+            txtSearchInventory.FillColor2 = Color.White;
+            txtSearchInventory.Font = new Font("Segoe UI", 9.5F);
+            txtSearchInventory.ForeColor = Color.DimGray;
+            txtSearchInventory.HoverBorderColor1 = Color.Gray;
+            txtSearchInventory.HoverBorderColor2 = Color.Gray;
+            txtSearchInventory.IsEnabled = true;
+            txtSearchInventory.Location = new Point(14, 83);
+            txtSearchInventory.Name = "txtSearchInventory";
+            txtSearchInventory.PlaceholderColor = Color.Gray;
+            txtSearchInventory.PlaceholderText = "Search Transactions...";
+            txtSearchInventory.ReadOnlyBorderColor1 = Color.LightGray;
+            txtSearchInventory.ReadOnlyBorderColor2 = Color.LightGray;
+            txtSearchInventory.ReadOnlyFillColor1 = Color.WhiteSmoke;
+            txtSearchInventory.ReadOnlyFillColor2 = Color.WhiteSmoke;
+            txtSearchInventory.ReadOnlyPlaceholderColor = Color.DarkGray;
+            txtSearchInventory.SelectionBackColor = Color.FromArgb(77, 77, 255);
+            txtSearchInventory.ShadowAnimationDuration = 1;
+            txtSearchInventory.ShadowBlur = 10;
+            txtSearchInventory.ShadowColor = Color.FromArgb(15, 0, 0, 0);
+            txtSearchInventory.Size = new Size(552, 40);
+            txtSearchInventory.SolidBorderColor = Color.LightSlateGray;
+            txtSearchInventory.SolidBorderFocusColor = Color.FromArgb(77, 77, 255);
+            txtSearchInventory.SolidBorderHoverColor = Color.Gray;
+            txtSearchInventory.SolidFillColor = Color.White;
+            txtSearchInventory.TabIndex = 2;
+            txtSearchInventory.TextPadding = new Padding(16, 0, 6, 0);
+            txtSearchInventory.ValidationErrorMessage = "Invalid input.";
+            txtSearchInventory.ValidationFunction = null;
+            // 
+            // lblInventory
+            // 
+            lblInventory.AutoSize = true;
+            lblInventory.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblInventory.Location = new Point(14, 38);
+            lblInventory.Name = "lblInventory";
+            lblInventory.Size = new Size(112, 25);
+            lblInventory.TabIndex = 1;
+            lblInventory.Text = "lblInventory";
+            // 
+            // pnlLowInventoryStockAlert
+            // 
+            pnlLowInventoryStockAlert.ActiveBackColor = Color.Empty;
+            pnlLowInventoryStockAlert.ActiveBorderColor = Color.Empty;
+            pnlLowInventoryStockAlert.AdvancedBorderStyle = SiticoneNetCoreUI.SiticoneAdvancedPanel.BorderStyleEx.Solid;
+            pnlLowInventoryStockAlert.AnimationDuration = 500;
+            pnlLowInventoryStockAlert.AnimationType = SiticoneNetCoreUI.SiticoneAdvancedPanel.AnimationTypeEx.Fade;
+            pnlLowInventoryStockAlert.BackColor = Color.White;
+            pnlLowInventoryStockAlert.BackgroundImageCustom = null;
+            pnlLowInventoryStockAlert.BackgroundImageOpacity = 1F;
+            pnlLowInventoryStockAlert.BackgroundImageSizeMode = SiticoneNetCoreUI.SiticoneAdvancedPanel.ImageSizeModeEx.Stretch;
+            pnlLowInventoryStockAlert.BackgroundOverlayColor = Color.FromArgb(0, 0, 0, 0);
+            pnlLowInventoryStockAlert.BorderColor = Color.Gray;
+            pnlLowInventoryStockAlert.BorderDashPattern = null;
+            pnlLowInventoryStockAlert.BorderGlowColor = Color.Cyan;
+            pnlLowInventoryStockAlert.BorderGlowSize = 3F;
+            pnlLowInventoryStockAlert.BorderWidth = 1F;
+            pnlLowInventoryStockAlert.BottomLeftRadius = 5;
+            pnlLowInventoryStockAlert.BottomRightRadius = 5;
+            pnlLowInventoryStockAlert.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
+            pnlLowInventoryStockAlert.Controls.Add(label3);
+            pnlLowInventoryStockAlert.Controls.Add(label4);
+            pnlLowInventoryStockAlert.Controls.Add(label6);
+            pnlLowInventoryStockAlert.CornerPadding = new Padding(5);
+            pnlLowInventoryStockAlert.DisabledBackColor = Color.Empty;
+            pnlLowInventoryStockAlert.DisabledBorderColor = Color.Empty;
+            pnlLowInventoryStockAlert.DoubleBorderSpacing = 2F;
+            pnlLowInventoryStockAlert.EasingType = SiticoneNetCoreUI.SiticoneAdvancedPanel.EasingTypeEx.Linear;
+            pnlLowInventoryStockAlert.EnableAnimation = false;
+            pnlLowInventoryStockAlert.EnableBackgroundImage = false;
+            pnlLowInventoryStockAlert.EnableBorderGlow = false;
+            pnlLowInventoryStockAlert.EnableDoubleBorder = false;
+            pnlLowInventoryStockAlert.EnableGradient = false;
+            pnlLowInventoryStockAlert.EnableInnerShadow = false;
+            pnlLowInventoryStockAlert.EnableShadow = false;
+            pnlLowInventoryStockAlert.EnableSmartPadding = true;
+            pnlLowInventoryStockAlert.EnableStateStyles = false;
+            pnlLowInventoryStockAlert.FlowDirectionCustom = FlowDirection.LeftToRight;
+            pnlLowInventoryStockAlert.GradientAngle = 90F;
+            pnlLowInventoryStockAlert.GradientEndColor = Color.LightGray;
+            pnlLowInventoryStockAlert.GradientStartColor = Color.White;
+            pnlLowInventoryStockAlert.GradientType = SiticoneNetCoreUI.SiticoneAdvancedPanel.GradientTypeEx.Linear;
+            pnlLowInventoryStockAlert.HoverBackColor = Color.Empty;
+            pnlLowInventoryStockAlert.HoverBorderColor = Color.Empty;
+            pnlLowInventoryStockAlert.InnerShadowColor = Color.Black;
+            pnlLowInventoryStockAlert.InnerShadowDepth = 3;
+            pnlLowInventoryStockAlert.InnerShadowOpacity = 0.2F;
+            pnlLowInventoryStockAlert.Location = new Point(873, 87);
+            pnlLowInventoryStockAlert.Name = "pnlLowInventoryStockAlert";
+            pnlLowInventoryStockAlert.Padding = new Padding(10);
+            pnlLowInventoryStockAlert.RadialGradientCenter = (PointF)resources.GetObject("pnlLowInventoryStockAlert.RadialGradientCenter");
+            pnlLowInventoryStockAlert.RadialGradientRadius = 1F;
+            pnlLowInventoryStockAlert.ScaleRatio = 0.8F;
+            pnlLowInventoryStockAlert.SecondaryBorderColor = Color.DarkGray;
+            pnlLowInventoryStockAlert.ShadowBlur = 10;
+            pnlLowInventoryStockAlert.ShadowColor = Color.Black;
+            pnlLowInventoryStockAlert.ShadowDepth = 5;
+            pnlLowInventoryStockAlert.ShadowOffset = new Point(2, 2);
+            pnlLowInventoryStockAlert.ShadowOpacity = 0.3F;
+            pnlLowInventoryStockAlert.Size = new Size(777, 87);
+            pnlLowInventoryStockAlert.SlideDirection = new Point(0, -30);
+            pnlLowInventoryStockAlert.TabIndex = 12;
+            pnlLowInventoryStockAlert.TopLeftRadius = 5;
+            pnlLowInventoryStockAlert.TopRightRadius = 5;
+            // 
+            // lblRequireReorder
+            // 
+            lblRequireReorder.AutoSize = true;
+            lblRequireReorder.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRequireReorder.Location = new Point(13, 60);
+            lblRequireReorder.Name = "lblRequireReorder";
+            lblRequireReorder.Size = new Size(137, 21);
+            lblRequireReorder.TabIndex = 6;
+            lblRequireReorder.Text = "lblRequireReorder";
+            // 
+            // lblLowStockItems
+            // 
+            lblLowStockItems.AutoSize = true;
+            lblLowStockItems.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLowStockItems.Location = new Point(13, 35);
+            lblLowStockItems.Name = "lblLowStockItems";
+            lblLowStockItems.Size = new Size(156, 25);
+            lblLowStockItems.TabIndex = 5;
+            lblLowStockItems.Text = "lblLowStockItems";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(14, 10);
+            label5.Name = "label5";
+            label5.Size = new Size(140, 25);
+            label5.TabIndex = 4;
+            label5.Text = "Low Stock Alert";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(13, 60);
+            label3.Name = "label3";
+            label3.Size = new Size(137, 21);
+            label3.TabIndex = 9;
+            label3.Text = "lblRequireReorder";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(13, 10);
+            label4.Name = "label4";
+            label4.Size = new Size(140, 25);
+            label4.TabIndex = 7;
+            label4.Text = "Low Stock Alert";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(13, 35);
+            label6.Name = "label6";
+            label6.Size = new Size(156, 25);
+            label6.TabIndex = 8;
+            label6.Text = "lblLowStockItems";
+            // 
             // UC_Inventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(pnlLowInventoryStockAlert);
+            Controls.Add(pnlInventory);
+            Controls.Add(pnlProducts);
+            Controls.Add(pnlLowProductsStockAlert);
             Controls.Add(btnAddItem);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "UC_Inventory";
             Size = new Size(1700, 1041);
             Load += UC_Inventory_Load;
+            pnlLowProductsStockAlert.ResumeLayout(false);
+            pnlLowProductsStockAlert.PerformLayout();
+            pnlProducts.ResumeLayout(false);
+            pnlProducts.PerformLayout();
+            pnlInventory.ResumeLayout(false);
+            pnlInventory.PerformLayout();
+            pnlLowInventoryStockAlert.ResumeLayout(false);
+            pnlLowInventoryStockAlert.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -148,5 +709,21 @@
         private Label label2;
         private Label label1;
         private SiticoneNetCoreUI.SiticoneButton btnAddItem;
+        private SiticoneNetCoreUI.SiticoneAdvancedPanel pnlLowProductsStockAlert;
+        private SiticoneNetCoreUI.SiticoneDropdown drpProductCategory;
+        private SiticoneNetCoreUI.SiticoneTextBox txtSearchProduct;
+        private SiticoneNetCoreUI.SiticoneAdvancedPanel pnlProducts;
+        private Label lblProducts;
+        private SiticoneNetCoreUI.SiticoneAdvancedPanel pnlInventory;
+        private Label lblInventory;
+        private SiticoneNetCoreUI.SiticoneAdvancedPanel pnlLowInventoryStockAlert;
+        private SiticoneNetCoreUI.SiticoneDropdown drpInventoryCategory;
+        private SiticoneNetCoreUI.SiticoneTextBox txtSearchInventory;
+        private Label lblRequireReorder;
+        private Label label5;
+        private Label lblLowStockItems;
+        private Label label3;
+        private Label label4;
+        private Label label6;
     }
 }

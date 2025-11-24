@@ -32,20 +32,14 @@
             panelSidebar = new SiticoneNetCoreUI.SiticonePinnablePanel();
             btnActivityLog = new SiticoneNetCoreUI.SiticoneButton();
             btnEmployees = new SiticoneNetCoreUI.SiticoneButton();
-            btnReports = new SiticoneNetCoreUI.SiticoneButton();
             btnSalesHistory = new SiticoneNetCoreUI.SiticoneButton();
             label3 = new Label();
             label2 = new Label();
-            btnPromotions = new SiticoneNetCoreUI.SiticoneButton();
             btnProducts = new SiticoneNetCoreUI.SiticoneButton();
             btnOverview = new SiticoneNetCoreUI.SiticoneButton();
-            siticonePanel1 = new SiticoneNetCoreUI.SiticonePanel();
-            label1 = new Label();
-            siticoneLabel1 = new SiticoneNetCoreUI.SiticoneLabel();
             btnLogout = new SiticoneNetCoreUI.SiticoneButton();
             panelMain = new SiticoneNetCoreUI.SiticonePinnablePanel();
             panelSidebar.SuspendLayout();
-            siticonePanel1.SuspendLayout();
             SuspendLayout();
             // 
             // panelSidebar
@@ -55,14 +49,11 @@
             panelSidebar.BorderRadius = 0;
             panelSidebar.Controls.Add(btnActivityLog);
             panelSidebar.Controls.Add(btnEmployees);
-            panelSidebar.Controls.Add(btnReports);
             panelSidebar.Controls.Add(btnSalesHistory);
             panelSidebar.Controls.Add(label3);
             panelSidebar.Controls.Add(label2);
-            panelSidebar.Controls.Add(btnPromotions);
             panelSidebar.Controls.Add(btnProducts);
             panelSidebar.Controls.Add(btnOverview);
-            panelSidebar.Controls.Add(siticonePanel1);
             panelSidebar.Controls.Add(btnLogout);
             panelSidebar.Dock = DockStyle.Left;
             panelSidebar.GradientBorderEndColor = Color.Gray;
@@ -134,7 +125,7 @@
             btnActivityLog.IsReadOnly = false;
             btnActivityLog.IsToggleButton = false;
             btnActivityLog.IsToggled = false;
-            btnActivityLog.Location = new Point(12, 574);
+            btnActivityLog.Location = new Point(13, 476);
             btnActivityLog.LongPressDurationMS = 1000;
             btnActivityLog.Name = "btnActivityLog";
             btnActivityLog.NormalFontStyle = FontStyle.Regular;
@@ -211,7 +202,7 @@
             btnEmployees.IsReadOnly = false;
             btnEmployees.IsToggleButton = false;
             btnEmployees.IsToggled = false;
-            btnEmployees.Location = new Point(12, 525);
+            btnEmployees.Location = new Point(13, 427);
             btnEmployees.LongPressDurationMS = 1000;
             btnEmployees.Name = "btnEmployees";
             btnEmployees.NormalFontStyle = FontStyle.Regular;
@@ -239,83 +230,6 @@
             btnEmployees.UseAdvancedRendering = true;
             btnEmployees.UseParticles = false;
             btnEmployees.Click += btnEmployees_Click;
-            // 
-            // btnReports
-            // 
-            btnReports.AccessibleDescription = "The default button control that accept input though the mouse, touch and keyboard";
-            btnReports.AccessibleName = "Reports";
-            btnReports.AutoSizeBasedOnText = false;
-            btnReports.BackColor = Color.Transparent;
-            btnReports.BadgeBackColor = Color.Black;
-            btnReports.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
-            btnReports.BadgeValue = 0;
-            btnReports.BadgeValueForeColor = Color.White;
-            btnReports.BorderColor = Color.FromArgb(60, 60, 60);
-            btnReports.BorderWidth = 2;
-            btnReports.ButtonBackColor = Color.FromArgb(30, 30, 30);
-            btnReports.ButtonImage = null;
-            btnReports.ButtonTextLeftPadding = 0;
-            btnReports.CanBeep = true;
-            btnReports.CanGlow = false;
-            btnReports.CanShake = true;
-            btnReports.ContextMenuStripEx = null;
-            btnReports.CornerRadiusBottomLeft = 6;
-            btnReports.CornerRadiusBottomRight = 6;
-            btnReports.CornerRadiusTopLeft = 6;
-            btnReports.CornerRadiusTopRight = 6;
-            btnReports.CustomCursor = Cursors.Default;
-            btnReports.DisabledTextColor = Color.FromArgb(150, 150, 150);
-            btnReports.EnableLongPress = false;
-            btnReports.EnableRippleEffect = true;
-            btnReports.EnableShadow = true;
-            btnReports.EnableTextWrapping = false;
-            btnReports.Font = new Font("Segoe UI Emoji", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnReports.GlowColor = Color.FromArgb(30, 255, 255, 255);
-            btnReports.GlowIntensity = 100;
-            btnReports.GlowRadius = 20F;
-            btnReports.GradientBackground = false;
-            btnReports.GradientColor = Color.FromArgb(0, 227, 64);
-            btnReports.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            btnReports.HintText = null;
-            btnReports.HoverBackColor = Color.FromArgb(50, 50, 50);
-            btnReports.HoverFontStyle = FontStyle.Regular;
-            btnReports.HoverTextColor = Color.White;
-            btnReports.HoverTransitionDuration = 250;
-            btnReports.ImageAlign = ContentAlignment.MiddleLeft;
-            btnReports.ImagePadding = 5;
-            btnReports.ImageSize = new Size(16, 16);
-            btnReports.IsRadial = false;
-            btnReports.IsReadOnly = false;
-            btnReports.IsToggleButton = false;
-            btnReports.IsToggled = false;
-            btnReports.Location = new Point(12, 476);
-            btnReports.LongPressDurationMS = 1000;
-            btnReports.Name = "btnReports";
-            btnReports.NormalFontStyle = FontStyle.Regular;
-            btnReports.ParticleColor = Color.FromArgb(200, 200, 200);
-            btnReports.ParticleCount = 15;
-            btnReports.PressAnimationScale = 0.97F;
-            btnReports.PressedBackColor = Color.FromArgb(40, 40, 40);
-            btnReports.PressedFontStyle = FontStyle.Regular;
-            btnReports.PressTransitionDuration = 150;
-            btnReports.ReadOnlyTextColor = Color.FromArgb(100, 100, 100);
-            btnReports.RippleColor = Color.FromArgb(100, 100, 100);
-            btnReports.RippleOpacity = 0.3F;
-            btnReports.RippleRadiusMultiplier = 0.6F;
-            btnReports.ShadowBlur = 6;
-            btnReports.ShadowColor = Color.FromArgb(60, 0, 0, 0);
-            btnReports.ShadowOffset = new Point(0, 2);
-            btnReports.ShakeDuration = 500;
-            btnReports.ShakeIntensity = 5;
-            btnReports.Size = new Size(180, 43);
-            btnReports.TabIndex = 10;
-            btnReports.Text = "Reports";
-            btnReports.TextAlign = ContentAlignment.MiddleCenter;
-            btnReports.TextColor = Color.White;
-            btnReports.TooltipText = null;
-            btnReports.UseAdvancedRendering = true;
-            btnReports.UseParticles = false;
-            btnReports.Click += btnReports_Click;
             // 
             // btnSalesHistory
             // 
@@ -365,7 +279,7 @@
             btnSalesHistory.IsReadOnly = false;
             btnSalesHistory.IsToggleButton = false;
             btnSalesHistory.IsToggled = false;
-            btnSalesHistory.Location = new Point(12, 427);
+            btnSalesHistory.Location = new Point(13, 378);
             btnSalesHistory.LongPressDurationMS = 1000;
             btnSalesHistory.Name = "btnSalesHistory";
             btnSalesHistory.NormalFontStyle = FontStyle.Regular;
@@ -413,83 +327,6 @@
             label2.Size = new Size(132, 21);
             label2.TabIndex = 7;
             label2.Text = "lblLoggedInUser";
-            // 
-            // btnPromotions
-            // 
-            btnPromotions.AccessibleDescription = "The default button control that accept input though the mouse, touch and keyboard";
-            btnPromotions.AccessibleName = "Promotions";
-            btnPromotions.AutoSizeBasedOnText = false;
-            btnPromotions.BackColor = Color.Transparent;
-            btnPromotions.BadgeBackColor = Color.Black;
-            btnPromotions.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
-            btnPromotions.BadgeValue = 0;
-            btnPromotions.BadgeValueForeColor = Color.White;
-            btnPromotions.BorderColor = Color.FromArgb(60, 60, 60);
-            btnPromotions.BorderWidth = 2;
-            btnPromotions.ButtonBackColor = Color.FromArgb(30, 30, 30);
-            btnPromotions.ButtonImage = null;
-            btnPromotions.ButtonTextLeftPadding = 0;
-            btnPromotions.CanBeep = true;
-            btnPromotions.CanGlow = false;
-            btnPromotions.CanShake = true;
-            btnPromotions.ContextMenuStripEx = null;
-            btnPromotions.CornerRadiusBottomLeft = 6;
-            btnPromotions.CornerRadiusBottomRight = 6;
-            btnPromotions.CornerRadiusTopLeft = 6;
-            btnPromotions.CornerRadiusTopRight = 6;
-            btnPromotions.CustomCursor = Cursors.Default;
-            btnPromotions.DisabledTextColor = Color.FromArgb(150, 150, 150);
-            btnPromotions.EnableLongPress = false;
-            btnPromotions.EnableRippleEffect = true;
-            btnPromotions.EnableShadow = true;
-            btnPromotions.EnableTextWrapping = false;
-            btnPromotions.Font = new Font("Segoe UI Emoji", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPromotions.GlowColor = Color.FromArgb(30, 255, 255, 255);
-            btnPromotions.GlowIntensity = 100;
-            btnPromotions.GlowRadius = 20F;
-            btnPromotions.GradientBackground = false;
-            btnPromotions.GradientColor = Color.FromArgb(0, 227, 64);
-            btnPromotions.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            btnPromotions.HintText = null;
-            btnPromotions.HoverBackColor = Color.FromArgb(50, 50, 50);
-            btnPromotions.HoverFontStyle = FontStyle.Regular;
-            btnPromotions.HoverTextColor = Color.White;
-            btnPromotions.HoverTransitionDuration = 250;
-            btnPromotions.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPromotions.ImagePadding = 5;
-            btnPromotions.ImageSize = new Size(16, 16);
-            btnPromotions.IsRadial = false;
-            btnPromotions.IsReadOnly = false;
-            btnPromotions.IsToggleButton = false;
-            btnPromotions.IsToggled = false;
-            btnPromotions.Location = new Point(13, 378);
-            btnPromotions.LongPressDurationMS = 1000;
-            btnPromotions.Name = "btnPromotions";
-            btnPromotions.NormalFontStyle = FontStyle.Regular;
-            btnPromotions.ParticleColor = Color.FromArgb(200, 200, 200);
-            btnPromotions.ParticleCount = 15;
-            btnPromotions.PressAnimationScale = 0.97F;
-            btnPromotions.PressedBackColor = Color.FromArgb(40, 40, 40);
-            btnPromotions.PressedFontStyle = FontStyle.Regular;
-            btnPromotions.PressTransitionDuration = 150;
-            btnPromotions.ReadOnlyTextColor = Color.FromArgb(100, 100, 100);
-            btnPromotions.RippleColor = Color.FromArgb(100, 100, 100);
-            btnPromotions.RippleOpacity = 0.3F;
-            btnPromotions.RippleRadiusMultiplier = 0.6F;
-            btnPromotions.ShadowBlur = 6;
-            btnPromotions.ShadowColor = Color.FromArgb(60, 0, 0, 0);
-            btnPromotions.ShadowOffset = new Point(0, 2);
-            btnPromotions.ShakeDuration = 500;
-            btnPromotions.ShakeIntensity = 5;
-            btnPromotions.Size = new Size(180, 43);
-            btnPromotions.TabIndex = 6;
-            btnPromotions.Text = "Promotions";
-            btnPromotions.TextAlign = ContentAlignment.MiddleCenter;
-            btnPromotions.TextColor = Color.White;
-            btnPromotions.TooltipText = null;
-            btnPromotions.UseAdvancedRendering = true;
-            btnPromotions.UseParticles = false;
-            btnPromotions.Click += btnPromotions_Click;
             // 
             // btnProducts
             // 
@@ -645,75 +482,6 @@
             btnOverview.UseParticles = false;
             btnOverview.Click += btnOverview_Click_1;
             // 
-            // siticonePanel1
-            // 
-            siticonePanel1.AcrylicTintColor = Color.FromArgb(128, 255, 255, 255);
-            siticonePanel1.BackColor = Color.Transparent;
-            siticonePanel1.BorderAlignment = System.Drawing.Drawing2D.PenAlignment.Center;
-            siticonePanel1.BorderDashPattern = null;
-            siticonePanel1.BorderGradientEndColor = Color.Purple;
-            siticonePanel1.BorderGradientStartColor = Color.Blue;
-            siticonePanel1.BorderThickness = 2F;
-            siticonePanel1.Controls.Add(label1);
-            siticonePanel1.Controls.Add(siticoneLabel1);
-            siticonePanel1.CornerRadiusBottomLeft = 0F;
-            siticonePanel1.CornerRadiusBottomRight = 0F;
-            siticonePanel1.CornerRadiusTopLeft = 0F;
-            siticonePanel1.CornerRadiusTopRight = 0F;
-            siticonePanel1.Dock = DockStyle.Top;
-            siticonePanel1.EnableAcrylicEffect = false;
-            siticonePanel1.EnableMicaEffect = false;
-            siticonePanel1.EnableRippleEffect = false;
-            siticonePanel1.FillColor = Color.White;
-            siticonePanel1.GradientColors = new Color[]
-    {
-    Color.White,
-    Color.LightGray,
-    Color.Gray
-    };
-            siticonePanel1.GradientPositions = new float[]
-    {
-    0F,
-    0.5F,
-    1F
-    };
-            siticonePanel1.Location = new Point(5, 5);
-            siticonePanel1.Name = "siticonePanel1";
-            siticonePanel1.PatternStyle = System.Drawing.Drawing2D.HatchStyle.Max;
-            siticonePanel1.RippleAlpha = 50;
-            siticonePanel1.RippleAlphaDecrement = 3;
-            siticonePanel1.RippleColor = Color.FromArgb(50, 255, 255, 255);
-            siticonePanel1.RippleMaxSize = 600F;
-            siticonePanel1.RippleSpeed = 15F;
-            siticonePanel1.ShowBorder = true;
-            siticonePanel1.Size = new Size(194, 100);
-            siticonePanel1.TabIndex = 3;
-            siticonePanel1.TabStop = true;
-            siticonePanel1.TrackSystemTheme = false;
-            siticonePanel1.UseBorderGradient = false;
-            siticonePanel1.UseMultiGradient = false;
-            siticonePanel1.UsePatternTexture = false;
-            siticonePanel1.UseRadialGradient = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(78, 43);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 15);
-            label1.TabIndex = 1;
-            // 
-            // siticoneLabel1
-            // 
-            siticoneLabel1.BackColor = Color.Transparent;
-            siticoneLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            siticoneLabel1.Location = new Point(78, 20);
-            siticoneLabel1.Name = "siticoneLabel1";
-            siticoneLabel1.Size = new Size(82, 23);
-            siticoneLabel1.TabIndex = 0;
-            siticoneLabel1.Text = "One Shot";
-            // 
             // btnLogout
             // 
             btnLogout.AccessibleDescription = "The default button control that accept input though the mouse, touch and keyboard";
@@ -835,8 +603,6 @@
             Load += MainDashboard_Load;
             panelSidebar.ResumeLayout(false);
             panelSidebar.PerformLayout();
-            siticonePanel1.ResumeLayout(false);
-            siticonePanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -844,18 +610,13 @@
 
         private SiticoneNetCoreUI.SiticonePinnablePanel panelSidebar;
         private SiticoneNetCoreUI.SiticoneButton btnLogout;
-        private SiticoneNetCoreUI.SiticonePanel siticonePanel1;
-        private SiticoneNetCoreUI.SiticoneLabel siticoneLabel1;
         private SiticoneNetCoreUI.SiticonePinnablePanel panelMain;
         private SiticoneNetCoreUI.SiticoneButton btnOverview;
-        private Label label1;
         private SiticoneNetCoreUI.SiticoneButton btnProducts;
-        private SiticoneNetCoreUI.SiticoneButton btnPromotions;
         private SiticoneNetCoreUI.SiticoneButton btnSalesHistory;
         private Label label3;
         private Label label2;
         private SiticoneNetCoreUI.SiticoneButton btnEmployees;
-        private SiticoneNetCoreUI.SiticoneButton btnReports;
         private SiticoneNetCoreUI.SiticoneButton btnActivityLog;
     }
 

@@ -235,50 +235,7 @@ namespace OneShotPOS
             return footerRow;
         }
 
-        private Panel CreateSaleRow(string day, double revenue, double maxRevenue, int containerWidth)
-        {
-            // Calculate usable width for the bar relative to the panel
-            int usableWidth = containerWidth - 140;
-            int rowHeight = 35;
-
-            Panel row = new Panel { Height = rowHeight, Width = containerWidth - 5, Padding = new Padding(0) };
-
-            // 1. Day Label
-            Label lblDay = new Label { Text = day, Dock = DockStyle.Left, Width = 50, TextAlign = ContentAlignment.MiddleLeft };
-            row.Controls.Add(lblDay);
-
-            // 2. Revenue Label
-            Label lblRevenue = new Label { Text = $"₱{revenue:N0}", Dock = DockStyle.Right, Width = 80, TextAlign = ContentAlignment.MiddleRight };
-            row.Controls.Add(lblRevenue);
-
-            // 3. Bar Container
-            Panel barContainer = new Panel { Dock = DockStyle.Fill, Padding = new Padding(5, (rowHeight / 2) - 5, 5, (rowHeight / 2) - 5) };
-            row.Controls.Add(barContainer);
-            barContainer.BringToFront(); // Ensure bar is visually between labels
-
-            // 4. Bar Background (Light Gray)
-            Panel barBackground = new Panel
-            {
-                BackColor = Color.LightGray,
-                Height = 10,
-                Width = usableWidth,
-                Dock = DockStyle.Left
-            };
-            barContainer.Controls.Add(barBackground);
-
-            // 5. Colored Bar (Green)
-            int barWidth = (int)((revenue / maxRevenue) * usableWidth);
-            Panel coloredBar = new Panel
-            {
-                BackColor = ChartSeriesColor,
-                Height = 10,
-                Width = barWidth,
-                Location = new Point(0, 0)
-            };
-            barBackground.Controls.Add(coloredBar);
-
-            return row;
-        }
+       
 
         private int GetDayOrder(string day)
         {
@@ -286,33 +243,7 @@ namespace OneShotPOS
             return "MonTueWedThuFriSatSun".IndexOf(day) / 3;
         }
 
-        private void AddFooterLabel(FlowLayoutPanel flowPanel, string labelText, double value)
-        {
-            Panel footerRow = new Panel { Height = 25, Width = flowPanel.ClientSize.Width - 5, Padding = new Padding(0, 5, 0, 0) };
-
-            Label lblLabel = new Label
-            {
-                Text = labelText,
-                Dock = DockStyle.Left,
-                Width = 100,
-                Font = new Font("Segoe UI", 9F, FontStyle.Bold),
-                TextAlign = ContentAlignment.MiddleLeft
-            };
-
-            Label lblValue = new Label
-            {
-                Text = $"₱{value:N0}",
-                Dock = DockStyle.Right,
-                Width = 80,
-                Font = new Font("Segoe UI", 9F, FontStyle.Regular),
-                TextAlign = ContentAlignment.MiddleRight
-            };
-
-            footerRow.Controls.Add(lblValue);
-            footerRow.Controls.Add(lblLabel);
-            flowPanel.Controls.Add(new Panel { Height = 1, BackColor = Color.LightGray, Width = flowPanel.ClientSize.Width }); // Separator line
-            flowPanel.Controls.Add(footerRow);
-        }
+      
 
         // --- REVENUE TREND CHART (Right Chart) ---
 
@@ -419,60 +350,7 @@ namespace OneShotPOS
             RevenueTrendPanel.Controls.Add(CreateFooterLabel("Monthly Average", $"₱{monthlyAverage:N0}", new Point(10, currentRowY), false));
         }
 
-        private Panel CreateMonthlyRow(string month, double revenue, double change, double maxRevenue, int containerWidth)
-        {
-            int usableWidth = containerWidth - 190;
-            int rowHeight = 35;
-
-            Panel row = new Panel { Height = rowHeight, Width = containerWidth - 5, Padding = new Padding(0) };
-
-            // 1. Month Label
-            Label lblMonth = new Label { Text = month, Dock = DockStyle.Left, Width = 50, TextAlign = ContentAlignment.MiddleLeft };
-            row.Controls.Add(lblMonth);
-
-            // 2. Change Percentage Label
-            Label lblChange = new Label
-            {
-                Text = change == 0 ? "" : $"{(change >= 0 ? "+" : "")}{change:P1}",
-                Dock = DockStyle.Right,
-                Width = 60,
-                TextAlign = ContentAlignment.MiddleRight,
-                ForeColor = change >= 0 ? ChartSeriesColor : SecondaryColor
-            };
-            row.Controls.Add(lblChange);
-
-            // 3. Revenue Label
-            Label lblRevenue = new Label { Text = $"₱{revenue:N0}", Dock = DockStyle.Right, Width = 80, TextAlign = ContentAlignment.MiddleRight };
-            row.Controls.Add(lblRevenue);
-
-            // 4. Bar Container
-            Panel barContainer = new Panel { Dock = DockStyle.Fill, Padding = new Padding(5, (rowHeight / 2) - 5, 5, (rowHeight / 2) - 5) };
-            row.Controls.Add(barContainer);
-            barContainer.BringToFront();
-
-            // 5. Bar Background (Light Gray)
-            Panel barBackground = new Panel
-            {
-                BackColor = Color.LightGray,
-                Height = 10,
-                Width = usableWidth,
-                Dock = DockStyle.Left
-            };
-            barContainer.Controls.Add(barBackground);
-
-            // 6. Colored Bar (Green)
-            int barWidth = (int)((revenue / maxRevenue) * usableWidth);
-            Panel coloredBar = new Panel
-            {
-                BackColor = ChartSeriesColor,
-                Height = 10,
-                Width = barWidth,
-                Location = new Point(0, 0)
-            };
-            barBackground.Controls.Add(coloredBar);
-
-            return row;
-        }
+        
 
         // --- RECENT ACTIVITIES (Bottom List) ---
 
@@ -636,7 +514,6 @@ namespace OneShotPOS
                 case "Sale": return ChartSeriesColor; // Green
                 case "Inventory": return Color.DarkOrange;
                 case "User": return Color.DarkBlue;
-                case "Promo": return Color.MediumPurple;
                 case "System": return Color.Gray;
                 default: return Color.LightGray;
             }

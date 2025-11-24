@@ -301,6 +301,7 @@
             Controls.Add(label1);
             Name = "UC_ActivityLog";
             Size = new Size(1700, 1041);
+            Load += UC_ActivityLog_Load;
             siticoneAdvancedPanel1.ResumeLayout(false);
             panelActivityTimeline.ResumeLayout(false);
             panelActivityTimeline.PerformLayout();
