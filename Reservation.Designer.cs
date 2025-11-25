@@ -168,7 +168,7 @@
             txtCustomerName.SolidBorderHoverColor = Color.Gray;
             txtCustomerName.SolidFillColor = Color.White;
             txtCustomerName.TabIndex = 10;
-            txtCustomerName.Text = "siticoneTextBox1";
+            txtCustomerName.Text = "Enter Customer name...";
             txtCustomerName.TextPadding = new Padding(16, 0, 6, 0);
             txtCustomerName.ValidationErrorMessage = "Invalid input.";
             txtCustomerName.ValidationFunction = null;
@@ -233,7 +233,7 @@
             txtPhoneNum.SolidBorderHoverColor = Color.Gray;
             txtPhoneNum.SolidFillColor = Color.White;
             txtPhoneNum.TabIndex = 12;
-            txtPhoneNum.Text = "siticoneTextBox2";
+            txtPhoneNum.Text = "Enter Phone number...";
             txtPhoneNum.TextPadding = new Padding(16, 0, 6, 0);
             txtPhoneNum.ValidationErrorMessage = "Invalid input.";
             txtPhoneNum.ValidationFunction = null;

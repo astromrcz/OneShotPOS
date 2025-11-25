@@ -293,6 +293,7 @@
             MinimizeBox = false;
             Name = "ReservedTable";
             Text = "ReservedTable";
+            Load += ReservedTable_Load;
             ResumeLayout(false);
             PerformLayout();
         }

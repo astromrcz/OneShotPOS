@@ -13,7 +13,6 @@ using System.Windows.Forms;
 using Siticone.Desktop.UI.WinForms;
 
 
-
 namespace OneShotPOS
 {
     public partial class UC_Inventory : UserControl

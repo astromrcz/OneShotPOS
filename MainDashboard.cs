@@ -37,7 +37,18 @@ namespace OneShotPOS
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // 1. Dispose of the current dashboard form
+                this.Close();
+
+                // 2. Open the login page back up
+                LoginPage loginPage = new LoginPage();
+                loginPage.Show();
+
+                // Note: The main application loop (Application.Run) continues, 
+                // allowing background database processes to finish cleanly.
+            }
         }
 
         private void siticoneCloseButton1_Click(object sender, EventArgs e)
