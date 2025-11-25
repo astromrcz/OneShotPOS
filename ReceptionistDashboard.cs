@@ -61,92 +61,39 @@ namespace OneShotPOS
 
         private void siticoneCloseButton1_Click(object sender, EventArgs e) //logout Button
         {
-            Application.Exit();
+            LoginPage login = new LoginPage();
+            login.Show();
+            this.Close();
         }
 
+        private void btnTables_Click(object sender, EventArgs e)
+        {
+            panelMain.Padding = new Padding(0); // Remove container padding
+            panelMain.Controls.Clear();
+            UC_Receptionist recep = new UC_Receptionist();
+            recep.Dock = DockStyle.Fill;
+            recep.Margin = new Padding(0);
+            recep.Padding = new Padding(0);
 
+            panelMain.Controls.Add(recep);
+        }
 
-        private void btnOverview_Click_1(object sender, EventArgs e)
+        private void btnQueue_Click(object sender, EventArgs e)
         {
             panelMain.Padding = new Padding(0); // Remove container padding
             panelMain.Controls.Clear();
 
-            UC_Overview overview = new UC_Overview();
-            overview.Dock = DockStyle.Fill;
-            overview.Margin = new Padding(0);
-            overview.Padding = new Padding(0);
+            UC_Queue queue = new UC_Queue();
+            queue.Dock = DockStyle.Fill;
+            queue.Margin = new Padding(0);
+            queue.Padding = new Padding(0);
 
-            panelMain.Controls.Add(overview);
+            panelMain.Controls.Add(queue);
         }
 
-        private void btnInventory_Click(object sender, EventArgs e)
+        private void btnQuickSale_Click(object sender, EventArgs e)
         {
-            panelMain.Padding = new Padding(0); // Remove container padding
-            panelMain.Controls.Clear();
 
-           
-        }
-
-        private void btnProducts_Click(object sender, EventArgs e)
-        {
-            panelMain.Padding = new Padding(0); // Remove container padding
-            panelMain.Controls.Clear();
-
-            UC_Inventory products = new UC_Inventory();
-            products.Dock = DockStyle.Fill;
-            products.Margin = new Padding(0);
-            products.Padding = new Padding(0);
-
-            panelMain.Controls.Add(products);
-        }
-
-        private void btnPromotions_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnSalesHistory_Click(object sender, EventArgs e)
-        {
-            panelMain.Padding = new Padding(0); // Remove container padding
-            panelMain.Controls.Clear();
-
-            UC_SalesHistory sales = new UC_SalesHistory();
-            sales.Dock = DockStyle.Fill;
-            sales.Margin = new Padding(0);
-            sales.Padding = new Padding(0);
-
-            panelMain.Controls.Add(sales);
-        }
-
-        private void btnReports_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnEmployees_Click(object sender, EventArgs e)
-        {
-            panelMain.Padding = new Padding(0); // Remove container padding
-            panelMain.Controls.Clear();
-
-            UC_Employees employee = new UC_Employees();
-            employee.Dock = DockStyle.Fill;
-            employee.Margin = new Padding(0);
-            employee.Padding = new Padding(0);
-
-            panelMain.Controls.Add(employee);
-        }
-
-        private void btnActivityLog_Click(object sender, EventArgs e)
-        {
-            panelMain.Padding = new Padding(0); // Remove container padding
-            panelMain.Controls.Clear();
-
-            UC_ActivityLog activity = new UC_ActivityLog();
-            activity.Dock = DockStyle.Fill;
-            activity.Margin = new Padding(0);
-            activity.Padding = new Padding(0);
-
-            panelMain.Controls.Add(activity);
         }
     }
 }

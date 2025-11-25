@@ -32,7 +32,6 @@
             panelSidebar = new SiticoneNetCoreUI.SiticonePinnablePanel();
             btnActivityLog = new SiticoneNetCoreUI.SiticoneButton();
             btnEmployees = new SiticoneNetCoreUI.SiticoneButton();
-            btnSalesHistory = new SiticoneNetCoreUI.SiticoneButton();
             lblUserRole = new Label();
             lblLoggedInUser = new Label();
             btnProducts = new SiticoneNetCoreUI.SiticoneButton();
@@ -49,7 +48,6 @@
             panelSidebar.BorderRadius = 0;
             panelSidebar.Controls.Add(btnActivityLog);
             panelSidebar.Controls.Add(btnEmployees);
-            panelSidebar.Controls.Add(btnSalesHistory);
             panelSidebar.Controls.Add(lblUserRole);
             panelSidebar.Controls.Add(lblLoggedInUser);
             panelSidebar.Controls.Add(btnProducts);
@@ -125,7 +123,7 @@
             btnActivityLog.IsReadOnly = false;
             btnActivityLog.IsToggleButton = false;
             btnActivityLog.IsToggled = false;
-            btnActivityLog.Location = new Point(13, 476);
+            btnActivityLog.Location = new Point(13, 427);
             btnActivityLog.LongPressDurationMS = 1000;
             btnActivityLog.Name = "btnActivityLog";
             btnActivityLog.NormalFontStyle = FontStyle.Regular;
@@ -202,7 +200,7 @@
             btnEmployees.IsReadOnly = false;
             btnEmployees.IsToggleButton = false;
             btnEmployees.IsToggled = false;
-            btnEmployees.Location = new Point(13, 427);
+            btnEmployees.Location = new Point(13, 378);
             btnEmployees.LongPressDurationMS = 1000;
             btnEmployees.Name = "btnEmployees";
             btnEmployees.NormalFontStyle = FontStyle.Regular;
@@ -230,83 +228,6 @@
             btnEmployees.UseAdvancedRendering = true;
             btnEmployees.UseParticles = false;
             btnEmployees.Click += btnEmployees_Click;
-            // 
-            // btnSalesHistory
-            // 
-            btnSalesHistory.AccessibleDescription = "The default button control that accept input though the mouse, touch and keyboard";
-            btnSalesHistory.AccessibleName = "Sales History";
-            btnSalesHistory.AutoSizeBasedOnText = false;
-            btnSalesHistory.BackColor = Color.Transparent;
-            btnSalesHistory.BadgeBackColor = Color.Black;
-            btnSalesHistory.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
-            btnSalesHistory.BadgeValue = 0;
-            btnSalesHistory.BadgeValueForeColor = Color.White;
-            btnSalesHistory.BorderColor = Color.FromArgb(60, 60, 60);
-            btnSalesHistory.BorderWidth = 2;
-            btnSalesHistory.ButtonBackColor = Color.FromArgb(30, 30, 30);
-            btnSalesHistory.ButtonImage = null;
-            btnSalesHistory.ButtonTextLeftPadding = 0;
-            btnSalesHistory.CanBeep = true;
-            btnSalesHistory.CanGlow = false;
-            btnSalesHistory.CanShake = true;
-            btnSalesHistory.ContextMenuStripEx = null;
-            btnSalesHistory.CornerRadiusBottomLeft = 6;
-            btnSalesHistory.CornerRadiusBottomRight = 6;
-            btnSalesHistory.CornerRadiusTopLeft = 6;
-            btnSalesHistory.CornerRadiusTopRight = 6;
-            btnSalesHistory.CustomCursor = Cursors.Default;
-            btnSalesHistory.DisabledTextColor = Color.FromArgb(150, 150, 150);
-            btnSalesHistory.EnableLongPress = false;
-            btnSalesHistory.EnableRippleEffect = true;
-            btnSalesHistory.EnableShadow = true;
-            btnSalesHistory.EnableTextWrapping = false;
-            btnSalesHistory.Font = new Font("Segoe UI Emoji", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSalesHistory.GlowColor = Color.FromArgb(30, 255, 255, 255);
-            btnSalesHistory.GlowIntensity = 100;
-            btnSalesHistory.GlowRadius = 20F;
-            btnSalesHistory.GradientBackground = false;
-            btnSalesHistory.GradientColor = Color.FromArgb(0, 227, 64);
-            btnSalesHistory.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            btnSalesHistory.HintText = null;
-            btnSalesHistory.HoverBackColor = Color.FromArgb(50, 50, 50);
-            btnSalesHistory.HoverFontStyle = FontStyle.Regular;
-            btnSalesHistory.HoverTextColor = Color.White;
-            btnSalesHistory.HoverTransitionDuration = 250;
-            btnSalesHistory.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSalesHistory.ImagePadding = 5;
-            btnSalesHistory.ImageSize = new Size(16, 16);
-            btnSalesHistory.IsRadial = false;
-            btnSalesHistory.IsReadOnly = false;
-            btnSalesHistory.IsToggleButton = false;
-            btnSalesHistory.IsToggled = false;
-            btnSalesHistory.Location = new Point(13, 378);
-            btnSalesHistory.LongPressDurationMS = 1000;
-            btnSalesHistory.Name = "btnSalesHistory";
-            btnSalesHistory.NormalFontStyle = FontStyle.Regular;
-            btnSalesHistory.ParticleColor = Color.FromArgb(200, 200, 200);
-            btnSalesHistory.ParticleCount = 15;
-            btnSalesHistory.PressAnimationScale = 0.97F;
-            btnSalesHistory.PressedBackColor = Color.FromArgb(40, 40, 40);
-            btnSalesHistory.PressedFontStyle = FontStyle.Regular;
-            btnSalesHistory.PressTransitionDuration = 150;
-            btnSalesHistory.ReadOnlyTextColor = Color.FromArgb(100, 100, 100);
-            btnSalesHistory.RippleColor = Color.FromArgb(100, 100, 100);
-            btnSalesHistory.RippleOpacity = 0.3F;
-            btnSalesHistory.RippleRadiusMultiplier = 0.6F;
-            btnSalesHistory.ShadowBlur = 6;
-            btnSalesHistory.ShadowColor = Color.FromArgb(60, 0, 0, 0);
-            btnSalesHistory.ShadowOffset = new Point(0, 2);
-            btnSalesHistory.ShakeDuration = 500;
-            btnSalesHistory.ShakeIntensity = 5;
-            btnSalesHistory.Size = new Size(180, 43);
-            btnSalesHistory.TabIndex = 9;
-            btnSalesHistory.Text = "Sales History";
-            btnSalesHistory.TextAlign = ContentAlignment.MiddleCenter;
-            btnSalesHistory.TextColor = Color.White;
-            btnSalesHistory.TooltipText = null;
-            btnSalesHistory.UseAdvancedRendering = true;
-            btnSalesHistory.UseParticles = false;
-            btnSalesHistory.Click += btnSalesHistory_Click;
             // 
             // lblUserRole
             // 
@@ -613,7 +534,6 @@
         private SiticoneNetCoreUI.SiticonePinnablePanel panelMain;
         private SiticoneNetCoreUI.SiticoneButton btnOverview;
         private SiticoneNetCoreUI.SiticoneButton btnProducts;
-        private SiticoneNetCoreUI.SiticoneButton btnSalesHistory;
         private Label lblUserRole;
         private Label lblLoggedInUser;
         private SiticoneNetCoreUI.SiticoneButton btnEmployees;

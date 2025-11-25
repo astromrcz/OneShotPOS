@@ -259,8 +259,6 @@ namespace OneShotPOS
             }
         }
 
-
-
         private void LoadInventoryCards(string searchTerm = "")
         {
             flowPanelInventory.Controls.Clear();

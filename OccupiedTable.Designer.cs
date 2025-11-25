@@ -38,7 +38,6 @@
             label4 = new Label();
             btnExtend = new SiticoneNetCoreUI.SiticoneButton();
             label3 = new Label();
-            label1 = new Label();
             lblElapsedTime = new Label();
             pnlCurrentBill = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             ((System.ComponentModel.ISupportInitialize)numMin).BeginInit();
@@ -48,11 +47,14 @@
             // numMin
             // 
             numMin.BorderStyle = BorderStyle.FixedSingle;
+            numMin.Increment = new decimal(new int[] { 30, 0, 0, 0 });
             numMin.Location = new Point(14, 40);
-            numMin.Maximum = new decimal(new int[] { 12, 0, 0, 0 });
+            numMin.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
+            numMin.Minimum = new decimal(new int[] { 30, 0, 0, 0 });
             numMin.Name = "numMin";
             numMin.Size = new Size(331, 23);
             numMin.TabIndex = 15;
+            numMin.Value = new decimal(new int[] { 30, 0, 0, 0 });
             // 
             // label2
             // 
@@ -321,22 +323,11 @@
             label3.TabIndex = 16;
             label3.Text = "minutes";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semilight", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(12, 65);
-            label1.Name = "label1";
-            label1.Size = new Size(96, 20);
-            label1.TabIndex = 17;
-            label1.Text = "Elapsed Time";
-            // 
             // lblElapsedTime
             // 
             lblElapsedTime.AutoSize = true;
             lblElapsedTime.Font = new Font("Segoe UI Semilight", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblElapsedTime.Location = new Point(12, 85);
+            lblElapsedTime.Location = new Point(12, 71);
             lblElapsedTime.Name = "lblElapsedTime";
             lblElapsedTime.Size = new Size(107, 20);
             lblElapsedTime.TabIndex = 18;
@@ -412,7 +403,6 @@
             ClientSize = new Size(454, 562);
             Controls.Add(pnlCurrentBill);
             Controls.Add(lblElapsedTime);
-            Controls.Add(label1);
             Controls.Add(siticoneAdvancedPanel1);
             Controls.Add(btnEndTable);
             Controls.Add(lblAvailability);
@@ -437,7 +427,6 @@
         private Label lblAvailability;
         private Label lblTblNumber;
         private SiticoneNetCoreUI.SiticoneAdvancedPanel siticoneAdvancedPanel1;
-        private Label label1;
         private Label lblElapsedTime;
         private Label label4;
         private SiticoneNetCoreUI.SiticoneButton btnExtend;

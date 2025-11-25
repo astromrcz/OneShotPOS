@@ -293,7 +293,9 @@
             // 
             // numHours
             // 
+            numHours.Increment = new decimal(new int[] { 0, 0, 0, 0 });
             numHours.Location = new Point(12, 169);
+            numHours.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numHours.Name = "numHours";
             numHours.Size = new Size(120, 23);
             numHours.TabIndex = 8;

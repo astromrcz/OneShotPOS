@@ -1,5 +1,4 @@
-﻿using SiticoneNetCoreUI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,31 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace OneShotPOS
 {
-    public partial class AddProduct : Form
+    public partial class ReservedTable : Form
     {
-        public AddProduct()
+        public ReservedTable()
         {
             InitializeComponent();
         }
 
-        
-
-        private void AddProduct_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAddProduct_Click(object sender, EventArgs e)
+        private void btnStartNow_Click(object sender, EventArgs e)
         {
 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }

@@ -10,14 +10,12 @@
 
   <ItemGroup>
     <Compile Remove="AddProduct - Copy.Designer.cs" />
-    <Compile Remove="AddProduct.Designer.cs" />
     <Compile Remove="EditProduct.Designer.cs" />
     <Compile Remove="UC_Products.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="EditItem.Designer.cs" />
-    <EmbeddedResource Include="AddProduct.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,9 +42,7 @@
     <Compile Update="EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ReceptionistDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="ReceptionistDashboard.cs" />
     <Compile Update="UC_Inventory.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -200,8 +200,13 @@ namespace OneShotPOS
                 }
             }
         }
+
+        private void btnReserve_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
-    }
+}
 
 
