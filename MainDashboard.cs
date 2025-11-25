@@ -13,13 +13,18 @@ namespace OneShotPOS
 {
     public partial class MainDashboard : Form
     {
-        public MainDashboard()
+        private readonly string _connectionString;
+        private readonly string _loggedInEmployeeId;
+        public MainDashboard(string userEmail, string userRole, string employeeId, string connectionString)
         {
             InitializeComponent();
             panelMain.BringToFront();
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-
+            _connectionString = connectionString;
+            _loggedInEmployeeId = employeeId;
+            lblLoggedInUser.Text = userEmail;
+            lblUserRole.Text = userRole;
         }
       
         private void MainDashboard_Load(object sender, EventArgs e)

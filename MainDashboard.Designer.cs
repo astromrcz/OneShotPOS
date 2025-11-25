@@ -33,8 +33,8 @@
             btnActivityLog = new SiticoneNetCoreUI.SiticoneButton();
             btnEmployees = new SiticoneNetCoreUI.SiticoneButton();
             btnSalesHistory = new SiticoneNetCoreUI.SiticoneButton();
-            label3 = new Label();
-            label2 = new Label();
+            lblUserRole = new Label();
+            lblLoggedInUser = new Label();
             btnProducts = new SiticoneNetCoreUI.SiticoneButton();
             btnOverview = new SiticoneNetCoreUI.SiticoneButton();
             btnLogout = new SiticoneNetCoreUI.SiticoneButton();
@@ -50,8 +50,8 @@
             panelSidebar.Controls.Add(btnActivityLog);
             panelSidebar.Controls.Add(btnEmployees);
             panelSidebar.Controls.Add(btnSalesHistory);
-            panelSidebar.Controls.Add(label3);
-            panelSidebar.Controls.Add(label2);
+            panelSidebar.Controls.Add(lblUserRole);
+            panelSidebar.Controls.Add(lblLoggedInUser);
             panelSidebar.Controls.Add(btnProducts);
             panelSidebar.Controls.Add(btnOverview);
             panelSidebar.Controls.Add(btnLogout);
@@ -308,25 +308,25 @@
             btnSalesHistory.UseParticles = false;
             btnSalesHistory.Click += btnSalesHistory_Click;
             // 
-            // label3
+            // lblUserRole
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(33, 180);
-            label3.Name = "label3";
-            label3.Size = new Size(94, 21);
-            label3.TabIndex = 8;
-            label3.Text = "lblUserRole";
+            lblUserRole.AutoSize = true;
+            lblUserRole.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUserRole.Location = new Point(33, 180);
+            lblUserRole.Name = "lblUserRole";
+            lblUserRole.Size = new Size(94, 21);
+            lblUserRole.TabIndex = 8;
+            lblUserRole.Text = "lblUserRole";
             // 
-            // label2
+            // lblLoggedInUser
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(33, 159);
-            label2.Name = "label2";
-            label2.Size = new Size(132, 21);
-            label2.TabIndex = 7;
-            label2.Text = "lblLoggedInUser";
+            lblLoggedInUser.AutoSize = true;
+            lblLoggedInUser.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLoggedInUser.Location = new Point(33, 159);
+            lblLoggedInUser.Name = "lblLoggedInUser";
+            lblLoggedInUser.Size = new Size(132, 21);
+            lblLoggedInUser.TabIndex = 7;
+            lblLoggedInUser.Text = "lblLoggedInUser";
             // 
             // btnProducts
             // 
@@ -614,8 +614,8 @@
         private SiticoneNetCoreUI.SiticoneButton btnOverview;
         private SiticoneNetCoreUI.SiticoneButton btnProducts;
         private SiticoneNetCoreUI.SiticoneButton btnSalesHistory;
-        private Label label3;
-        private Label label2;
+        private Label lblUserRole;
+        private Label lblLoggedInUser;
         private SiticoneNetCoreUI.SiticoneButton btnEmployees;
         private SiticoneNetCoreUI.SiticoneButton btnActivityLog;
     }

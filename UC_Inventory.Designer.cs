@@ -39,10 +39,10 @@
             drpProductCategory = new SiticoneNetCoreUI.SiticoneDropdown();
             txtSearchProduct = new SiticoneNetCoreUI.SiticoneTextBox();
             pnlProducts = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            dgvProd = new DataGridView();
+            flowPanelProducts = new SiticoneNetCoreUI.SiticoneFlowPanel();
             lblProducts = new Label();
             pnlInventory = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
-            dgvInv = new DataGridView();
+            flowPanelInventory = new SiticoneNetCoreUI.SiticoneFlowPanel();
             drpInventoryCategory = new SiticoneNetCoreUI.SiticoneDropdown();
             txtSearchInventory = new SiticoneNetCoreUI.SiticoneTextBox();
             lblInventory = new Label();
@@ -54,9 +54,7 @@
             btnRefresh = new SiticoneNetCoreUI.SiticoneButton();
             pnlLowProductsStockAlert.SuspendLayout();
             pnlProducts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvProd).BeginInit();
             pnlInventory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvInv).BeginInit();
             pnlLowInventoryStockAlert.SuspendLayout();
             SuspendLayout();
             // 
@@ -345,6 +343,7 @@
             txtSearchProduct.TextPadding = new Padding(16, 0, 6, 0);
             txtSearchProduct.ValidationErrorMessage = "Invalid input.";
             txtSearchProduct.ValidationFunction = null;
+            txtSearchProduct.TextChanged += txtSearchProduct_TextChanged;
             // 
             // pnlProducts
             // 
@@ -366,7 +365,7 @@
             pnlProducts.BottomLeftRadius = 5;
             pnlProducts.BottomRightRadius = 5;
             pnlProducts.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
-            pnlProducts.Controls.Add(dgvProd);
+            pnlProducts.Controls.Add(flowPanelProducts);
             pnlProducts.Controls.Add(drpProductCategory);
             pnlProducts.Controls.Add(lblProducts);
             pnlProducts.Controls.Add(txtSearchProduct);
@@ -412,19 +411,25 @@
             pnlProducts.TopLeftRadius = 5;
             pnlProducts.TopRightRadius = 5;
             // 
-            // dgvProd
+            // flowPanelProducts
             // 
-            dgvProd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvProd.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvProd.BackgroundColor = Color.White;
-            dgvProd.BorderStyle = BorderStyle.Fixed3D;
-            dgvProd.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
-            dgvProd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProd.GridColor = Color.White;
-            dgvProd.Location = new Point(0, 113);
-            dgvProd.Name = "dgvProd";
-            dgvProd.Size = new Size(784, 612);
-            dgvProd.TabIndex = 2;
+            flowPanelProducts.EnableAnimations = true;
+            flowPanelProducts.EnableAutoScale = true;
+            flowPanelProducts.EnableDragDrop = false;
+            flowPanelProducts.EnableLayoutCaching = true;
+            flowPanelProducts.EnableSmoothScrolling = true;
+            flowPanelProducts.EnableSnapToGrid = false;
+            flowPanelProducts.EnableTransparency = false;
+            flowPanelProducts.EnableVirtualization = false;
+            flowPanelProducts.EnableWrapping = true;
+            flowPanelProducts.GridSize = 8;
+            flowPanelProducts.IsTrackingTheme = false;
+            flowPanelProducts.ItemSpacing = 5;
+            flowPanelProducts.Location = new Point(14, 115);
+            flowPanelProducts.Name = "flowPanelProducts";
+            flowPanelProducts.Size = new Size(757, 597);
+            flowPanelProducts.TabIndex = 2;
+            flowPanelProducts.VirtualizationThreshold = 100;
             // 
             // lblProducts
             // 
@@ -456,7 +461,7 @@
             pnlInventory.BottomLeftRadius = 5;
             pnlInventory.BottomRightRadius = 5;
             pnlInventory.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
-            pnlInventory.Controls.Add(dgvInv);
+            pnlInventory.Controls.Add(flowPanelInventory);
             pnlInventory.Controls.Add(drpInventoryCategory);
             pnlInventory.Controls.Add(txtSearchInventory);
             pnlInventory.Controls.Add(lblInventory);
@@ -503,19 +508,25 @@
             pnlInventory.TopRightRadius = 5;
             pnlInventory.Paint += pnlInventory_Paint;
             // 
-            // dgvInv
+            // flowPanelInventory
             // 
-            dgvInv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvInv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvInv.BackgroundColor = Color.White;
-            dgvInv.BorderStyle = BorderStyle.Fixed3D;
-            dgvInv.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
-            dgvInv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInv.GridColor = Color.White;
-            dgvInv.Location = new Point(0, 113);
-            dgvInv.Name = "dgvInv";
-            dgvInv.Size = new Size(784, 612);
-            dgvInv.TabIndex = 4;
+            flowPanelInventory.EnableAnimations = true;
+            flowPanelInventory.EnableAutoScale = true;
+            flowPanelInventory.EnableDragDrop = false;
+            flowPanelInventory.EnableLayoutCaching = true;
+            flowPanelInventory.EnableSmoothScrolling = true;
+            flowPanelInventory.EnableSnapToGrid = false;
+            flowPanelInventory.EnableTransparency = false;
+            flowPanelInventory.EnableVirtualization = false;
+            flowPanelInventory.EnableWrapping = true;
+            flowPanelInventory.GridSize = 8;
+            flowPanelInventory.IsTrackingTheme = false;
+            flowPanelInventory.ItemSpacing = 5;
+            flowPanelInventory.Location = new Point(13, 115);
+            flowPanelInventory.Name = "flowPanelInventory";
+            flowPanelInventory.Size = new Size(758, 597);
+            flowPanelInventory.TabIndex = 4;
+            flowPanelInventory.VirtualizationThreshold = 100;
             // 
             // drpInventoryCategory
             // 
@@ -818,10 +829,8 @@
             pnlLowProductsStockAlert.PerformLayout();
             pnlProducts.ResumeLayout(false);
             pnlProducts.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvProd).EndInit();
             pnlInventory.ResumeLayout(false);
             pnlInventory.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvInv).EndInit();
             pnlLowInventoryStockAlert.ResumeLayout(false);
             pnlLowInventoryStockAlert.PerformLayout();
             ResumeLayout(false);
@@ -853,7 +862,7 @@
         private Label lblLowStkPrd;
         private Label lblPrdRq;
         private Label lblLowStockItem;
-        private DataGridView dgvProd;
-        private DataGridView dgvInv;
+        private SiticoneNetCoreUI.SiticoneFlowPanel flowPanelProducts;
+        private SiticoneNetCoreUI.SiticoneFlowPanel flowPanelInventory;
     }
 }

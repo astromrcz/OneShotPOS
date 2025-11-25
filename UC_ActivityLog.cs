@@ -37,22 +37,21 @@ namespace OneShotPOS
                 Dock = DockStyle.Fill,
                 FlowDirection = FlowDirection.TopDown,
                 WrapContents = false,
-                AutoScroll = true, // Enables vertical scrolling
+                AutoScroll = true,
                 Padding = new Padding(0)
             };
             panelActivityTimeline.Controls.Add(flowPanel);
 
-            // Query for the last 5-10 activities
+            // Query to fetch ALL activities (removed LIMIT 8)
             string sql = @"
-        SELECT 
-            T1.Timestamp, 
-            T1.Description, 
-            T1.ActivityType,
-            T2.Name 
-        FROM TBL_ACTIVITY_LOG T1
-        LEFT JOIN TBL_EMPLOYEES T2 ON T1.EmployeeID = T2.EmployeeID
-        ORDER BY T1.Timestamp DESC
-        LIMIT 8;";
+    SELECT 
+        T1.Timestamp, 
+        T1.Description, 
+        T1.ActivityType,
+        T2.Name 
+    FROM TBL_ACTIVITY_LOG T1
+    LEFT JOIN TBL_EMPLOYEES T2 ON T1.EmployeeID = T2.EmployeeID
+    ORDER BY T1.Timestamp DESC;";
 
             try
             {
@@ -63,8 +62,9 @@ namespace OneShotPOS
                     {
                         using (SQLiteDataReader reader = command.ExecuteReader())
                         {
-                            // Calculate the width for the rows to fit the FlowLayoutPanel's ClientSize
-                            int rowWidth = flowPanel.ClientSize.Width - 5; // Adjust for internal padding/margin
+                            // 🌟 FIX: Use flowPanel.Width for the size of the control itself. 
+                            // This lets the FlowLayoutPanel handle the scrollbar offset.
+                            int rowWidth = flowPanel.Width;
 
                             while (reader.Read())
                             {
@@ -74,6 +74,7 @@ namespace OneShotPOS
                                 string employeeName = reader["Name"] is DBNull ? "System" : reader["Name"].ToString();
 
                                 // 1. Create the Activity Row Panel
+                                // Pass the full width of the FlowLayoutPanel
                                 Panel activityRow = CreateActivityRow(timestamp, description, activityType, employeeName, rowWidth);
                                 flowPanel.Controls.Add(activityRow);
 
@@ -82,8 +83,8 @@ namespace OneShotPOS
                                 {
                                     Height = 1,
                                     BackColor = Color.LightGray,
-                                    Width = rowWidth,
-                                    Margin = new Padding(0, 0, 0, 0) // No margin
+                                    Width = rowWidth, // Use the same width for the separator
+                                    Margin = new Padding(0, 0, 0, 0)
                                 };
                                 flowPanel.Controls.Add(separator);
                             }
@@ -93,10 +94,11 @@ namespace OneShotPOS
             }
             catch (Exception ex)
             {
-                // Handle database error
+                // Handle database error gracefully
+                MessageBox.Show("Error loading activity log: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-            private Panel CreateActivityRow(string timestamp, string description, string activityType, string employeeName, int containerWidth)
+        private Panel CreateActivityRow(string timestamp, string description, string activityType, string employeeName, int containerWidth)
         {
             // Height remains 70 for visual consistency; Width is now containerWidth
             Panel row = new Panel { Height = 70, Width = containerWidth, Padding = new Padding(5) };
@@ -129,9 +131,31 @@ namespace OneShotPOS
                 ForeColor = Color.DarkSlateGray
             };
 
-            // 3. Employee and Time Footer
-            TimeSpan elapsed = DateTime.Now - DateTime.Parse(timestamp);
-            string timeAgo = GetTimeAgo(elapsed);
+            // 3. Employee and Time Footer (Time Zone FIX is here)
+            DateTime loggedTime;
+            TimeSpan elapsed = TimeSpan.Zero;
+            string timeAgo = "N/A";
+
+            if (DateTime.TryParse(timestamp, out loggedTime))
+            {
+                // 1. Explicitly treat the database time as UTC (Crucial step for SQLite time zone fix)
+                // If the loggedTime is not marked as Unspecified, this converts it correctly.
+                DateTime loggedTimeUtc = DateTime.SpecifyKind(loggedTime, DateTimeKind.Utc);
+
+                // 2. Convert it from UTC to the local time zone (e.g., UTC+8 for Philippines)
+                DateTime loggedTimeLocal = loggedTimeUtc.ToLocalTime();
+
+                // 3. Calculate the difference between now (local) and the logged time (local)
+                elapsed = DateTime.Now - loggedTimeLocal;
+
+                // Safety check: If the clock is slightly off or a second passes, elapsed might be negative
+                if (elapsed.TotalSeconds < 0)
+                {
+                    elapsed = TimeSpan.Zero;
+                }
+
+                timeAgo = GetTimeAgo(elapsed);
+            }
 
             Label lblFooter = new Label
             {
@@ -142,7 +166,7 @@ namespace OneShotPOS
                 ForeColor = Color.Gray
             };
 
-            // 4. Value Label (e.g., +48 bottles, ₱1,240.00)
+            // 4. Value Label (e.g., ₱1,240.00)
             string valueText = GetActivityValue(description);
             Label lblValue = new Label
             {
@@ -160,6 +184,9 @@ namespace OneShotPOS
 
             return row;
         }
+
+        // NOTE: The helper methods (GetActivityHeader, GetActivityColor, GetTimeAgo, GetActivityValue) 
+        // remain the same as they do not require modification for this specific time zone fix.
         private string GetActivityHeader(string activityType, string description)
         {
             // Logic extracted from previous response for cleaner output
@@ -200,9 +227,11 @@ namespace OneShotPOS
             // Extracts value based on content matching screenshot formats
             if (description.Contains("completed for P"))
             {
-                // Sale Completed: "Transaction TXN-2024-1115-003 completed for P935.00" (Close enough to ₱1,240.00 recent activity example)
-                // This is a placeholder since the screenshot data doesn't perfectly match the "Recent Activity" values.
-                return "₱" + description.Split(new[] { " for P" }, StringSplitOptions.None)[1].TrimEnd('.', '0');
+                string[] parts = description.Split(new[] { " for P" }, StringSplitOptions.None);
+                if (parts.Length > 1) // Check if the array has an element at index 1
+                {
+                    return "₱" + parts[1].TrimEnd('.', '0');
+                }
             }
             if (description.Contains("stock updated from"))
             {

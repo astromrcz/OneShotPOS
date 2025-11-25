@@ -30,15 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceptionistDashboard));
             panelSidebar = new SiticoneNetCoreUI.SiticonePinnablePanel();
-            label3 = new Label();
-            label2 = new Label();
-            siticonePanel1 = new SiticoneNetCoreUI.SiticonePanel();
-            label1 = new Label();
-            siticoneLabel1 = new SiticoneNetCoreUI.SiticoneLabel();
+            lblUserRole = new Label();
+            lblLoggedInUser = new Label();
             btnLogout = new SiticoneNetCoreUI.SiticoneButton();
             panelMain = new SiticoneNetCoreUI.SiticonePinnablePanel();
             panelSidebar.SuspendLayout();
-            siticonePanel1.SuspendLayout();
             SuspendLayout();
             // 
             // panelSidebar
@@ -46,9 +42,8 @@
             panelSidebar.BackColor = Color.Transparent;
             panelSidebar.BorderColor = Color.DarkGray;
             panelSidebar.BorderRadius = 0;
-            panelSidebar.Controls.Add(label3);
-            panelSidebar.Controls.Add(label2);
-            panelSidebar.Controls.Add(siticonePanel1);
+            panelSidebar.Controls.Add(lblUserRole);
+            panelSidebar.Controls.Add(lblLoggedInUser);
             panelSidebar.Controls.Add(btnLogout);
             panelSidebar.Dock = DockStyle.Left;
             panelSidebar.GradientBorderEndColor = Color.Gray;
@@ -72,94 +67,25 @@
             panelSidebar.Size = new Size(204, 1041);
             panelSidebar.TabIndex = 0;
             // 
-            // label3
+            // lblUserRole
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(33, 180);
-            label3.Name = "label3";
-            label3.Size = new Size(94, 21);
-            label3.TabIndex = 8;
-            label3.Text = "lblUserRole";
+            lblUserRole.AutoSize = true;
+            lblUserRole.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUserRole.Location = new Point(33, 180);
+            lblUserRole.Name = "lblUserRole";
+            lblUserRole.Size = new Size(94, 21);
+            lblUserRole.TabIndex = 8;
+            lblUserRole.Text = "lblUserRole";
             // 
-            // label2
+            // lblLoggedInUser
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(33, 159);
-            label2.Name = "label2";
-            label2.Size = new Size(132, 21);
-            label2.TabIndex = 7;
-            label2.Text = "lblLoggedInUser";
-            // 
-            // siticonePanel1
-            // 
-            siticonePanel1.AcrylicTintColor = Color.FromArgb(128, 255, 255, 255);
-            siticonePanel1.BackColor = Color.Transparent;
-            siticonePanel1.BorderAlignment = System.Drawing.Drawing2D.PenAlignment.Center;
-            siticonePanel1.BorderDashPattern = null;
-            siticonePanel1.BorderGradientEndColor = Color.Purple;
-            siticonePanel1.BorderGradientStartColor = Color.Blue;
-            siticonePanel1.BorderThickness = 2F;
-            siticonePanel1.Controls.Add(label1);
-            siticonePanel1.Controls.Add(siticoneLabel1);
-            siticonePanel1.CornerRadiusBottomLeft = 0F;
-            siticonePanel1.CornerRadiusBottomRight = 0F;
-            siticonePanel1.CornerRadiusTopLeft = 0F;
-            siticonePanel1.CornerRadiusTopRight = 0F;
-            siticonePanel1.Dock = DockStyle.Top;
-            siticonePanel1.EnableAcrylicEffect = false;
-            siticonePanel1.EnableMicaEffect = false;
-            siticonePanel1.EnableRippleEffect = false;
-            siticonePanel1.FillColor = Color.White;
-            siticonePanel1.GradientColors = new Color[]
-    {
-    Color.White,
-    Color.LightGray,
-    Color.Gray
-    };
-            siticonePanel1.GradientPositions = new float[]
-    {
-    0F,
-    0.5F,
-    1F
-    };
-            siticonePanel1.Location = new Point(5, 5);
-            siticonePanel1.Name = "siticonePanel1";
-            siticonePanel1.PatternStyle = System.Drawing.Drawing2D.HatchStyle.Max;
-            siticonePanel1.RippleAlpha = 50;
-            siticonePanel1.RippleAlphaDecrement = 3;
-            siticonePanel1.RippleColor = Color.FromArgb(50, 255, 255, 255);
-            siticonePanel1.RippleMaxSize = 600F;
-            siticonePanel1.RippleSpeed = 15F;
-            siticonePanel1.ShowBorder = true;
-            siticonePanel1.Size = new Size(194, 100);
-            siticonePanel1.TabIndex = 3;
-            siticonePanel1.TabStop = true;
-            siticonePanel1.TrackSystemTheme = false;
-            siticonePanel1.UseBorderGradient = false;
-            siticonePanel1.UseMultiGradient = false;
-            siticonePanel1.UsePatternTexture = false;
-            siticonePanel1.UseRadialGradient = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(78, 43);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 15);
-            label1.TabIndex = 1;
-            // 
-            // siticoneLabel1
-            // 
-            siticoneLabel1.BackColor = Color.Transparent;
-            siticoneLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            siticoneLabel1.Location = new Point(78, 20);
-            siticoneLabel1.Name = "siticoneLabel1";
-            siticoneLabel1.Size = new Size(82, 23);
-            siticoneLabel1.TabIndex = 0;
-            siticoneLabel1.Text = "One Shot";
+            lblLoggedInUser.AutoSize = true;
+            lblLoggedInUser.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLoggedInUser.Location = new Point(33, 159);
+            lblLoggedInUser.Name = "lblLoggedInUser";
+            lblLoggedInUser.Size = new Size(132, 21);
+            lblLoggedInUser.TabIndex = 7;
+            lblLoggedInUser.Text = "lblLoggedInUser";
             // 
             // btnLogout
             // 
@@ -282,8 +208,6 @@
             Load += MainDashboard_Load;
             panelSidebar.ResumeLayout(false);
             panelSidebar.PerformLayout();
-            siticonePanel1.ResumeLayout(false);
-            siticonePanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -291,12 +215,9 @@
 
         private SiticoneNetCoreUI.SiticonePinnablePanel panelSidebar;
         private SiticoneNetCoreUI.SiticoneButton btnLogout;
-        private SiticoneNetCoreUI.SiticonePanel siticonePanel1;
-        private SiticoneNetCoreUI.SiticoneLabel siticoneLabel1;
         private SiticoneNetCoreUI.SiticonePinnablePanel panelMain;
-        private Label label1;
-        private Label label3;
-        private Label label2;
+        private Label lblUserRole;
+        private Label lblLoggedInUser;
     }
 
 }

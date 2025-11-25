@@ -258,6 +258,7 @@
             siticoneCloseButton1.TabIndex = 6;
             siticoneCloseButton1.Text = "siticoneCloseButton1";
             siticoneCloseButton1.TooltipText = "Close button";
+            siticoneCloseButton1.Click += siticoneCloseButton1_Click;
             // 
             // siticoneLabel2
             // 
