@@ -138,17 +138,14 @@ namespace OneShotPOS
 
             if (DateTime.TryParse(timestamp, out loggedTime))
             {
-                // 1. Explicitly treat the database time as UTC (Crucial step for SQLite time zone fix)
-                // If the loggedTime is not marked as Unspecified, this converts it correctly.
+               
                 DateTime loggedTimeUtc = DateTime.SpecifyKind(loggedTime, DateTimeKind.Utc);
 
-                // 2. Convert it from UTC to the local time zone (e.g., UTC+8 for Philippines)
                 DateTime loggedTimeLocal = loggedTimeUtc.ToLocalTime();
 
-                // 3. Calculate the difference between now (local) and the logged time (local)
                 elapsed = DateTime.Now - loggedTimeLocal;
 
-                // Safety check: If the clock is slightly off or a second passes, elapsed might be negative
+               
                 if (elapsed.TotalSeconds < 0)
                 {
                     elapsed = TimeSpan.Zero;
@@ -166,12 +163,12 @@ namespace OneShotPOS
                 ForeColor = Color.Gray
             };
 
-            // 4. Value Label (e.g., ₱1,240.00)
+           
             string valueText = GetActivityValue(description);
             Label lblValue = new Label
             {
                 Text = valueText,
-                Location = new Point(containerWidth - valueWidth - 10, 0), // Positioned correctly on the far right
+                Location = new Point(containerWidth - valueWidth - 10, 0), 
                 Size = new Size(valueWidth, 30),
                 TextAlign = ContentAlignment.MiddleRight,
                 Font = new Font("Segoe UI", 9F, FontStyle.Bold),
@@ -185,11 +182,8 @@ namespace OneShotPOS
             return row;
         }
 
-        // NOTE: The helper methods (GetActivityHeader, GetActivityColor, GetTimeAgo, GetActivityValue) 
-        // remain the same as they do not require modification for this specific time zone fix.
         private string GetActivityHeader(string activityType, string description)
         {
-            // Logic extracted from previous response for cleaner output
             if (activityType == "Sale")
             {
                 return $"Sale Completed: {description.Split(new[] { " completed for " }, StringSplitOptions.None)[0]}";
@@ -198,8 +192,38 @@ namespace OneShotPOS
             {
                 return $"Inventory updated: {description.Split(new[] { " stock updated from " }, StringSplitOptions.None)[0]}";
             }
+            else if (activityType == "System" && description.Contains("Deleted"))
+            {
+                // Try to extract what was deleted
+                if (description.Contains("queue group"))
+                {
+                    return $"Queue Group Deleted: {ExtractNameFrom(description, "queue group")}";
+                }
+                else if (description.Contains("table"))
+                {
+                    return $"Table Deleted: {ExtractNameFrom(description, "table")}";
+                }
+                else if (description.Contains("product"))
+                {
+                    return $"Product Deleted: {ExtractNameFrom(description, "product")}";
+                }
+                else
+                {
+                    return $"Deleted: {description}";
+                }
+            }
+
             return description;
         }
+        private string ExtractNameFrom(string text, string keyword)
+        {
+            int start = text.IndexOf(keyword);
+            if (start == -1) return keyword;
+
+            string[] parts = text.Substring(start).Split(new[] { '\'', '"' }, StringSplitOptions.RemoveEmptyEntries);
+            return parts.Length > 1 ? parts[1] : keyword;
+        }
+
 
         private Color GetActivityColor(string type)
         {

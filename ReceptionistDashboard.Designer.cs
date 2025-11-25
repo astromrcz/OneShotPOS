@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceptionistDashboard));
             panelSidebar = new SiticoneNetCoreUI.SiticonePinnablePanel();
-            btnQuickSale = new SiticoneNetCoreUI.SiticoneButton();
             btnQueue = new SiticoneNetCoreUI.SiticoneButton();
             btnTables = new SiticoneNetCoreUI.SiticoneButton();
             lblUserRole = new Label();
@@ -45,7 +44,6 @@
             panelSidebar.BackColor = Color.Transparent;
             panelSidebar.BorderColor = Color.DarkGray;
             panelSidebar.BorderRadius = 0;
-            panelSidebar.Controls.Add(btnQuickSale);
             panelSidebar.Controls.Add(btnQueue);
             panelSidebar.Controls.Add(btnTables);
             panelSidebar.Controls.Add(lblUserRole);
@@ -72,82 +70,6 @@
             panelSidebar.ShadowColor = Color.FromArgb(100, 0, 0, 0);
             panelSidebar.Size = new Size(204, 1041);
             panelSidebar.TabIndex = 0;
-            // 
-            // btnQuickSale
-            // 
-            btnQuickSale.AccessibleDescription = "The default button control that accept input though the mouse, touch and keyboard";
-            btnQuickSale.AccessibleName = "Quick Sale";
-            btnQuickSale.AutoSizeBasedOnText = false;
-            btnQuickSale.BackColor = Color.Transparent;
-            btnQuickSale.BadgeBackColor = Color.Black;
-            btnQuickSale.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
-            btnQuickSale.BadgeValue = 0;
-            btnQuickSale.BadgeValueForeColor = Color.White;
-            btnQuickSale.BorderColor = Color.FromArgb(213, 216, 220);
-            btnQuickSale.BorderWidth = 1;
-            btnQuickSale.ButtonBackColor = Color.FromArgb(245, 247, 250);
-            btnQuickSale.ButtonImage = null;
-            btnQuickSale.ButtonTextLeftPadding = 0;
-            btnQuickSale.CanBeep = true;
-            btnQuickSale.CanGlow = false;
-            btnQuickSale.CanShake = true;
-            btnQuickSale.ContextMenuStripEx = null;
-            btnQuickSale.CornerRadiusBottomLeft = 6;
-            btnQuickSale.CornerRadiusBottomRight = 6;
-            btnQuickSale.CornerRadiusTopLeft = 6;
-            btnQuickSale.CornerRadiusTopRight = 6;
-            btnQuickSale.CustomCursor = Cursors.Default;
-            btnQuickSale.DisabledTextColor = Color.FromArgb(150, 150, 150);
-            btnQuickSale.EnableLongPress = false;
-            btnQuickSale.EnableRippleEffect = true;
-            btnQuickSale.EnableShadow = false;
-            btnQuickSale.EnableTextWrapping = false;
-            btnQuickSale.Font = new Font("Segoe UI Semibold", 10.2F);
-            btnQuickSale.GlowColor = Color.FromArgb(100, 255, 255, 255);
-            btnQuickSale.GlowIntensity = 100;
-            btnQuickSale.GlowRadius = 20F;
-            btnQuickSale.GradientBackground = false;
-            btnQuickSale.GradientColor = Color.FromArgb(0, 227, 64);
-            btnQuickSale.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            btnQuickSale.HintText = null;
-            btnQuickSale.HoverBackColor = Color.FromArgb(240, 240, 240);
-            btnQuickSale.HoverFontStyle = FontStyle.Regular;
-            btnQuickSale.HoverTextColor = Color.FromArgb(0, 0, 0);
-            btnQuickSale.HoverTransitionDuration = 250;
-            btnQuickSale.ImageAlign = ContentAlignment.MiddleLeft;
-            btnQuickSale.ImagePadding = 5;
-            btnQuickSale.ImageSize = new Size(16, 16);
-            btnQuickSale.IsRadial = false;
-            btnQuickSale.IsReadOnly = false;
-            btnQuickSale.IsToggleButton = false;
-            btnQuickSale.IsToggled = false;
-            btnQuickSale.Location = new Point(8, 398);
-            btnQuickSale.LongPressDurationMS = 1000;
-            btnQuickSale.Name = "btnQuickSale";
-            btnQuickSale.NormalFontStyle = FontStyle.Regular;
-            btnQuickSale.ParticleColor = Color.FromArgb(200, 200, 200);
-            btnQuickSale.ParticleCount = 15;
-            btnQuickSale.PressAnimationScale = 0.97F;
-            btnQuickSale.PressedBackColor = Color.FromArgb(225, 227, 230);
-            btnQuickSale.PressedFontStyle = FontStyle.Regular;
-            btnQuickSale.PressTransitionDuration = 150;
-            btnQuickSale.ReadOnlyTextColor = Color.FromArgb(100, 100, 100);
-            btnQuickSale.RippleColor = Color.FromArgb(0, 0, 0);
-            btnQuickSale.RippleRadiusMultiplier = 0.6F;
-            btnQuickSale.ShadowBlur = 5;
-            btnQuickSale.ShadowColor = Color.FromArgb(30, 0, 0, 0);
-            btnQuickSale.ShadowOffset = new Point(0, 2);
-            btnQuickSale.ShakeDuration = 500;
-            btnQuickSale.ShakeIntensity = 5;
-            btnQuickSale.Size = new Size(190, 50);
-            btnQuickSale.TabIndex = 11;
-            btnQuickSale.Text = "Quick Sale";
-            btnQuickSale.TextAlign = ContentAlignment.MiddleCenter;
-            btnQuickSale.TextColor = Color.FromArgb(0, 0, 0);
-            btnQuickSale.TooltipText = null;
-            btnQuickSale.UseAdvancedRendering = true;
-            btnQuickSale.UseParticles = false;
-            btnQuickSale.Click += btnQuickSale_Click;
             // 
             // btnQueue
             // 
@@ -452,7 +374,6 @@
         private SiticoneNetCoreUI.SiticonePinnablePanel panelMain;
         private Label lblUserRole;
         private Label lblLoggedInUser;
-        private SiticoneNetCoreUI.SiticoneButton btnQuickSale;
         private SiticoneNetCoreUI.SiticoneButton btnQueue;
         private SiticoneNetCoreUI.SiticoneButton btnTables;
     }

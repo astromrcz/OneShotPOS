@@ -24,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>

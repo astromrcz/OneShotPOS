@@ -41,11 +41,12 @@
             label4 = new Label();
             siticoneAdvancedPanel1 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             label6 = new Label();
-            lvlRevenue = new Label();
+            lblActiveEmployees = new Label();
             label3 = new Label();
             siticoneAdvancedPanel2 = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             txtSearchEmployee = new SiticoneNetCoreUI.SiticoneTextBox();
             btnAddEmployee = new SiticoneNetCoreUI.SiticoneButton();
+            pnlEmployees = new SiticoneNetCoreUI.SiticoneFlowPanel();
             siticoneAdvancedPanel4.SuspendLayout();
             siticoneAdvancedPanel3.SuspendLayout();
             siticoneAdvancedPanel1.SuspendLayout();
@@ -248,9 +249,9 @@
             lblActiveAdmins.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblActiveAdmins.Location = new Point(25, 84);
             lblActiveAdmins.Name = "lblActiveAdmins";
-            lblActiveAdmins.Size = new Size(192, 37);
+            lblActiveAdmins.Size = new Size(208, 37);
             lblActiveAdmins.TabIndex = 2;
-            lblActiveAdmins.Text = "lblTransactions";
+            lblActiveAdmins.Text = "lblActiveAdmins";
             // 
             // label4
             // 
@@ -283,7 +284,7 @@
             siticoneAdvancedPanel1.BottomRightRadius = 5;
             siticoneAdvancedPanel1.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
             siticoneAdvancedPanel1.Controls.Add(label6);
-            siticoneAdvancedPanel1.Controls.Add(lvlRevenue);
+            siticoneAdvancedPanel1.Controls.Add(lblActiveEmployees);
             siticoneAdvancedPanel1.Controls.Add(label3);
             siticoneAdvancedPanel1.CornerPadding = new Padding(5);
             siticoneAdvancedPanel1.DisabledBackColor = Color.Empty;
@@ -337,15 +338,15 @@
             label6.TabIndex = 2;
             label6.Text = "Active Staff Members";
             // 
-            // lvlRevenue
+            // lblActiveEmployees
             // 
-            lvlRevenue.AutoSize = true;
-            lvlRevenue.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lvlRevenue.Location = new Point(14, 84);
-            lvlRevenue.Name = "lvlRevenue";
-            lvlRevenue.Size = new Size(247, 37);
-            lvlRevenue.TabIndex = 1;
-            lvlRevenue.Text = "lblActiveEmployees";
+            lblActiveEmployees.AutoSize = true;
+            lblActiveEmployees.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblActiveEmployees.Location = new Point(14, 84);
+            lblActiveEmployees.Name = "lblActiveEmployees";
+            lblActiveEmployees.Size = new Size(247, 37);
+            lblActiveEmployees.TabIndex = 1;
+            lblActiveEmployees.Text = "lblActiveEmployees";
             // 
             // label3
             // 
@@ -554,10 +555,31 @@
             btnAddEmployee.UseParticles = false;
             btnAddEmployee.Click += btnAddEmployee_Click;
             // 
+            // pnlEmployees
+            // 
+            pnlEmployees.EnableAnimations = true;
+            pnlEmployees.EnableAutoScale = true;
+            pnlEmployees.EnableDragDrop = false;
+            pnlEmployees.EnableLayoutCaching = true;
+            pnlEmployees.EnableSmoothScrolling = true;
+            pnlEmployees.EnableSnapToGrid = false;
+            pnlEmployees.EnableTransparency = false;
+            pnlEmployees.EnableVirtualization = false;
+            pnlEmployees.EnableWrapping = true;
+            pnlEmployees.GridSize = 8;
+            pnlEmployees.IsTrackingTheme = false;
+            pnlEmployees.ItemSpacing = 5;
+            pnlEmployees.Location = new Point(44, 484);
+            pnlEmployees.Name = "pnlEmployees";
+            pnlEmployees.Size = new Size(1630, 529);
+            pnlEmployees.TabIndex = 18;
+            pnlEmployees.VirtualizationThreshold = 100;
+            // 
             // UC_Employees
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(pnlEmployees);
             Controls.Add(btnAddEmployee);
             Controls.Add(siticoneAdvancedPanel2);
             Controls.Add(siticoneAdvancedPanel4);
@@ -567,6 +589,7 @@
             Controls.Add(label1);
             Name = "UC_Employees";
             Size = new Size(1700, 1041);
+            Load += UC_Employees_Load;
             siticoneAdvancedPanel4.ResumeLayout(false);
             siticoneAdvancedPanel4.PerformLayout();
             siticoneAdvancedPanel3.ResumeLayout(false);
@@ -589,7 +612,7 @@
         private Label lblActiveAdmins;
         private Label label4;
         private SiticoneNetCoreUI.SiticoneAdvancedPanel siticoneAdvancedPanel1;
-        private Label lvlRevenue;
+        private Label lblActiveEmployees;
         private Label label3;
         private Label label8;
         private Label AdminAcc;
@@ -597,5 +620,6 @@
         private SiticoneNetCoreUI.SiticoneAdvancedPanel siticoneAdvancedPanel2;
         private SiticoneNetCoreUI.SiticoneTextBox txtSearchEmployee;
         private SiticoneNetCoreUI.SiticoneButton btnAddEmployee;
+        private SiticoneNetCoreUI.SiticoneFlowPanel pnlEmployees;
     }
 }
