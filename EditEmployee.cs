@@ -50,14 +50,16 @@ namespace OneShotPOS
             using (var conn = new SQLiteConnection(ConnectionString))
             {
                 conn.Open();
+
+                // ✅ Update employee
                 string query = @"UPDATE TBL_EMPLOYEES SET 
-                        Name = @name, 
-                        Email = @email, 
-                        Phone = @phone, 
-                        Role = @role, 
-                        PasswordHash = @pass, 
-                        IsActive = @active 
-                        WHERE EmployeeID = @id";
+            Name = @name, 
+            Email = @email, 
+            Phone = @phone, 
+            Role = @role, 
+            PasswordHash = @pass, 
+            IsActive = @active 
+            WHERE EmployeeID = @id";
 
                 using (var cmd = new SQLiteCommand(query, conn))
                 {
@@ -68,8 +70,20 @@ namespace OneShotPOS
                     cmd.Parameters.AddWithValue("@pass", txtPassword.Text);
                     cmd.Parameters.AddWithValue("@active", dropStatus.SelectedItem?.ToString() == "Active" ? 1 : 0);
                     cmd.Parameters.AddWithValue("@id", employeeId);
-
                     cmd.ExecuteNonQuery();
+                }
+
+                // ✅ Log activity
+                string logQuery = @"INSERT INTO TBL_ACTIVITY_LOG 
+            (Timestamp, ActivityType, Description, EmployeeID) 
+            VALUES (@time, 'Account', @desc, @actorId)";
+
+                using (var cmdLog = new SQLiteCommand(logQuery, conn))
+                {
+                    cmdLog.Parameters.AddWithValue("@time", DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
+                    cmdLog.Parameters.AddWithValue("@desc", $"Updated employee account: {txtFullName.Text} ({RoleDropDown.SelectedItem})");
+                    cmdLog.Parameters.AddWithValue("@actorId", LoginPage.Session.EmployeeID);
+                    cmdLog.ExecuteNonQuery();
                 }
             }
 
@@ -78,9 +92,10 @@ namespace OneShotPOS
             this.Close();
         }
 
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

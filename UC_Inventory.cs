@@ -20,11 +20,12 @@ namespace OneShotPOS
         private System.Timers.Timer debounceTimer;
         private bool isLow;
         private const string ConnectionString = @"Data Source=""C:\Users\morco\Downloads\testDB.db"";Version=3;";
+      
         public UC_Inventory()
         {
+           
             InitializeComponent();
         }
-        private readonly string _loggedInEmployeeId;
 
 
         private void UC_Inventory_Load(object sender, EventArgs e)
@@ -32,7 +33,7 @@ namespace OneShotPOS
             LoadInventoryAlerts();
             LoadInventoryCards();
             LoadProductCards();
-
+        
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)
@@ -152,6 +153,10 @@ namespace OneShotPOS
         private void LoadProductCards(string searchTerm = "")
         {
             flowPanelProducts.Controls.Clear();
+           
+            flowPanelProducts.AutoScroll = true;
+            flowPanelProducts.WrapContents = true;
+            flowPanelProducts.FlowDirection = FlowDirection.TopDown;
 
             using (var connection = new SQLiteConnection(ConnectionString))
             {
@@ -253,6 +258,10 @@ namespace OneShotPOS
                             card.Controls.Add(new Label { Text = $"Qty: {qty}", Font = new Font("Segoe UI", 8), ForeColor = isLow ? Color.FromArgb(192, 64, 0) : Color.Black, Location = new Point(150, 50), AutoSize = true });
 
                             flowPanelProducts.Controls.Add(card);
+                            int count = flowPanelProducts.Controls.Count;
+                            lblProducts.Text = $"Products: {count}";
+                            
+
                         }
 
                     }
@@ -263,6 +272,13 @@ namespace OneShotPOS
         private void LoadInventoryCards(string searchTerm = "")
         {
             flowPanelInventory.Controls.Clear();
+            flowPanelInventory.AutoScroll = true;
+            flowPanelInventory.WrapContents = true;
+            flowPanelInventory.FlowDirection = FlowDirection.TopDown;
+
+            flowPanelProducts.AutoScroll = true;
+            flowPanelProducts.WrapContents = true;
+            flowPanelProducts.FlowDirection = FlowDirection.TopDown;
 
             using (var connection = new SQLiteConnection(ConnectionString))
             {
@@ -270,11 +286,14 @@ namespace OneShotPOS
 
                 string query = @"
         SELECT 
-            I.InventoryID, 
-            I.ProductID, 
-            P.ProductName, 
-            I.Quantity, 
-            I.MinStock
+            I.InventoryID,
+            I.ProductID,
+            P.ProductName,
+            I.Quantity,
+            I.MinStock,
+            I.CostPrice,
+            I.Supplier,
+            I.Unit
         FROM TBL_INVENTORY I
         JOIN TBL_PRODUCTS P ON I.ProductID = P.ProductID
         WHERE P.ProductName LIKE @Search
@@ -288,19 +307,24 @@ namespace OneShotPOS
                     {
                         while (reader.Read())
                         {
+                            int inventoryId = Convert.ToInt32(reader["InventoryID"]);
                             string name = reader["ProductName"].ToString();
                             int qty = Convert.ToInt32(reader["Quantity"]);
                             int min = Convert.ToInt32(reader["MinStock"]);
+                            decimal cost = Convert.ToDecimal(reader["CostPrice"]);
+                            string supplier = reader["Supplier"].ToString();
+                            string unit = reader["Unit"].ToString();
                             bool isLow = qty < min;
 
                             Panel card = new Panel
                             {
                                 Width = 250,
-                                Height = 100,
+                                Height = 110,
                                 Margin = new Padding(10),
                                 BackColor = isLow ? Color.FromArgb(255, 230, 230) : Color.White,
                                 BorderStyle = BorderStyle.FixedSingle
                             };
+
                             var btnEdit = new SiticoneButton
                             {
                                 Text = "Edit",
@@ -310,7 +334,14 @@ namespace OneShotPOS
                                 ForeColor = Color.White,
                                 Font = new Font("Segoe UI", 8, FontStyle.Bold),
                                 BorderRadius = 5,
-                                Cursor = Cursors.Hand
+                                Cursor = Cursors.Hand,
+                                Tag = inventoryId
+                            };
+                            btnEdit.Click += (s, e) =>
+                            {
+                                EditProduct editForm = new EditProduct(inventoryId);
+                                editForm.ShowDialog();
+                                LoadInventoryCards(); // Refresh after edit
                             };
 
                             var btnDelete = new SiticoneButton
@@ -322,8 +353,28 @@ namespace OneShotPOS
                                 ForeColor = Color.White,
                                 Font = new Font("Segoe UI", 8, FontStyle.Bold),
                                 BorderRadius = 5,
-                                Cursor = Cursors.Hand
+                                Cursor = Cursors.Hand,
+                                Tag = inventoryId
                             };
+                            btnDelete.Click += (s, e) =>
+                            {
+                                var confirm = MessageBox.Show($"Delete inventory for '{name}'?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                if (confirm == DialogResult.Yes)
+                                {
+                                    using (var connDel = new SQLiteConnection(ConnectionString))
+                                    {
+                                        connDel.Open();
+                                        string deleteQuery = "DELETE FROM TBL_INVENTORY WHERE InventoryID = @id";
+                                        using (var cmdDel = new SQLiteCommand(deleteQuery, connDel))
+                                        {
+                                            cmdDel.Parameters.AddWithValue("@id", inventoryId);
+                                            cmdDel.ExecuteNonQuery();
+                                        }
+                                    }
+                                    LoadInventoryCards(); // Refresh after delete
+                                }
+                            };
+
                             card.Controls.Add(btnEdit);
                             card.Controls.Add(btnDelete);
                             card.Controls.Add(new Label
@@ -333,31 +384,48 @@ namespace OneShotPOS
                                 Location = new Point(10, 10),
                                 AutoSize = true
                             });
-
                             card.Controls.Add(new Label
                             {
-                                Text = $"Qty: {qty}",
+                                Text = $"Qty: {qty} {unit}",
                                 Font = new Font("Segoe UI", 9),
-                                ForeColor = qty < 5 ? Color.FromArgb(192, 64, 0) : Color.Black,
-                                Location = new Point(10, 40),
+                                ForeColor = isLow ? Color.OrangeRed : Color.Black,
+                                Location = new Point(10, 30),
                                 AutoSize = true
                             });
-
                             card.Controls.Add(new Label
                             {
                                 Text = $"Min: {min}",
                                 Font = new Font("Segoe UI", 9),
                                 ForeColor = isLow ? Color.OrangeRed : Color.DarkGreen,
-                                Location = new Point(100, 40),
+                                Location = new Point(100, 30),
+                                AutoSize = true
+                            });
+                            card.Controls.Add(new Label
+                            {
+                                Text = $"₱{cost:N2}",
+                                Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                                ForeColor = Color.DarkSlateGray,
+                                Location = new Point(10, 50),
+                                AutoSize = true
+                            });
+                            card.Controls.Add(new Label
+                            {
+                                Text = $"Supplier: {supplier}",
+                                Font = new Font("Segoe UI", 8),
+                                ForeColor = Color.Gray,
+                                Location = new Point(10, 70),
                                 AutoSize = true
                             });
 
                             flowPanelInventory.Controls.Add(card);
+                            int count = flowPanelInventory.Controls.Count;
+                            lblInventory.Text = $"Inventory Items: {count}";
                         }
                     }
                 }
             }
         }
+
 
 
 
@@ -371,15 +439,7 @@ namespace OneShotPOS
 
         }
 
-        private void txtSearchProduct_TextChanged(object sender, EventArgs e)
-        {
-            debounceTimer.Stop();
-            debounceTimer.Start();
-        }
-        private void debounceTimer_Tick(object sender, EventArgs e)
-        {
-            debounceTimer.Stop();
-            LoadProductCards(txtSearchProduct.Text.Trim());
-        }
+        
+        
     }
 }

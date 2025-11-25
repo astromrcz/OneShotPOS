@@ -36,15 +36,11 @@
             lblLowStkPrd = new Label();
             lblPrdRq = new Label();
             label5 = new Label();
-            drpProductCategory = new SiticoneNetCoreUI.SiticoneDropdown();
-            txtSearchProduct = new SiticoneNetCoreUI.SiticoneTextBox();
             pnlProducts = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             flowPanelProducts = new SiticoneNetCoreUI.SiticoneFlowPanel();
             lblProducts = new Label();
             pnlInventory = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             flowPanelInventory = new SiticoneNetCoreUI.SiticoneFlowPanel();
-            drpInventoryCategory = new SiticoneNetCoreUI.SiticoneDropdown();
-            txtSearchInventory = new SiticoneNetCoreUI.SiticoneTextBox();
             lblInventory = new Label();
             pnlLowInventoryStockAlert = new SiticoneNetCoreUI.SiticoneAdvancedPanel();
             lblLowStockItem = new Label();
@@ -250,101 +246,6 @@
             label5.TabIndex = 4;
             label5.Text = "Products Low Stock Alert";
             // 
-            // drpProductCategory
-            // 
-            drpProductCategory.AllowMultipleSelection = false;
-            drpProductCategory.BackColor = Color.FromArgb(240, 245, 255);
-            drpProductCategory.BorderColor = Color.FromArgb(100, 150, 220);
-            drpProductCategory.CanBeep = false;
-            drpProductCategory.CanShake = true;
-            drpProductCategory.CornerRadius = 13;
-            drpProductCategory.DataSource = null;
-            drpProductCategory.DisplayMember = null;
-            drpProductCategory.DropdownBackColor = Color.FromArgb(245, 250, 255);
-            drpProductCategory.DropdownWidth = 0;
-            drpProductCategory.DropShadowEnabled = false;
-            drpProductCategory.Font = new Font("Segoe UI", 10F);
-            drpProductCategory.ForeColor = Color.FromArgb(40, 40, 100);
-            drpProductCategory.HoveredItemBackColor = Color.FromArgb(220, 235, 255);
-            drpProductCategory.HoveredItemTextColor = Color.FromArgb(40, 40, 100);
-            drpProductCategory.IsReadonly = false;
-            drpProductCategory.ItemHeight = 30;
-            drpProductCategory.Location = new Point(575, 55);
-            drpProductCategory.MaxDropDownItems = 8;
-            drpProductCategory.Name = "drpProductCategory";
-            drpProductCategory.PlaceholderColor = Color.FromArgb(150, 170, 200);
-            drpProductCategory.PlaceholderDisappearsOnFocus = false;
-            drpProductCategory.PlaceholderText = "Select an option";
-            drpProductCategory.SelectedIndex = -1;
-            drpProductCategory.SelectedItem = null;
-            drpProductCategory.SelectedItemBackColor = Color.Black;
-            drpProductCategory.SelectedItemTextColor = Color.White;
-            drpProductCategory.SelectedValue = null;
-            drpProductCategory.Size = new Size(199, 40);
-            drpProductCategory.TabIndex = 1;
-            drpProductCategory.Text = "siticoneDropdown1";
-            drpProductCategory.UnselectedItemTextColor = Color.FromArgb(40, 40, 100);
-            drpProductCategory.ValueMember = null;
-            // 
-            // txtSearchProduct
-            // 
-            txtSearchProduct.AccessibleDescription = "A customizable text input field.";
-            txtSearchProduct.AccessibleName = "Text Box";
-            txtSearchProduct.AccessibleRole = AccessibleRole.Text;
-            txtSearchProduct.BackColor = Color.Transparent;
-            txtSearchProduct.BlinkCount = 3;
-            txtSearchProduct.BlinkShadow = false;
-            txtSearchProduct.BorderColor1 = Color.LightSlateGray;
-            txtSearchProduct.BorderColor2 = Color.LightSlateGray;
-            txtSearchProduct.BorderFocusColor1 = Color.FromArgb(77, 77, 255);
-            txtSearchProduct.BorderFocusColor2 = Color.FromArgb(77, 77, 255);
-            txtSearchProduct.CanShake = true;
-            txtSearchProduct.ContinuousBlink = false;
-            txtSearchProduct.CornerRadiusBottomLeft = 13;
-            txtSearchProduct.CornerRadiusBottomRight = 13;
-            txtSearchProduct.CornerRadiusTopLeft = 13;
-            txtSearchProduct.CornerRadiusTopRight = 13;
-            txtSearchProduct.CursorBlinkRate = 500;
-            txtSearchProduct.CursorColor = Color.Black;
-            txtSearchProduct.CursorHeight = 26;
-            txtSearchProduct.CursorOffset = 0;
-            txtSearchProduct.CursorStyle = SiticoneNetCoreUI.Helpers.DrawingStyle.SiticoneDrawingStyle.Solid;
-            txtSearchProduct.CursorWidth = 1;
-            txtSearchProduct.DisabledBackColor = Color.WhiteSmoke;
-            txtSearchProduct.DisabledBorderColor = Color.LightGray;
-            txtSearchProduct.DisabledTextColor = Color.Gray;
-            txtSearchProduct.EnableDropShadow = false;
-            txtSearchProduct.FillColor1 = Color.White;
-            txtSearchProduct.FillColor2 = Color.White;
-            txtSearchProduct.Font = new Font("Segoe UI", 9.5F);
-            txtSearchProduct.ForeColor = Color.DimGray;
-            txtSearchProduct.HoverBorderColor1 = Color.Gray;
-            txtSearchProduct.HoverBorderColor2 = Color.Gray;
-            txtSearchProduct.IsEnabled = true;
-            txtSearchProduct.Location = new Point(13, 55);
-            txtSearchProduct.Name = "txtSearchProduct";
-            txtSearchProduct.PlaceholderColor = Color.Gray;
-            txtSearchProduct.PlaceholderText = "Search Transactions...";
-            txtSearchProduct.ReadOnlyBorderColor1 = Color.LightGray;
-            txtSearchProduct.ReadOnlyBorderColor2 = Color.LightGray;
-            txtSearchProduct.ReadOnlyFillColor1 = Color.WhiteSmoke;
-            txtSearchProduct.ReadOnlyFillColor2 = Color.WhiteSmoke;
-            txtSearchProduct.ReadOnlyPlaceholderColor = Color.DarkGray;
-            txtSearchProduct.SelectionBackColor = Color.FromArgb(77, 77, 255);
-            txtSearchProduct.ShadowAnimationDuration = 1;
-            txtSearchProduct.ShadowBlur = 10;
-            txtSearchProduct.ShadowColor = Color.FromArgb(15, 0, 0, 0);
-            txtSearchProduct.Size = new Size(552, 40);
-            txtSearchProduct.SolidBorderColor = Color.LightSlateGray;
-            txtSearchProduct.SolidBorderFocusColor = Color.FromArgb(77, 77, 255);
-            txtSearchProduct.SolidBorderHoverColor = Color.Gray;
-            txtSearchProduct.SolidFillColor = Color.White;
-            txtSearchProduct.TabIndex = 0;
-            txtSearchProduct.TextPadding = new Padding(16, 0, 6, 0);
-            txtSearchProduct.ValidationErrorMessage = "Invalid input.";
-            txtSearchProduct.ValidationFunction = null;
-            txtSearchProduct.TextChanged += txtSearchProduct_TextChanged;
-            // 
             // pnlProducts
             // 
             pnlProducts.ActiveBackColor = Color.Empty;
@@ -366,9 +267,7 @@
             pnlProducts.BottomRightRadius = 5;
             pnlProducts.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
             pnlProducts.Controls.Add(flowPanelProducts);
-            pnlProducts.Controls.Add(drpProductCategory);
             pnlProducts.Controls.Add(lblProducts);
-            pnlProducts.Controls.Add(txtSearchProduct);
             pnlProducts.CornerPadding = new Padding(5);
             pnlProducts.DisabledBackColor = Color.Empty;
             pnlProducts.DisabledBorderColor = Color.Empty;
@@ -393,7 +292,7 @@
             pnlProducts.InnerShadowColor = Color.Black;
             pnlProducts.InnerShadowDepth = 3;
             pnlProducts.InnerShadowOpacity = 0.2F;
-            pnlProducts.Location = new Point(44, 217);
+            pnlProducts.Location = new Point(16, 217);
             pnlProducts.Name = "pnlProducts";
             pnlProducts.Padding = new Padding(10);
             pnlProducts.RadialGradientCenter = (PointF)resources.GetObject("pnlProducts.RadialGradientCenter");
@@ -405,7 +304,7 @@
             pnlProducts.ShadowDepth = 5;
             pnlProducts.ShadowOffset = new Point(2, 2);
             pnlProducts.ShadowOpacity = 0.3F;
-            pnlProducts.Size = new Size(784, 725);
+            pnlProducts.Size = new Size(812, 808);
             pnlProducts.SlideDirection = new Point(0, -30);
             pnlProducts.TabIndex = 15;
             pnlProducts.TopLeftRadius = 5;
@@ -425,9 +324,9 @@
             flowPanelProducts.GridSize = 8;
             flowPanelProducts.IsTrackingTheme = false;
             flowPanelProducts.ItemSpacing = 5;
-            flowPanelProducts.Location = new Point(14, 115);
+            flowPanelProducts.Location = new Point(13, 38);
             flowPanelProducts.Name = "flowPanelProducts";
-            flowPanelProducts.Size = new Size(757, 597);
+            flowPanelProducts.Size = new Size(786, 757);
             flowPanelProducts.TabIndex = 2;
             flowPanelProducts.VirtualizationThreshold = 100;
             // 
@@ -462,8 +361,6 @@
             pnlInventory.BottomRightRadius = 5;
             pnlInventory.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
             pnlInventory.Controls.Add(flowPanelInventory);
-            pnlInventory.Controls.Add(drpInventoryCategory);
-            pnlInventory.Controls.Add(txtSearchInventory);
             pnlInventory.Controls.Add(lblInventory);
             pnlInventory.CornerPadding = new Padding(5);
             pnlInventory.DisabledBackColor = Color.Empty;
@@ -501,7 +398,7 @@
             pnlInventory.ShadowDepth = 5;
             pnlInventory.ShadowOffset = new Point(2, 2);
             pnlInventory.ShadowOpacity = 0.3F;
-            pnlInventory.Size = new Size(784, 725);
+            pnlInventory.Size = new Size(812, 808);
             pnlInventory.SlideDirection = new Point(0, -30);
             pnlInventory.TabIndex = 16;
             pnlInventory.TopLeftRadius = 5;
@@ -522,105 +419,11 @@
             flowPanelInventory.GridSize = 8;
             flowPanelInventory.IsTrackingTheme = false;
             flowPanelInventory.ItemSpacing = 5;
-            flowPanelInventory.Location = new Point(13, 115);
+            flowPanelInventory.Location = new Point(13, 38);
             flowPanelInventory.Name = "flowPanelInventory";
-            flowPanelInventory.Size = new Size(758, 597);
+            flowPanelInventory.Size = new Size(786, 757);
             flowPanelInventory.TabIndex = 4;
             flowPanelInventory.VirtualizationThreshold = 100;
-            // 
-            // drpInventoryCategory
-            // 
-            drpInventoryCategory.AllowMultipleSelection = false;
-            drpInventoryCategory.BackColor = Color.FromArgb(240, 245, 255);
-            drpInventoryCategory.BorderColor = Color.FromArgb(100, 150, 220);
-            drpInventoryCategory.CanBeep = false;
-            drpInventoryCategory.CanShake = true;
-            drpInventoryCategory.CornerRadius = 13;
-            drpInventoryCategory.DataSource = null;
-            drpInventoryCategory.DisplayMember = null;
-            drpInventoryCategory.DropdownBackColor = Color.FromArgb(245, 250, 255);
-            drpInventoryCategory.DropdownWidth = 0;
-            drpInventoryCategory.DropShadowEnabled = false;
-            drpInventoryCategory.Font = new Font("Segoe UI", 10F);
-            drpInventoryCategory.ForeColor = Color.FromArgb(40, 40, 100);
-            drpInventoryCategory.HoveredItemBackColor = Color.FromArgb(220, 235, 255);
-            drpInventoryCategory.HoveredItemTextColor = Color.FromArgb(40, 40, 100);
-            drpInventoryCategory.IsReadonly = false;
-            drpInventoryCategory.ItemHeight = 30;
-            drpInventoryCategory.Location = new Point(572, 55);
-            drpInventoryCategory.MaxDropDownItems = 8;
-            drpInventoryCategory.Name = "drpInventoryCategory";
-            drpInventoryCategory.PlaceholderColor = Color.FromArgb(150, 170, 200);
-            drpInventoryCategory.PlaceholderDisappearsOnFocus = false;
-            drpInventoryCategory.PlaceholderText = "Select an option";
-            drpInventoryCategory.SelectedIndex = -1;
-            drpInventoryCategory.SelectedItem = null;
-            drpInventoryCategory.SelectedItemBackColor = Color.Black;
-            drpInventoryCategory.SelectedItemTextColor = Color.White;
-            drpInventoryCategory.SelectedValue = null;
-            drpInventoryCategory.Size = new Size(199, 40);
-            drpInventoryCategory.TabIndex = 3;
-            drpInventoryCategory.Text = "siticoneDropdown1";
-            drpInventoryCategory.UnselectedItemTextColor = Color.FromArgb(40, 40, 100);
-            drpInventoryCategory.ValueMember = null;
-            // 
-            // txtSearchInventory
-            // 
-            txtSearchInventory.AccessibleDescription = "A customizable text input field.";
-            txtSearchInventory.AccessibleName = "Text Box";
-            txtSearchInventory.AccessibleRole = AccessibleRole.Text;
-            txtSearchInventory.BackColor = Color.Transparent;
-            txtSearchInventory.BlinkCount = 3;
-            txtSearchInventory.BlinkShadow = false;
-            txtSearchInventory.BorderColor1 = Color.LightSlateGray;
-            txtSearchInventory.BorderColor2 = Color.LightSlateGray;
-            txtSearchInventory.BorderFocusColor1 = Color.FromArgb(77, 77, 255);
-            txtSearchInventory.BorderFocusColor2 = Color.FromArgb(77, 77, 255);
-            txtSearchInventory.CanShake = true;
-            txtSearchInventory.ContinuousBlink = false;
-            txtSearchInventory.CornerRadiusBottomLeft = 13;
-            txtSearchInventory.CornerRadiusBottomRight = 13;
-            txtSearchInventory.CornerRadiusTopLeft = 13;
-            txtSearchInventory.CornerRadiusTopRight = 13;
-            txtSearchInventory.CursorBlinkRate = 500;
-            txtSearchInventory.CursorColor = Color.Black;
-            txtSearchInventory.CursorHeight = 26;
-            txtSearchInventory.CursorOffset = 0;
-            txtSearchInventory.CursorStyle = SiticoneNetCoreUI.Helpers.DrawingStyle.SiticoneDrawingStyle.Solid;
-            txtSearchInventory.CursorWidth = 1;
-            txtSearchInventory.DisabledBackColor = Color.WhiteSmoke;
-            txtSearchInventory.DisabledBorderColor = Color.LightGray;
-            txtSearchInventory.DisabledTextColor = Color.Gray;
-            txtSearchInventory.EnableDropShadow = false;
-            txtSearchInventory.FillColor1 = Color.White;
-            txtSearchInventory.FillColor2 = Color.White;
-            txtSearchInventory.Font = new Font("Segoe UI", 9.5F);
-            txtSearchInventory.ForeColor = Color.DimGray;
-            txtSearchInventory.HoverBorderColor1 = Color.Gray;
-            txtSearchInventory.HoverBorderColor2 = Color.Gray;
-            txtSearchInventory.IsEnabled = true;
-            txtSearchInventory.Location = new Point(14, 55);
-            txtSearchInventory.Name = "txtSearchInventory";
-            txtSearchInventory.PlaceholderColor = Color.Gray;
-            txtSearchInventory.PlaceholderText = "Search Transactions...";
-            txtSearchInventory.ReadOnlyBorderColor1 = Color.LightGray;
-            txtSearchInventory.ReadOnlyBorderColor2 = Color.LightGray;
-            txtSearchInventory.ReadOnlyFillColor1 = Color.WhiteSmoke;
-            txtSearchInventory.ReadOnlyFillColor2 = Color.WhiteSmoke;
-            txtSearchInventory.ReadOnlyPlaceholderColor = Color.DarkGray;
-            txtSearchInventory.SelectionBackColor = Color.FromArgb(77, 77, 255);
-            txtSearchInventory.ShadowAnimationDuration = 1;
-            txtSearchInventory.ShadowBlur = 10;
-            txtSearchInventory.ShadowColor = Color.FromArgb(15, 0, 0, 0);
-            txtSearchInventory.Size = new Size(552, 40);
-            txtSearchInventory.SolidBorderColor = Color.LightSlateGray;
-            txtSearchInventory.SolidBorderFocusColor = Color.FromArgb(77, 77, 255);
-            txtSearchInventory.SolidBorderHoverColor = Color.Gray;
-            txtSearchInventory.SolidFillColor = Color.White;
-            txtSearchInventory.TabIndex = 2;
-            txtSearchInventory.TextPadding = new Padding(16, 0, 6, 0);
-            txtSearchInventory.ValidationErrorMessage = "Invalid input.";
-            txtSearchInventory.ValidationFunction = null;
             // 
             // lblInventory
             // 
@@ -691,7 +494,7 @@
             pnlLowInventoryStockAlert.ShadowDepth = 5;
             pnlLowInventoryStockAlert.ShadowOffset = new Point(2, 2);
             pnlLowInventoryStockAlert.ShadowOpacity = 0.3F;
-            pnlLowInventoryStockAlert.Size = new Size(777, 87);
+            pnlLowInventoryStockAlert.Size = new Size(812, 87);
             pnlLowInventoryStockAlert.SlideDirection = new Point(0, -30);
             pnlLowInventoryStockAlert.TabIndex = 12;
             pnlLowInventoryStockAlert.TopLeftRadius = 5;
@@ -843,15 +646,11 @@
         private Label label1;
         private SiticoneNetCoreUI.SiticoneButton btnAddItem;
         private SiticoneNetCoreUI.SiticoneAdvancedPanel pnlLowProductsStockAlert;
-        private SiticoneNetCoreUI.SiticoneDropdown drpProductCategory;
-        private SiticoneNetCoreUI.SiticoneTextBox txtSearchProduct;
         private SiticoneNetCoreUI.SiticoneAdvancedPanel pnlProducts;
         private Label lblProducts;
         private SiticoneNetCoreUI.SiticoneAdvancedPanel pnlInventory;
         private Label lblInventory;
         private SiticoneNetCoreUI.SiticoneAdvancedPanel pnlLowInventoryStockAlert;
-        private SiticoneNetCoreUI.SiticoneDropdown drpInventoryCategory;
-        private SiticoneNetCoreUI.SiticoneTextBox txtSearchInventory;
         private Label label5;
         private Label lblRqItm;
         private Label label4;

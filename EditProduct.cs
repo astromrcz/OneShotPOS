@@ -109,6 +109,8 @@ namespace OneShotPOS
             using (var conn = new SQLiteConnection(ConnectionString))
             {
                 conn.Open();
+
+                // ✅ Update product
                 string query = @"UPDATE TBL_PRODUCTS SET 
             ProductName = @name, 
             CategoryID = @catId, 
@@ -125,8 +127,20 @@ namespace OneShotPOS
                     cmd.Parameters.AddWithValue("@price", price);
                     cmd.Parameters.AddWithValue("@qty", quantity);
                     cmd.Parameters.AddWithValue("@id", productId);
-
                     cmd.ExecuteNonQuery();
+                }
+
+                // ✅ Log activity
+                string logQuery = @"INSERT INTO TBL_ACTIVITY_LOG 
+            (Timestamp, ActivityType, Description, EmployeeID) 
+            VALUES (@time, 'Inventory', @desc, @empId)";
+
+                using (var cmdLog = new SQLiteCommand(logQuery, conn))
+                {
+                    cmdLog.Parameters.AddWithValue("@time", DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
+                    cmdLog.Parameters.AddWithValue("@desc", $"Updated product '{name}' under '{category}' with new price ₱{price:N2} and quantity {quantity}");
+                    cmdLog.Parameters.AddWithValue("@empId", LoginPage.Session.EmployeeID); // Logged-in user
+                    cmdLog.ExecuteNonQuery();
                 }
             }
 
@@ -136,9 +150,10 @@ namespace OneShotPOS
         }
 
 
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

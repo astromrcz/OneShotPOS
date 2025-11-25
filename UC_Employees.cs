@@ -108,16 +108,33 @@ namespace OneShotPOS
                 using (var conn = new SQLiteConnection(ConnectionString))
                 {
                     conn.Open();
+
+                    // ✅ Deactivate employee
                     string query = "UPDATE TBL_EMPLOYEES SET IsActive = 0 WHERE EmployeeID = @id";
                     using (var cmd = new SQLiteCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@id", employeeId);
                         cmd.ExecuteNonQuery();
                     }
+
+                    // ✅ Log activity
+                    string logQuery = @"INSERT INTO TBL_ACTIVITY_LOG 
+                (Timestamp, ActivityType, Description, EmployeeID) 
+                VALUES (@time, 'Account', @desc, @actorId)";
+
+                    using (var cmdLog = new SQLiteCommand(logQuery, conn))
+                    {
+                        cmdLog.Parameters.AddWithValue("@time", DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
+                        cmdLog.Parameters.AddWithValue("@desc", $"Deactivated employee account with ID {employeeId}");
+                        cmdLog.Parameters.AddWithValue("@actorId", LoginPage.Session.EmployeeID);
+                        cmdLog.ExecuteNonQuery();
+                    }
                 }
+
                 LoadEmployees();
             }
         }
+
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
@@ -157,6 +174,11 @@ namespace OneShotPOS
             lblActiveAdmins.Text = activeAdmins.ToString();
             lblActiveReceptionist.Text = activeReceptionists.ToString();
         }
-
+        
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadEmployees();
+            PopulateEmployeeStats();
+        }
     }
 }

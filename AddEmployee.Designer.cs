@@ -35,7 +35,6 @@
             label7 = new Label();
             label6 = new Label();
             txtContactNo = new SiticoneNetCoreUI.SiticoneTextBox();
-            RoleDropDown = new SiticoneNetCoreUI.SiticoneDropdown();
             txtEmail = new SiticoneNetCoreUI.SiticoneTextBox();
             btnCancel = new SiticoneNetCoreUI.SiticoneButton();
             btnCreateAccount = new SiticoneNetCoreUI.SiticoneButton();
@@ -45,6 +44,7 @@
             txtFullName = new SiticoneNetCoreUI.SiticoneTextBox();
             label2 = new Label();
             label1 = new Label();
+            cbRoles = new ComboBox();
             siticoneAdvancedPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,12 +68,12 @@
             siticoneAdvancedPanel1.BottomLeftRadius = 5;
             siticoneAdvancedPanel1.BottomRightRadius = 5;
             siticoneAdvancedPanel1.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
+            siticoneAdvancedPanel1.Controls.Add(cbRoles);
             siticoneAdvancedPanel1.Controls.Add(siticoneCloseButton1);
             siticoneAdvancedPanel1.Controls.Add(txtPassword);
             siticoneAdvancedPanel1.Controls.Add(label7);
             siticoneAdvancedPanel1.Controls.Add(label6);
             siticoneAdvancedPanel1.Controls.Add(txtContactNo);
-            siticoneAdvancedPanel1.Controls.Add(RoleDropDown);
             siticoneAdvancedPanel1.Controls.Add(txtEmail);
             siticoneAdvancedPanel1.Controls.Add(btnCancel);
             siticoneAdvancedPanel1.Controls.Add(btnCreateAccount);
@@ -173,7 +173,7 @@
             txtPassword.HoverBorderColor1 = Color.Gray;
             txtPassword.HoverBorderColor2 = Color.Gray;
             txtPassword.IsEnabled = true;
-            txtPassword.Location = new Point(8, 479);
+            txtPassword.Location = new Point(8, 470);
             txtPassword.Name = "txtPassword";
             txtPassword.PlaceholderColor = Color.Gray;
             txtPassword.PlaceholderText = "Enter text here...";
@@ -202,7 +202,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(13, 444);
+            label7.Location = new Point(13, 435);
             label7.Name = "label7";
             label7.Size = new Size(142, 21);
             label7.TabIndex = 19;
@@ -277,41 +277,6 @@
             txtContactNo.TextPadding = new Padding(16, 0, 6, 0);
             txtContactNo.ValidationErrorMessage = "Invalid input.";
             txtContactNo.ValidationFunction = null;
-            // 
-            // RoleDropDown
-            // 
-            RoleDropDown.AllowMultipleSelection = false;
-            RoleDropDown.BackColor = Color.FromArgb(240, 245, 255);
-            RoleDropDown.BorderColor = Color.FromArgb(100, 150, 220);
-            RoleDropDown.CanBeep = false;
-            RoleDropDown.CanShake = true;
-            RoleDropDown.DataSource = null;
-            RoleDropDown.DisplayMember = null;
-            RoleDropDown.DropdownBackColor = Color.FromArgb(245, 250, 255);
-            RoleDropDown.DropdownWidth = 0;
-            RoleDropDown.DropShadowEnabled = false;
-            RoleDropDown.Font = new Font("Segoe UI", 10F);
-            RoleDropDown.ForeColor = Color.FromArgb(40, 40, 100);
-            RoleDropDown.HoveredItemBackColor = Color.FromArgb(220, 235, 255);
-            RoleDropDown.HoveredItemTextColor = Color.FromArgb(40, 40, 100);
-            RoleDropDown.IsReadonly = false;
-            RoleDropDown.ItemHeight = 30;
-            RoleDropDown.Location = new Point(13, 382);
-            RoleDropDown.MaxDropDownItems = 8;
-            RoleDropDown.Name = "RoleDropDown";
-            RoleDropDown.PlaceholderColor = Color.FromArgb(150, 170, 200);
-            RoleDropDown.PlaceholderDisappearsOnFocus = false;
-            RoleDropDown.PlaceholderText = "Select an option";
-            RoleDropDown.SelectedIndex = -1;
-            RoleDropDown.SelectedItem = null;
-            RoleDropDown.SelectedItemBackColor = Color.FromArgb(70, 130, 220);
-            RoleDropDown.SelectedItemTextColor = Color.White;
-            RoleDropDown.SelectedValue = null;
-            RoleDropDown.Size = new Size(462, 40);
-            RoleDropDown.TabIndex = 16;
-            RoleDropDown.Text = "siticoneDropdown1";
-            RoleDropDown.UnselectedItemTextColor = Color.FromArgb(40, 40, 100);
-            RoleDropDown.ValueMember = null;
             // 
             // txtEmail
             // 
@@ -637,6 +602,14 @@
             label1.TabIndex = 0;
             label1.Text = "Add New Employee";
             // 
+            // cbRoles
+            // 
+            cbRoles.FormattingEnabled = true;
+            cbRoles.Location = new Point(13, 382);
+            cbRoles.Name = "cbRoles";
+            cbRoles.Size = new Size(462, 23);
+            cbRoles.TabIndex = 22;
+            // 
             // AddEmployee
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -671,7 +644,7 @@
         private Label label7;
         private Label label6;
         private SiticoneNetCoreUI.SiticoneTextBox txtContactNo;
-        private SiticoneNetCoreUI.SiticoneDropdown RoleDropDown;
         private SiticoneNetCoreUI.SiticoneCloseButton siticoneCloseButton1;
+        private ComboBox cbRoles;
     }
 }
