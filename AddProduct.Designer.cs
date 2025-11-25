@@ -36,12 +36,12 @@
             label6 = new Label();
             txtPrice = new SiticoneNetCoreUI.SiticoneTextBox();
             label5 = new Label();
-            dropCategory = new SiticoneNetCoreUI.SiticoneDropdown();
             label4 = new Label();
             label3 = new Label();
             txtProductName = new SiticoneNetCoreUI.SiticoneTextBox();
             label2 = new Label();
             label1 = new Label();
+            cbCategory = new ComboBox();
             siticoneAdvancedPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -65,13 +65,13 @@
             siticoneAdvancedPanel1.BottomLeftRadius = 5;
             siticoneAdvancedPanel1.BottomRightRadius = 5;
             siticoneAdvancedPanel1.ContentAlignmentCustom = ContentAlignment.MiddleCenter;
+            siticoneAdvancedPanel1.Controls.Add(cbCategory);
             siticoneAdvancedPanel1.Controls.Add(btnCancel);
             siticoneAdvancedPanel1.Controls.Add(btnAddProduct);
             siticoneAdvancedPanel1.Controls.Add(txtDescription);
             siticoneAdvancedPanel1.Controls.Add(label6);
             siticoneAdvancedPanel1.Controls.Add(txtPrice);
             siticoneAdvancedPanel1.Controls.Add(label5);
-            siticoneAdvancedPanel1.Controls.Add(dropCategory);
             siticoneAdvancedPanel1.Controls.Add(label4);
             siticoneAdvancedPanel1.Controls.Add(label3);
             siticoneAdvancedPanel1.Controls.Add(txtProductName);
@@ -113,7 +113,7 @@
             siticoneAdvancedPanel1.ShadowDepth = 5;
             siticoneAdvancedPanel1.ShadowOffset = new Point(2, 2);
             siticoneAdvancedPanel1.ShadowOpacity = 0.3F;
-            siticoneAdvancedPanel1.Size = new Size(488, 580);
+            siticoneAdvancedPanel1.Size = new Size(488, 551);
             siticoneAdvancedPanel1.SlideDirection = new Point(0, -30);
             siticoneAdvancedPanel1.TabIndex = 0;
             siticoneAdvancedPanel1.TopLeftRadius = 5;
@@ -167,7 +167,7 @@
             btnCancel.IsReadOnly = false;
             btnCancel.IsToggleButton = false;
             btnCancel.IsToggled = false;
-            btnCancel.Location = new Point(351, 511);
+            btnCancel.Location = new Point(351, 481);
             btnCancel.LongPressDurationMS = 1000;
             btnCancel.Name = "btnCancel";
             btnCancel.NormalFontStyle = FontStyle.Regular;
@@ -244,7 +244,7 @@
             btnAddProduct.IsReadOnly = false;
             btnAddProduct.IsToggleButton = false;
             btnAddProduct.IsToggled = false;
-            btnAddProduct.Location = new Point(13, 511);
+            btnAddProduct.Location = new Point(13, 481);
             btnAddProduct.LongPressDurationMS = 1000;
             btnAddProduct.Name = "btnAddProduct";
             btnAddProduct.NormalFontStyle = FontStyle.Regular;
@@ -283,7 +283,7 @@
             txtDescription.HoverBorderColor = Color.Gray;
             txtDescription.HoverImage = null;
             txtDescription.IdleImage = null;
-            txtDescription.Location = new Point(13, 400);
+            txtDescription.Location = new Point(13, 370);
             txtDescription.Name = "txtDescription";
             txtDescription.PlaceholderColor = Color.Gray;
             txtDescription.PlaceholderFont = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
@@ -302,7 +302,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(13, 362);
+            label6.Location = new Point(13, 332);
             label6.Name = "label6";
             label6.Size = new Size(98, 21);
             label6.TabIndex = 11;
@@ -343,10 +343,10 @@
             txtPrice.HoverBorderColor1 = Color.Gray;
             txtPrice.HoverBorderColor2 = Color.Gray;
             txtPrice.IsEnabled = true;
-            txtPrice.Location = new Point(13, 297);
+            txtPrice.Location = new Point(13, 267);
             txtPrice.Name = "txtPrice";
             txtPrice.PlaceholderColor = Color.Gray;
-            txtPrice.PlaceholderText = "Enter text here...";
+            txtPrice.PlaceholderText = "0.00";
             txtPrice.ReadOnlyBorderColor1 = Color.LightGray;
             txtPrice.ReadOnlyBorderColor2 = Color.LightGray;
             txtPrice.ReadOnlyFillColor1 = Color.WhiteSmoke;
@@ -356,14 +356,12 @@
             txtPrice.ShadowAnimationDuration = 1;
             txtPrice.ShadowBlur = 10;
             txtPrice.ShadowColor = Color.FromArgb(15, 0, 0, 0);
-            txtPrice.ShowBorder = false;
             txtPrice.Size = new Size(467, 40);
             txtPrice.SolidBorderColor = Color.LightSlateGray;
             txtPrice.SolidBorderFocusColor = Color.FromArgb(77, 77, 255);
             txtPrice.SolidBorderHoverColor = Color.Gray;
-            txtPrice.SolidFillColor = Color.Gainsboro;
+            txtPrice.SolidFillColor = Color.Transparent;
             txtPrice.TabIndex = 10;
-            txtPrice.Text = "0.00";
             txtPrice.TextPadding = new Padding(16, 0, 6, 0);
             txtPrice.ValidationErrorMessage = "Invalid input.";
             txtPrice.ValidationFunction = null;
@@ -372,46 +370,11 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(13, 273);
+            label5.Location = new Point(13, 243);
             label5.Name = "label5";
             label5.Size = new Size(74, 21);
             label5.TabIndex = 9;
             label5.Text = "Price (₱)";
-            // 
-            // dropCategory
-            // 
-            dropCategory.AllowMultipleSelection = false;
-            dropCategory.BackColor = Color.FromArgb(240, 245, 255);
-            dropCategory.BorderColor = Color.FromArgb(100, 150, 220);
-            dropCategory.CanBeep = false;
-            dropCategory.CanShake = true;
-            dropCategory.DataSource = null;
-            dropCategory.DisplayMember = null;
-            dropCategory.DropdownBackColor = Color.FromArgb(245, 250, 255);
-            dropCategory.DropdownWidth = 0;
-            dropCategory.DropShadowEnabled = false;
-            dropCategory.Font = new Font("Segoe UI", 10F);
-            dropCategory.ForeColor = Color.FromArgb(40, 40, 100);
-            dropCategory.HoveredItemBackColor = Color.FromArgb(220, 235, 255);
-            dropCategory.HoveredItemTextColor = Color.FromArgb(40, 40, 100);
-            dropCategory.IsReadonly = false;
-            dropCategory.ItemHeight = 30;
-            dropCategory.Location = new Point(13, 211);
-            dropCategory.MaxDropDownItems = 8;
-            dropCategory.Name = "dropCategory";
-            dropCategory.PlaceholderColor = Color.FromArgb(150, 170, 200);
-            dropCategory.PlaceholderDisappearsOnFocus = false;
-            dropCategory.PlaceholderText = "Select an option";
-            dropCategory.SelectedIndex = -1;
-            dropCategory.SelectedItem = null;
-            dropCategory.SelectedItemBackColor = Color.FromArgb(70, 130, 220);
-            dropCategory.SelectedItemTextColor = Color.White;
-            dropCategory.SelectedValue = null;
-            dropCategory.Size = new Size(462, 40);
-            dropCategory.TabIndex = 8;
-            dropCategory.Text = "Select Category";
-            dropCategory.UnselectedItemTextColor = Color.FromArgb(40, 40, 100);
-            dropCategory.ValueMember = null;
             // 
             // label4
             // 
@@ -471,7 +434,7 @@
             txtProductName.Location = new Point(13, 122);
             txtProductName.Name = "txtProductName";
             txtProductName.PlaceholderColor = Color.Gray;
-            txtProductName.PlaceholderText = "Enter text here...";
+            txtProductName.PlaceholderText = "e.g... San Miguel Beer";
             txtProductName.ReadOnlyBorderColor1 = Color.LightGray;
             txtProductName.ReadOnlyBorderColor2 = Color.LightGray;
             txtProductName.ReadOnlyFillColor1 = Color.WhiteSmoke;
@@ -481,14 +444,12 @@
             txtProductName.ShadowAnimationDuration = 1;
             txtProductName.ShadowBlur = 10;
             txtProductName.ShadowColor = Color.FromArgb(15, 0, 0, 0);
-            txtProductName.ShowBorder = false;
             txtProductName.Size = new Size(467, 40);
             txtProductName.SolidBorderColor = Color.LightSlateGray;
             txtProductName.SolidBorderFocusColor = Color.FromArgb(77, 77, 255);
             txtProductName.SolidBorderHoverColor = Color.Gray;
-            txtProductName.SolidFillColor = Color.Gainsboro;
+            txtProductName.SolidFillColor = Color.Transparent;
             txtProductName.TabIndex = 5;
-            txtProductName.Text = "e.g... San Miguel Beer";
             txtProductName.TextPadding = new Padding(16, 0, 6, 0);
             txtProductName.ValidationErrorMessage = "Invalid input.";
             txtProductName.ValidationFunction = null;
@@ -513,11 +474,19 @@
             label1.TabIndex = 0;
             label1.Text = "Add New Product";
             // 
+            // cbCategory
+            // 
+            cbCategory.FormattingEnabled = true;
+            cbCategory.Location = new Point(13, 209);
+            cbCategory.Name = "cbCategory";
+            cbCategory.Size = new Size(462, 23);
+            cbCategory.TabIndex = 15;
+            // 
             // AddProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(496, 586);
+            ClientSize = new Size(496, 559);
             Controls.Add(siticoneAdvancedPanel1);
             MaximizeBox = false;
             MinimizeBox = false;
@@ -541,9 +510,9 @@
         private Label label6;
         private SiticoneNetCoreUI.SiticoneTextBox txtPrice;
         private Label label5;
-        private SiticoneNetCoreUI.SiticoneDropdown dropCategory;
         private Label label4;
         private SiticoneNetCoreUI.SiticoneButton btnCancel;
         private SiticoneNetCoreUI.SiticoneButton btnAddProduct;
+        private ComboBox cbCategory;
     }
 }

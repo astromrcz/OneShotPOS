@@ -24,6 +24,7 @@ namespace OneShotPOS
         {
             InitializeComponent();
         }
+        private readonly string _loggedInEmployeeId;
 
 
         private void UC_Inventory_Load(object sender, EventArgs e)
@@ -36,9 +37,10 @@ namespace OneShotPOS
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            AddProduct product = new AddProduct();
+            AddProduct product = new AddProduct(LoginPage.Session.EmployeeID);
             product.Show();
         }
+
         private void LoadInventoryAlerts()
         {
             try
@@ -177,10 +179,12 @@ namespace OneShotPOS
                     {
                         while (reader.Read())
                         {
+                            int productId = Convert.ToInt32(reader["ProductID"]);
                             string name = reader["ProductName"].ToString();
                             string desc = reader["Description"].ToString();
                             decimal price = Convert.ToDecimal(reader["Price"]);
                             int qty = reader["Quantity"] is DBNull ? 0 : Convert.ToInt32(reader["Quantity"]);
+                            bool isLow = qty < 5;
 
                             Panel card = new Panel
                             {
@@ -190,6 +194,7 @@ namespace OneShotPOS
                                 BackColor = isLow ? Color.FromArgb(255, 230, 230) : Color.White,
                                 BorderStyle = BorderStyle.FixedSingle
                             };
+
                             var btnEdit = new SiticoneButton
                             {
                                 Text = "Edit",
@@ -199,7 +204,14 @@ namespace OneShotPOS
                                 ForeColor = Color.White,
                                 Font = new Font("Segoe UI", 8, FontStyle.Bold),
                                 BorderRadius = 5,
-                                Cursor = Cursors.Hand
+                                Cursor = Cursors.Hand,
+                                Tag = productId
+                            };
+                            btnEdit.Click += (s, e) =>
+                            {
+                                EditProduct editForm = new EditProduct(productId);
+                                editForm.ShowDialog();
+                                LoadProductCards(); // Refresh after edit
                             };
 
                             var btnDelete = new SiticoneButton
@@ -211,48 +223,38 @@ namespace OneShotPOS
                                 ForeColor = Color.White,
                                 Font = new Font("Segoe UI", 8, FontStyle.Bold),
                                 BorderRadius = 5,
-                                Cursor = Cursors.Hand
+                                Cursor = Cursors.Hand,
+                                Tag = productId
                             };
+                            btnDelete.Click += (s, e) =>
+                            {
+                                var confirm = MessageBox.Show($"Delete product '{name}'?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                if (confirm == DialogResult.Yes)
+                                {
+                                    using (var conn = new SQLiteConnection(ConnectionString))
+                                    {
+                                        conn.Open();
+                                        string deleteQuery = "DELETE FROM TBL_PRODUCTS WHERE ProductID = @id";
+                                        using (var cmd = new SQLiteCommand(deleteQuery, conn))
+                                        {
+                                            cmd.Parameters.AddWithValue("@id", productId);
+                                            cmd.ExecuteNonQuery();
+                                        }
+                                    }
+                                    LoadProductCards(); // Refresh after delete
+                                }
+                            };
+
                             card.Controls.Add(btnEdit);
                             card.Controls.Add(btnDelete);
-
-
-                            card.Controls.Add(new Label
-                            {
-                                Text = name,
-                                Font = new Font("Segoe UI", 10, FontStyle.Bold),
-                                Location = new Point(10, 10),
-                                AutoSize = true
-                            });
-
-                            card.Controls.Add(new Label
-                            {
-                                Text = $"Desc: {desc}",
-                                Font = new Font("Segoe UI", 8),
-                                Location = new Point(10, 30),
-                                AutoSize = true
-                            });
-
-                            card.Controls.Add(new Label
-                            {
-                                Text = $"₱{price:N2}",
-                                Font = new Font("Segoe UI", 9, FontStyle.Bold),
-                                ForeColor = Color.DarkGreen,
-                                Location = new Point(10, 50),
-                                AutoSize = true
-                            });
-
-                            card.Controls.Add(new Label
-                            {
-                                Text = $"Qty: {qty}",
-                                Font = new Font("Segoe UI", 8),
-                                ForeColor = qty < 5 ? Color.FromArgb(192, 64, 0) : Color.Black,
-                                Location = new Point(150, 50),
-                                AutoSize = true
-                            });
+                            card.Controls.Add(new Label { Text = name, Font = new Font("Segoe UI", 10, FontStyle.Bold), Location = new Point(10, 10), AutoSize = true });
+                            card.Controls.Add(new Label { Text = $"Desc: {desc}", Font = new Font("Segoe UI", 8), Location = new Point(10, 30), AutoSize = true });
+                            card.Controls.Add(new Label { Text = $"₱{price:N2}", Font = new Font("Segoe UI", 9, FontStyle.Bold), ForeColor = Color.DarkGreen, Location = new Point(10, 50), AutoSize = true });
+                            card.Controls.Add(new Label { Text = $"Qty: {qty}", Font = new Font("Segoe UI", 8), ForeColor = isLow ? Color.FromArgb(192, 64, 0) : Color.Black, Location = new Point(150, 50), AutoSize = true });
 
                             flowPanelProducts.Controls.Add(card);
                         }
+
                     }
                 }
             }

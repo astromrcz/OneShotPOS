@@ -7,6 +7,13 @@ namespace OneShotPOS
         {
             InitializeComponent();
         }
+        public static class Session
+        {
+            public static string EmployeeID;
+            public static string Email;
+            public static string Role;
+            public static string ConnectionString;
+        }
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
@@ -74,9 +81,14 @@ namespace OneShotPOS
 
                 if (!string.IsNullOrEmpty(userRole))
                 {
+                    Session.EmployeeID = loggedInEmployeeId;
+                    Session.Email = loggedInEmail;
+                    Session.Role = userRole;
+                    Session.ConnectionString = connectionString;
                     // 4. Redirect based on role, passing the necessary data
                     if (userRole.Equals("Admin", StringComparison.OrdinalIgnoreCase))
                     {
+
                         // Admin Dashboard
                         // ⚠️ Ensure MainDashboard has the constructor: MainDashboard(string email, string role, string empId, string connStr)
                         MainDashboard adminDashboard = new MainDashboard(loggedInEmail, userRole, loggedInEmployeeId, connectionString);
