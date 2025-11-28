@@ -145,7 +145,7 @@
             lblTotalCustomers.AutoSize = true;
             lblTotalCustomers.Font = new Font("Segoe UI", 12F);
             lblTotalCustomers.ForeColor = SystemColors.ControlDark;
-            lblTotalCustomers.Location = new Point(13, 106);
+            lblTotalCustomers.Location = new Point(13, 127);
             lblTotalCustomers.Name = "lblTotalCustomers";
             lblTotalCustomers.Size = new Size(134, 21);
             lblTotalCustomers.TabIndex = 2;
@@ -154,20 +154,20 @@
             // lblGroups
             // 
             lblGroups.AutoSize = true;
-            lblGroups.Font = new Font("Segoe UI", 12F);
-            lblGroups.Location = new Point(13, 85);
+            lblGroups.Font = new Font("Segoe UI", 18F);
+            lblGroups.Location = new Point(13, 95);
             lblGroups.Name = "lblGroups";
-            lblGroups.Size = new Size(78, 21);
+            lblGroups.Size = new Size(116, 32);
             lblGroups.TabIndex = 1;
             lblGroups.Text = "lblGroups";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
             label3.Location = new Point(13, 22);
             label3.Name = "label3";
-            label3.Size = new Size(90, 25);
+            label3.Size = new Size(128, 37);
             label3.TabIndex = 0;
             label3.Text = "In Queue";
             // 
@@ -241,7 +241,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F);
             label7.ForeColor = SystemColors.ControlDark;
-            label7.Location = new Point(13, 106);
+            label7.Location = new Point(13, 127);
             label7.Name = "label7";
             label7.Size = new Size(125, 21);
             label7.TabIndex = 4;
@@ -250,20 +250,20 @@
             // lblGrpReady
             // 
             lblGrpReady.AutoSize = true;
-            lblGrpReady.Font = new Font("Segoe UI", 12F);
-            lblGrpReady.Location = new Point(13, 85);
+            lblGrpReady.Font = new Font("Segoe UI", 18F);
+            lblGrpReady.Location = new Point(13, 95);
             lblGrpReady.Name = "lblGrpReady";
-            lblGrpReady.Size = new Size(96, 21);
+            lblGrpReady.Size = new Size(142, 32);
             lblGrpReady.TabIndex = 3;
             lblGrpReady.Text = "lblGrpReady";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
             label5.Location = new Point(13, 22);
             label5.Name = "label5";
-            label5.Size = new Size(129, 25);
+            label5.Size = new Size(184, 37);
             label5.TabIndex = 1;
             label5.Text = "Ready to Seat";
             // 
@@ -337,7 +337,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F);
             label6.ForeColor = SystemColors.ControlDark;
-            label6.Location = new Point(13, 106);
+            label6.Location = new Point(13, 127);
             label6.Name = "label6";
             label6.Size = new Size(126, 21);
             label6.TabIndex = 3;
@@ -346,20 +346,20 @@
             // lblWaitTime
             // 
             lblWaitTime.AutoSize = true;
-            lblWaitTime.Font = new Font("Segoe UI", 12F);
-            lblWaitTime.Location = new Point(13, 85);
+            lblWaitTime.Font = new Font("Segoe UI", 18F);
+            lblWaitTime.Location = new Point(13, 95);
             lblWaitTime.Name = "lblWaitTime";
-            lblWaitTime.Size = new Size(92, 21);
+            lblWaitTime.Size = new Size(140, 32);
             lblWaitTime.TabIndex = 2;
             lblWaitTime.Text = "lblWaitTime";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
             label4.Location = new Point(13, 22);
             label4.Name = "label4";
-            label4.Size = new Size(171, 25);
+            label4.Size = new Size(241, 37);
             label4.TabIndex = 1;
             label4.Text = "Average Wait time";
             // 

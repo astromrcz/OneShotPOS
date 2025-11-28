@@ -33,11 +33,15 @@
             label1 = new Label();
             txtCustomerName = new SiticoneNetCoreUI.SiticoneTextBox();
             label2 = new Label();
-            txtGroupSize = new SiticoneNetCoreUI.SiticoneTextBox();
             label3 = new Label();
             txtPhoneNo = new SiticoneNetCoreUI.SiticoneTextBox();
             btnCancel = new SiticoneNetCoreUI.SiticoneButton();
             BtnAddQueue = new SiticoneNetCoreUI.SiticoneButton();
+            label4 = new Label();
+            numGrpSize = new NumericUpDown();
+            numEstWait = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numGrpSize).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numEstWait).BeginInit();
             SuspendLayout();
             // 
             // lblAvailability
@@ -133,60 +137,6 @@
             label2.Size = new Size(90, 20);
             label2.TabIndex = 15;
             label2.Text = "Group Size *";
-            // 
-            // txtGroupSize
-            // 
-            txtGroupSize.AccessibleDescription = "A customizable text input field.";
-            txtGroupSize.AccessibleName = "Text Box";
-            txtGroupSize.AccessibleRole = AccessibleRole.Text;
-            txtGroupSize.BackColor = Color.Transparent;
-            txtGroupSize.BlinkCount = 3;
-            txtGroupSize.BlinkShadow = false;
-            txtGroupSize.BorderColor1 = Color.LightSlateGray;
-            txtGroupSize.BorderColor2 = Color.LightSlateGray;
-            txtGroupSize.BorderFocusColor1 = Color.FromArgb(77, 77, 255);
-            txtGroupSize.BorderFocusColor2 = Color.FromArgb(77, 77, 255);
-            txtGroupSize.CanShake = true;
-            txtGroupSize.ContinuousBlink = false;
-            txtGroupSize.CursorBlinkRate = 500;
-            txtGroupSize.CursorColor = Color.Black;
-            txtGroupSize.CursorHeight = 26;
-            txtGroupSize.CursorOffset = 0;
-            txtGroupSize.CursorStyle = SiticoneNetCoreUI.Helpers.DrawingStyle.SiticoneDrawingStyle.Solid;
-            txtGroupSize.CursorWidth = 1;
-            txtGroupSize.DisabledBackColor = Color.WhiteSmoke;
-            txtGroupSize.DisabledBorderColor = Color.LightGray;
-            txtGroupSize.DisabledTextColor = Color.Gray;
-            txtGroupSize.EnableDropShadow = false;
-            txtGroupSize.FillColor1 = Color.White;
-            txtGroupSize.FillColor2 = Color.White;
-            txtGroupSize.Font = new Font("Segoe UI", 9.5F);
-            txtGroupSize.ForeColor = Color.DimGray;
-            txtGroupSize.HoverBorderColor1 = Color.Gray;
-            txtGroupSize.HoverBorderColor2 = Color.Gray;
-            txtGroupSize.IsEnabled = true;
-            txtGroupSize.Location = new Point(12, 249);
-            txtGroupSize.Name = "txtGroupSize";
-            txtGroupSize.PlaceholderColor = Color.Gray;
-            txtGroupSize.PlaceholderText = "Enter text here...";
-            txtGroupSize.ReadOnlyBorderColor1 = Color.LightGray;
-            txtGroupSize.ReadOnlyBorderColor2 = Color.LightGray;
-            txtGroupSize.ReadOnlyFillColor1 = Color.WhiteSmoke;
-            txtGroupSize.ReadOnlyFillColor2 = Color.WhiteSmoke;
-            txtGroupSize.ReadOnlyPlaceholderColor = Color.DarkGray;
-            txtGroupSize.SelectionBackColor = Color.FromArgb(77, 77, 255);
-            txtGroupSize.ShadowAnimationDuration = 1;
-            txtGroupSize.ShadowBlur = 10;
-            txtGroupSize.ShadowColor = Color.FromArgb(15, 0, 0, 0);
-            txtGroupSize.Size = new Size(171, 40);
-            txtGroupSize.SolidBorderColor = Color.LightSlateGray;
-            txtGroupSize.SolidBorderFocusColor = Color.FromArgb(77, 77, 255);
-            txtGroupSize.SolidBorderHoverColor = Color.Gray;
-            txtGroupSize.SolidFillColor = Color.White;
-            txtGroupSize.TabIndex = 16;
-            txtGroupSize.TextPadding = new Padding(16, 0, 6, 0);
-            txtGroupSize.ValidationErrorMessage = "Invalid input.";
-            txtGroupSize.ValidationFunction = null;
             // 
             // label3
             // 
@@ -300,7 +250,7 @@
             btnCancel.IsReadOnly = false;
             btnCancel.IsToggleButton = false;
             btnCancel.IsToggled = false;
-            btnCancel.Location = new Point(344, 312);
+            btnCancel.Location = new Point(344, 290);
             btnCancel.LongPressDurationMS = 1000;
             btnCancel.Name = "btnCancel";
             btnCancel.NormalFontStyle = FontStyle.Regular;
@@ -377,7 +327,7 @@
             BtnAddQueue.IsReadOnly = false;
             BtnAddQueue.IsToggleButton = false;
             BtnAddQueue.IsToggled = false;
-            BtnAddQueue.Location = new Point(12, 312);
+            BtnAddQueue.Location = new Point(12, 290);
             BtnAddQueue.LongPressDurationMS = 1000;
             BtnAddQueue.Name = "BtnAddQueue";
             BtnAddQueue.NormalFontStyle = FontStyle.Regular;
@@ -406,23 +356,55 @@
             BtnAddQueue.UseParticles = false;
             BtnAddQueue.Click += BtnAddQueue_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semilight", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(152, 226);
+            label4.Name = "label4";
+            label4.Size = new Size(117, 20);
+            label4.TabIndex = 21;
+            label4.Text = "Estimated Wait *";
+            // 
+            // numGrpSize
+            // 
+            numGrpSize.Location = new Point(12, 249);
+            numGrpSize.Name = "numGrpSize";
+            numGrpSize.Size = new Size(120, 23);
+            numGrpSize.TabIndex = 22;
+            // 
+            // numEstWait
+            // 
+            numEstWait.Location = new Point(152, 249);
+            numEstWait.Name = "numEstWait";
+            numEstWait.Size = new Size(120, 23);
+            numEstWait.TabIndex = 23;
+            // 
             // AddQueue
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(501, 368);
+            ClientSize = new Size(501, 352);
+            Controls.Add(numEstWait);
+            Controls.Add(numGrpSize);
+            Controls.Add(label4);
             Controls.Add(btnCancel);
             Controls.Add(BtnAddQueue);
             Controls.Add(txtPhoneNo);
             Controls.Add(label3);
-            Controls.Add(txtGroupSize);
             Controls.Add(label2);
             Controls.Add(txtCustomerName);
             Controls.Add(label1);
             Controls.Add(lblAvailability);
             Controls.Add(lblTblNumber);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "AddQueue";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddQueue";
+            Load += AddQueue_Load;
+            ((System.ComponentModel.ISupportInitialize)numGrpSize).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numEstWait).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -434,10 +416,12 @@
         private Label label1;
         private SiticoneNetCoreUI.SiticoneTextBox txtCustomerName;
         private Label label2;
-        private SiticoneNetCoreUI.SiticoneTextBox txtGroupSize;
         private Label label3;
         private SiticoneNetCoreUI.SiticoneTextBox txtPhoneNo;
         private SiticoneNetCoreUI.SiticoneButton btnCancel;
         private SiticoneNetCoreUI.SiticoneButton BtnAddQueue;
+        private Label label4;
+        private NumericUpDown numGrpSize;
+        private NumericUpDown numEstWait;
     }
 }

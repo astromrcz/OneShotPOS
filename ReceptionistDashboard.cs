@@ -80,7 +80,7 @@ namespace OneShotPOS
             panelMain.Padding = new Padding(0); // Remove container padding
             panelMain.Controls.Clear();
 
-            UC_Queue queue = new UC_Queue();
+            UC_Queue queue = new UC_Queue(_connectionString, _loggedInEmployeeId);
             queue.Dock = DockStyle.Fill;
             queue.Margin = new Padding(0);
             queue.Padding = new Padding(0);

@@ -11,8 +11,9 @@ namespace OneShotPOS
 {
     public partial class UC_Queue : UserControl
     {
-        private const string ConnectionString = @"Data Source=""C:\Users\morco\Downloads\testDB.db"";Version=3;";
-        private const string EMPLOYEE_ID = "1001";
+        
+        private readonly string _connectionString;
+        private readonly string _loggedInEmployeeID;
 
         // Constants for layout
         private const int ROW_HEIGHT = 60;
@@ -29,9 +30,11 @@ namespace OneShotPOS
             public int EstWaitTimeMin { get; set; }
         }
 
-        public UC_Queue()
+        public UC_Queue(string connectionString, string employeeID)
         {
             InitializeComponent();
+            _connectionString = connectionString;
+            _loggedInEmployeeID = employeeID;
         }
 
         private void UC_Queue_Load(object sender, EventArgs e)
@@ -44,7 +47,8 @@ namespace OneShotPOS
 
         private void btnAddQueue_Click(object sender, EventArgs e)
         {
-            // AddQueue logic here
+            AddQueue add = new AddQueue();
+            add.Show();
         }
 
         private void LoadQueueData()
@@ -64,14 +68,55 @@ namespace OneShotPOS
         // --- 1. Mock Data ---
         private List<QueueEntry> GetQueueEntriesFromDB()
         {
-            var entries = new List<QueueEntry>
+            var entries = new List<QueueEntry>();
+
+            try
             {
-                new QueueEntry { QueueID = 4, CustomerName = "Diana Lopez", GroupSize = 3, PhoneNumber = "+63 917 444 5555", TimeEntered = DateTime.Now.AddMinutes(-2), Status = "Ready", EstWaitTimeMin = 0 },
-                new QueueEntry { QueueID = 1, CustomerName = "Roberto Santos", GroupSize = 4, PhoneNumber = "+63 917 111 2222", TimeEntered = DateTime.Now.AddMinutes(-15), Status = "Waiting", EstWaitTimeMin = 15 },
-                new QueueEntry { QueueID = 2, CustomerName = "Michelle Tan", GroupSize = 2, PhoneNumber = "+63 917 222 3333", TimeEntered = DateTime.Now.AddMinutes(-10), Status = "Waiting", EstWaitTimeMin = 10 },
-                new QueueEntry { QueueID = 3, CustomerName = "Carlos Rivera", GroupSize = 6, PhoneNumber = "+63 917 333 4444", TimeEntered = DateTime.Now.AddMinutes(-5), Status = "Waiting", EstWaitTimeMin = 20 }
-            };
-            return entries.OrderBy(e => e.QueueID).ToList();
+                using (var conn = new SQLiteConnection(_connectionString))
+                {
+                    conn.Open();
+                    // Order by Status (so 'Ready' might separate from 'Waiting') then by Time
+                    string query = "SELECT * FROM TBL_QUEUE ORDER BY Status DESC, Timestamp ASC";
+
+                    using (var cmd = new SQLiteCommand(query, conn))
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var entry = new QueueEntry();
+
+                            // 1. Direct Matches
+                            entry.QueueID = Convert.ToInt32(reader["QueueID"]);
+                            entry.CustomerName = reader["CustomerName"].ToString();
+                            entry.GroupSize = Convert.ToInt32(reader["GroupSize"]);
+                            entry.Status = reader["Status"].ToString();
+
+                            // 2. Mapped Columns (DB Name -> Class Property)
+                            entry.PhoneNumber = reader["ContactNumber"].ToString(); // DB is ContactNumber
+                            entry.TimeEntered = Convert.ToDateTime(reader["Timestamp"]); // DB is Timestamp
+
+                            // 3. Null Safety Check for Integer
+                            // If EstimatedWait is null in DB, use 0
+                            if (reader["EstimatedWait"] != DBNull.Value)
+                            {
+                                entry.EstWaitTimeMin = Convert.ToInt32(reader["EstimatedWait"]);
+                            }
+                            else
+                            {
+                                entry.EstWaitTimeMin = 0;
+                            }
+
+                            entries.Add(entry);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading TBL_QUEUE: " + ex.Message);
+            }
+
+            return entries;
         }
 
         // --- 2. Update Labels ---
@@ -122,9 +167,8 @@ namespace OneShotPOS
             Panel card = new Panel
             {
                 Height = ROW_HEIGHT,
-                Width = containerWidth - 40, // Allow space for scrollbar
+                Width = containerWidth - 40,
                 BackColor = (entry.Status == "Ready") ? Color.FromArgb(220, 255, 220) : Color.White,
-                // BorderStyle = BorderStyle.FixedSingle // Optional: Uncomment if you want borders
             };
 
             // Left Text (Name & ID)
@@ -147,25 +191,55 @@ namespace OneShotPOS
                 AutoSize = true
             };
 
-            // Buttons (Right Aligned)
+            // --- BUTTONS LOGIC ---
             int rightEdge = card.Width;
             int btnY = 12;
 
-            // Delete Button
-            SiticoneNetCoreUI.SiticoneButton btnDelete = CreateButton("Delete", Color.Red, Color.Transparent, 40);
-            btnDelete.Location = new Point(rightEdge - 50, btnY);
-            btnDelete.Click += (s, e) => { LogActivity("Queue", "Deleted"); LoadQueueData(); };
+            // 1. DELETE BUTTON
+            SiticoneNetCoreUI.SiticoneButton btnDelete = CreateButton("Delete", Color.Red, Color.White, 80);
+            btnDelete.Location = new Point(rightEdge - 95, btnY);
 
-            // Action Button
+            // EVENT: Delete Logic
+            btnDelete.Click += (s, e) => {
+                if (MessageBox.Show("Are you sure you want to remove this customer?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    DeleteQueueEntry(entry.QueueID); // Delete from DB
+                    LogActivity("Queue", $"Deleted ID #{entry.QueueID}");
+                    LoadQueueData(); // Refresh UI (Row will disappear)
+                }
+            };
+
+            // 2. ACTION BUTTON (Mark Ready / Seat Now)
             string actionText = (entry.Status == "Ready") ? "Seat Now" : "Mark Ready";
-            Color btnColor = (entry.Status == "Ready") ? Color.Black : Color.White;
+
+            // VISUALS: 
+            // If Waiting: Light Gray Button, Black Text.
+            // If Ready: SeaGreen Button, White Text (Fixes visibility issue).
+            Color btnColor = (entry.Status == "Ready") ? Color.SeaGreen : Color.FromArgb(230, 230, 230);
             Color txtColor = (entry.Status == "Ready") ? Color.White : Color.Black;
 
-            SiticoneNetCoreUI.SiticoneButton btnAction = CreateButton(actionText, txtColor, btnColor, 100);
-            btnAction.Location = new Point(rightEdge - 160, btnY);
+            SiticoneNetCoreUI.SiticoneButton btnAction = CreateButton(actionText, txtColor, btnColor, 110);
+            btnAction.Location = new Point(rightEdge - 215, btnY);
+
+            // EVENT: Action Logic
             btnAction.Click += (s, e) => {
-                LogActivity("Queue", $"Action: {actionText}");
-                LoadQueueData();
+                if (entry.Status == "Waiting")
+                {
+                    // Logic: Move to Ready Panel
+                    UpdateQueueStatus(entry.QueueID, "Ready");
+                    LogActivity("Queue", $"Marked Ready: {entry.CustomerName}");
+                }
+                else if (entry.Status == "Ready")
+                {
+                    // Logic: Seat Now (Remove from Queue completely)
+                    if (MessageBox.Show("Seat this customer now? This will remove them from the queue.", "Seat Customer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        DeleteQueueEntry(entry.QueueID);
+                        LogActivity("Queue", $"Seated: {entry.CustomerName}");
+                    }
+                }
+
+                LoadQueueData(); // Refresh UI (Card will move or disappear)
             };
 
             card.Controls.Add(lblMain);
@@ -185,10 +259,15 @@ namespace OneShotPOS
                 ButtonBackColor = back,
                 ForeColor = fore,
                 Font = new Font("Segoe UI", 9F, FontStyle.Bold),
+
+                // Standard Rounded Corners
                 CornerRadiusBottomLeft = 5,
                 CornerRadiusBottomRight = 5,
                 CornerRadiusTopLeft = 5,
                 CornerRadiusTopRight = 5,
+
+                // Removed BorderThickness and BorderColor to avoid errors
+
                 Cursor = Cursors.Hand
             };
         }
@@ -197,19 +276,66 @@ namespace OneShotPOS
         {
             try
             {
-                using (var conn = new SQLiteConnection(ConnectionString))
+                using (var conn = new SQLiteConnection(_connectionString))
                 {
                     conn.Open();
                     using (var cmd = new SQLiteCommand("INSERT INTO TBL_ACTIVITY_LOG (Timestamp, ActivityType, Description, EmployeeID) VALUES (datetime('now'), @t, @d, @e)", conn))
                     {
                         cmd.Parameters.AddWithValue("@t", type);
                         cmd.Parameters.AddWithValue("@d", desc);
-                        cmd.Parameters.AddWithValue("@e", EMPLOYEE_ID);
+                        cmd.Parameters.AddWithValue("@e", _loggedInEmployeeID);
                         cmd.ExecuteNonQuery();
                     }
                 }
             }
             catch { }
         }
+
+        // 1. Method to DELETE a row (Used for 'Delete' and 'Seat Now')
+        private void DeleteQueueEntry(int queueID)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(_connectionString))
+                {
+                    conn.Open();
+                    string query = "DELETE FROM TBL_QUEUE WHERE QueueID = @id";
+                    using (var cmd = new SQLiteCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", queueID);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting entry: " + ex.Message);
+            }
+        }
+
+        // 2. Method to UPDATE status (Used for 'Mark Ready')
+        private void UpdateQueueStatus(int queueID, string newStatus)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(_connectionString))
+                {
+                    conn.Open();
+                    string query = "UPDATE TBL_QUEUE SET Status = @status WHERE QueueID = @id";
+                    using (var cmd = new SQLiteCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@status", newStatus);
+                        cmd.Parameters.AddWithValue("@id", queueID);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating status: " + ex.Message);
+            }
+        }
+
+
     }
 }
