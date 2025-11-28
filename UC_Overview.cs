@@ -14,24 +14,21 @@ namespace OneShotPOS
     public partial class UC_Overview : UserControl
     {
         // Define the connection string. Using the path from your original code.
-        private const string ConnectionString = @"Data Source=""C:\Users\morco\Downloads\testDB.db"";Version=3;";
+        //private const string ConnectionString = @"Data Source=""C:\Users\morco\Downloads\testDB.db"";Version=3;";
         private static readonly Color ChartSeriesColor = Color.FromArgb(46, 204, 113);
         private static readonly Color SecondaryColor = Color.FromArgb(231, 76, 60); // Red for decrease/low stock
-
-        public UC_Overview()
+        private readonly string _connectionString;
+        public UC_Overview(string connectionString)
         {
             InitializeComponent();
+            _connectionString = connectionString;
         }
 
         private void UC_Overview_Load(object sender, EventArgs e)
         {
-            string dbPath = ConnectionString.Replace("Data Source=", "").Split(';')[0].Trim('"');
+            string dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "OSDB.db");
 
-            if (!File.Exists(dbPath))
-            {
-                MessageBox.Show($"DATABASE FILE NOT FOUND at path: {dbPath}\n\nPlease verify the ConnectionString.", "Configuration Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                return;
-            }
+          
 
             // Load all components
             LoadSummaryLabels();
@@ -46,7 +43,7 @@ namespace OneShotPOS
         {
             try
             {
-                using (var connection = new SQLiteConnection(ConnectionString))
+                using (var connection = new SQLiteConnection(_connectionString))
                 {
                     connection.Open();
 
@@ -383,7 +380,7 @@ namespace OneShotPOS
 
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+                using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
                 {
                     connection.Open();
                     using (SQLiteCommand command = new SQLiteCommand(sql, connection))

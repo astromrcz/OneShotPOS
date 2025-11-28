@@ -8,11 +8,13 @@ namespace OneShotPOS
 {
     public partial class UC_Employees : UserControl
     {
-        private const string ConnectionString = @"Data Source=C:\Users\morco\Downloads\testDB.db;Version=3;";
+        //private const string ConnectionString = @"Data Source=C:\Users\morco\Downloads\testDB.db;Version=3;";
+        private readonly string _connectionString;
 
-        public UC_Employees()
+        public UC_Employees(string connectionString)
         {
             InitializeComponent();
+            _connectionString = connectionString;
         }
 
         private void UC_Employees_Load(object sender, EventArgs e)
@@ -25,7 +27,7 @@ namespace OneShotPOS
         {
             pnlEmployees.Controls.Clear();
 
-            using (var conn = new SQLiteConnection(ConnectionString))
+            using (var conn = new SQLiteConnection(_connectionString))
             {
                 conn.Open();
                 string query = "SELECT EmployeeID, Name, Email, Phone, Role, IsActive FROM TBL_EMPLOYEES";
@@ -105,7 +107,7 @@ namespace OneShotPOS
             var confirm = MessageBox.Show("Are you sure you want to delete this employee?", "Confirm", MessageBoxButtons.YesNo);
             if (confirm == DialogResult.Yes)
             {
-                using (var conn = new SQLiteConnection(ConnectionString))
+                using (var conn = new SQLiteConnection(_connectionString))
                 {
                     conn.Open();
 
@@ -147,7 +149,7 @@ namespace OneShotPOS
             int activeAdmins = 0;
             int activeReceptionists = 0;
 
-            using (var conn = new SQLiteConnection(ConnectionString))
+            using (var conn = new SQLiteConnection(_connectionString))
             {
                 conn.Open();
                 string query = "SELECT Role, IsActive FROM TBL_EMPLOYEES";

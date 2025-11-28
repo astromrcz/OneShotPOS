@@ -19,11 +19,11 @@ namespace OneShotPOS
     {
         private System.Timers.Timer debounceTimer;
         private bool isLow;
-        private const string ConnectionString = @"Data Source=""C:\Users\morco\Downloads\testDB.db"";Version=3;";
-      
-        public UC_Inventory()
+        //private const string ConnectionString = @"Data Source=""C:\Users\morco\Downloads\testDB.db"";Version=3;";
+        private readonly string _connectionString;
+        public UC_Inventory(string connectionString)
         {
-           
+           _connectionString = connectionString;
             InitializeComponent();
         }
 
@@ -46,7 +46,7 @@ namespace OneShotPOS
         {
             try
             {
-                using (var connection = new SQLiteConnection(ConnectionString))
+                using (var connection = new SQLiteConnection(_connectionString))
                 {
                     connection.Open();
 
@@ -158,7 +158,7 @@ namespace OneShotPOS
             flowPanelProducts.WrapContents = true;
             flowPanelProducts.FlowDirection = FlowDirection.TopDown;
 
-            using (var connection = new SQLiteConnection(ConnectionString))
+            using (var connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
 
@@ -236,7 +236,7 @@ namespace OneShotPOS
                                 var confirm = MessageBox.Show($"Delete product '{name}'?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                                 if (confirm == DialogResult.Yes)
                                 {
-                                    using (var conn = new SQLiteConnection(ConnectionString))
+                                    using (var conn = new SQLiteConnection(_connectionString))
                                     {
                                         conn.Open();
                                         string deleteQuery = "DELETE FROM TBL_PRODUCTS WHERE ProductID = @id";
@@ -280,7 +280,7 @@ namespace OneShotPOS
             flowPanelProducts.WrapContents = true;
             flowPanelProducts.FlowDirection = FlowDirection.TopDown;
 
-            using (var connection = new SQLiteConnection(ConnectionString))
+            using (var connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
 
@@ -361,7 +361,7 @@ namespace OneShotPOS
                                 var confirm = MessageBox.Show($"Delete inventory for '{name}'?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                                 if (confirm == DialogResult.Yes)
                                 {
-                                    using (var connDel = new SQLiteConnection(ConnectionString))
+                                    using (var connDel = new SQLiteConnection(_connectionString))
                                     {
                                         connDel.Open();
                                         string deleteQuery = "DELETE FROM TBL_INVENTORY WHERE InventoryID = @id";

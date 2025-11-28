@@ -142,12 +142,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Controls.Add(btnReserve);
             Controls.Add(pnlTables);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "UC_Receptionist";
-            Size = new Size(1700, 1041);
+            Size = new Size(1725, 725);
             Load += UC_Receptionist_Load;
             ResumeLayout(false);
             PerformLayout();

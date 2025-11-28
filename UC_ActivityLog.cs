@@ -15,11 +15,12 @@ namespace OneShotPOS
     public partial class UC_ActivityLog : UserControl
     {
         private static readonly Color ChartSeriesColor = Color.FromArgb(46, 204, 113);
+        private readonly string _connectionString;
 
-        private const string ConnectionString = @"Data Source=""C:\Users\morco\Downloads\testDB.db"";Version=3;";
-        public UC_ActivityLog()
+        public UC_ActivityLog(string connectionString)
         {
             InitializeComponent();
+            _connectionString = connectionString;
         }
 
         private void UC_ActivityLog_Load(object sender, EventArgs e)
@@ -55,7 +56,7 @@ namespace OneShotPOS
 
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+                using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
                 {
                     connection.Open();
                     using (SQLiteCommand command = new SQLiteCommand(sql, connection))

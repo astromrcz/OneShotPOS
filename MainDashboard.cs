@@ -63,7 +63,7 @@ namespace OneShotPOS
             panelMain.Padding = new Padding(0); // Remove container padding
             panelMain.Controls.Clear();
 
-            UC_Overview overview = new UC_Overview();
+            UC_Overview overview = new UC_Overview(_connectionString);
             overview.Dock = DockStyle.Fill;
             overview.Margin = new Padding(0);
             overview.Padding = new Padding(0);
@@ -78,7 +78,7 @@ namespace OneShotPOS
             panelMain.Padding = new Padding(0); // Remove container padding
             panelMain.Controls.Clear();
 
-            UC_Inventory inventory = new UC_Inventory();
+            UC_Inventory inventory = new UC_Inventory(_connectionString);
             inventory.Dock = DockStyle.Fill;
             inventory.Margin = new Padding(0);
             inventory.Padding = new Padding(0);
@@ -86,35 +86,12 @@ namespace OneShotPOS
             panelMain.Controls.Add(inventory);
         }
 
-        private void btnPromotions_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnSalesHistory_Click(object sender, EventArgs e)
-        {
-            panelMain.Padding = new Padding(0); // Remove container padding
-            panelMain.Controls.Clear();
-
-            UC_SalesHistory sales = new UC_SalesHistory();
-            sales.Dock = DockStyle.Fill;
-            sales.Margin = new Padding(0);
-            sales.Padding = new Padding(0);
-
-            panelMain.Controls.Add(sales);
-        }
-
-        private void btnReports_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnEmployees_Click(object sender, EventArgs e)
         {
             panelMain.Padding = new Padding(0); // Remove container padding
             panelMain.Controls.Clear();
 
-            UC_Employees employee = new UC_Employees();
+            UC_Employees employee = new UC_Employees(_connectionString);
             employee.Dock = DockStyle.Fill;
             employee.Margin = new Padding(0);
             employee.Padding = new Padding(0);
@@ -127,7 +104,7 @@ namespace OneShotPOS
             panelMain.Padding = new Padding(0); // Remove container padding
             panelMain.Controls.Clear();
 
-            UC_ActivityLog activity = new UC_ActivityLog();
+            UC_ActivityLog activity = new UC_ActivityLog(_connectionString);
             activity.Dock = DockStyle.Fill;
             activity.Margin = new Padding(0);
             activity.Padding = new Padding(0);

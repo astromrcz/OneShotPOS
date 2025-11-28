@@ -14,6 +14,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Resources\OSDB.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\OSDB.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.66" />
     <PackageReference Include="MaterialSkin" Version="0.2.1" />
     <PackageReference Include="Siticone.Desktop.UI" Version="2.1.1" />

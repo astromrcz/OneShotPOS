@@ -35,7 +35,7 @@ namespace OneShotPOS
             panelMain.Dock = DockStyle.Fill;
             panelMain.Padding = new Padding(0);
             panelMain.Margin = new Padding(0);
-            UC_Receptionist recep = new UC_Receptionist();
+            UC_Receptionist recep = new UC_Receptionist(_connectionString);
             recep.Dock = DockStyle.Fill;
             recep.Margin = new Padding(0);
             recep.Padding = new Padding(0);
@@ -49,13 +49,10 @@ namespace OneShotPOS
             {
                 // 1. Dispose of the current dashboard form
                 this.Close();
-
-                // 2. Open the login page back up
                 LoginPage loginPage = new LoginPage();
                 loginPage.Show();
 
-                // Note: The main application loop (Application.Run) continues, 
-                // allowing background database processes to finish cleanly.
+                
             }
         }
 
@@ -70,7 +67,7 @@ namespace OneShotPOS
         {
             panelMain.Padding = new Padding(0); // Remove container padding
             panelMain.Controls.Clear();
-            UC_Receptionist recep = new UC_Receptionist();
+            UC_Receptionist recep = new UC_Receptionist(_connectionString);
             recep.Dock = DockStyle.Fill;
             recep.Margin = new Padding(0);
             recep.Padding = new Padding(0);

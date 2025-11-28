@@ -686,6 +686,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(236, 240, 241);
             Controls.Add(siticoneAdvancedPanel4);
             Controls.Add(siticoneAdvancedPanel3);
@@ -697,7 +700,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "UC_Overview";
-            Size = new Size(1700, 1047);
+            Size = new Size(1661, 1028);
             Load += UC_Overview_Load;
             WeeklySalesPanel.ResumeLayout(false);
             WeeklySalesPanel.PerformLayout();

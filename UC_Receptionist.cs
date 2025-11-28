@@ -14,12 +14,14 @@ namespace OneShotPOS
 {
     public partial class UC_Receptionist : UserControl
     {
-        private const string ConnectionString = @"Data Source=""C:\Users\morco\Downloads\testDB.db"";Version=3;";
-        private const string EMPLOYEE_ID = "1001"; // Placeholder for logging consistency
-
-        public UC_Receptionist()
+        //private const string ConnectionString = @"Data Source=""C:\Users\morco\Downloads\testDB.db"";Version=3;";
+        //private const string EMPLOYEE_ID = "1001"; // Placeholder for logging consistency
+        private readonly string _connectionString;
+        public UC_Receptionist(string connectionString)
         {
             InitializeComponent();
+            _connectionString = connectionString;
+
         }
 
         private void UC_Receptionist_Load(object sender, EventArgs e)
@@ -32,7 +34,7 @@ namespace OneShotPOS
 
         private void LoadTableCards()
         {
-            using (var connection = new SQLiteConnection(ConnectionString))
+            using (var connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
 
@@ -220,7 +222,7 @@ namespace OneShotPOS
 
                 if (status == "Available")
                 {
-                    StartTable startForm = new StartTable(tableName, status, ConnectionString);
+                    StartTable startForm = new StartTable(tableName, status, _connectionString);
                     if (startForm.ShowDialog() == DialogResult.OK)
                     {
                         LoadTableCards();
@@ -229,7 +231,7 @@ namespace OneShotPOS
                 else if (status == "Reserved")
                 {
                     // Open the ReservedTable form
-                    ReservedTable reservedForm = new ReservedTable(tableName, ConnectionString);
+                    ReservedTable reservedForm = new ReservedTable(tableName, _connectionString);
                     if (reservedForm.ShowDialog() == DialogResult.OK)
                     {
                         LoadTableCards();
@@ -237,7 +239,7 @@ namespace OneShotPOS
                 }
                 else if (status == "Occupied")
                 {
-                    OccupiedTable occupiedForm = new OccupiedTable(tableName, ConnectionString);
+                    OccupiedTable occupiedForm = new OccupiedTable(tableName, _connectionString);
                     if (occupiedForm.ShowDialog() == DialogResult.OK)
                     {
                         LoadTableCards();
@@ -253,7 +255,7 @@ namespace OneShotPOS
         private void btnReserve_Click(object sender, EventArgs e)
         {
             // Assuming UC_Receptionist.Designer.cs has a button named 'btnReserve' that calls this method.
-            Reservation reservationForm = new Reservation(ConnectionString);
+            Reservation reservationForm = new Reservation(_connectionString);
             if (reservationForm.ShowDialog() == DialogResult.OK)
             {
                 LoadTableCards();

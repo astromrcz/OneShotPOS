@@ -198,7 +198,7 @@
             pnlLowProductsStockAlert.InnerShadowColor = Color.Black;
             pnlLowProductsStockAlert.InnerShadowDepth = 3;
             pnlLowProductsStockAlert.InnerShadowOpacity = 0.2F;
-            pnlLowProductsStockAlert.Location = new Point(44, 111);
+            pnlLowProductsStockAlert.Location = new Point(16, 111);
             pnlLowProductsStockAlert.Name = "pnlLowProductsStockAlert";
             pnlLowProductsStockAlert.Padding = new Padding(10);
             pnlLowProductsStockAlert.RadialGradientCenter = (PointF)resources.GetObject("pnlLowProductsStockAlert.RadialGradientCenter");
@@ -210,7 +210,7 @@
             pnlLowProductsStockAlert.ShadowDepth = 5;
             pnlLowProductsStockAlert.ShadowOffset = new Point(2, 2);
             pnlLowProductsStockAlert.ShadowOpacity = 0.3F;
-            pnlLowProductsStockAlert.Size = new Size(784, 87);
+            pnlLowProductsStockAlert.Size = new Size(812, 87);
             pnlLowProductsStockAlert.SlideDirection = new Point(0, -30);
             pnlLowProductsStockAlert.TabIndex = 11;
             pnlLowProductsStockAlert.TopLeftRadius = 5;
@@ -617,6 +617,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Controls.Add(btnRefresh);
             Controls.Add(pnlLowInventoryStockAlert);
             Controls.Add(pnlInventory);
@@ -626,7 +629,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "UC_Inventory";
-            Size = new Size(1700, 1041);
+            Size = new Size(1686, 1028);
             Load += UC_Inventory_Load;
             pnlLowProductsStockAlert.ResumeLayout(false);
             pnlLowProductsStockAlert.PerformLayout();

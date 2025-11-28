@@ -589,6 +589,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Controls.Add(btnAddQueue);
             Controls.Add(pnlWaitingQueue);
             Controls.Add(pnlReadySeat);
@@ -598,7 +601,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "UC_Queue";
-            Size = new Size(1700, 1047);
+            Size = new Size(1654, 1021);
             Load += UC_Queue_Load;
             siticoneAdvancedPanel1.ResumeLayout(false);
             siticoneAdvancedPanel1.PerformLayout();

@@ -142,20 +142,20 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semilight", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Segoe UI Semilight", 16.25F);
             label8.Location = new Point(13, 121);
             label8.Name = "label8";
-            label8.Size = new Size(141, 25);
+            label8.Size = new Size(159, 30);
             label8.TabIndex = 4;
             label8.Text = "Front Desk Staff";
             // 
             // lblActiveReceptionist
             // 
             lblActiveReceptionist.AutoSize = true;
-            lblActiveReceptionist.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblActiveReceptionist.Font = new Font("Segoe UI", 22.25F);
             lblActiveReceptionist.Location = new Point(13, 84);
             lblActiveReceptionist.Name = "lblActiveReceptionist";
-            lblActiveReceptionist.Size = new Size(264, 37);
+            lblActiveReceptionist.Size = new Size(293, 41);
             lblActiveReceptionist.TabIndex = 3;
             lblActiveReceptionist.Text = "lblActiveReceptionist";
             // 
@@ -237,20 +237,20 @@
             // AdminAcc
             // 
             AdminAcc.AutoSize = true;
-            AdminAcc.Font = new Font("Segoe UI Semilight", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AdminAcc.Font = new Font("Segoe UI Semilight", 16.25F);
             AdminAcc.Location = new Point(31, 121);
             AdminAcc.Name = "AdminAcc";
-            AdminAcc.Size = new Size(126, 25);
+            AdminAcc.Size = new Size(145, 30);
             AdminAcc.TabIndex = 3;
             AdminAcc.Text = "Admin Access";
             // 
             // lblActiveAdmins
             // 
             lblActiveAdmins.AutoSize = true;
-            lblActiveAdmins.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblActiveAdmins.Font = new Font("Segoe UI", 22.25F);
             lblActiveAdmins.Location = new Point(25, 84);
             lblActiveAdmins.Name = "lblActiveAdmins";
-            lblActiveAdmins.Size = new Size(208, 37);
+            lblActiveAdmins.Size = new Size(230, 41);
             lblActiveAdmins.TabIndex = 2;
             lblActiveAdmins.Text = "lblActiveAdmins";
             // 
@@ -332,20 +332,20 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semilight", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Segoe UI Semilight", 16.25F);
             label6.Location = new Point(14, 121);
             label6.Name = "label6";
-            label6.Size = new Size(186, 25);
+            label6.Size = new Size(211, 30);
             label6.TabIndex = 2;
             label6.Text = "Active Staff Members";
             // 
             // lblActiveEmployees
             // 
             lblActiveEmployees.AutoSize = true;
-            lblActiveEmployees.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblActiveEmployees.Font = new Font("Segoe UI", 22.25F);
             lblActiveEmployees.Location = new Point(14, 84);
             lblActiveEmployees.Name = "lblActiveEmployees";
-            lblActiveEmployees.Size = new Size(247, 37);
+            lblActiveEmployees.Size = new Size(274, 41);
             lblActiveEmployees.TabIndex = 1;
             lblActiveEmployees.Text = "lblActiveEmployees";
             // 

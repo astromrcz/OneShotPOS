@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
             panelSidebar = new SiticoneNetCoreUI.SiticonePinnablePanel();
+            label1 = new Label();
             btnActivityLog = new SiticoneNetCoreUI.SiticoneButton();
             btnEmployees = new SiticoneNetCoreUI.SiticoneButton();
             lblUserRole = new Label();
@@ -46,6 +47,7 @@
             panelSidebar.BackColor = Color.Transparent;
             panelSidebar.BorderColor = Color.DarkGray;
             panelSidebar.BorderRadius = 0;
+            panelSidebar.Controls.Add(label1);
             panelSidebar.Controls.Add(btnActivityLog);
             panelSidebar.Controls.Add(btnEmployees);
             panelSidebar.Controls.Add(lblUserRole);
@@ -74,6 +76,18 @@
             panelSidebar.ShadowColor = Color.FromArgb(100, 0, 0, 0);
             panelSidebar.Size = new Size(204, 1041);
             panelSidebar.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Top;
+            label1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
+            label1.Location = new Point(5, 5);
+            label1.Margin = new Padding(3, 15, 3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(175, 64);
+            label1.TabIndex = 13;
+            label1.Text = "One Shot Bar\r\n    and Billiards";
             // 
             // btnActivityLog
             // 
@@ -233,7 +247,7 @@
             // 
             lblUserRole.AutoSize = true;
             lblUserRole.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUserRole.Location = new Point(33, 180);
+            lblUserRole.Location = new Point(13, 177);
             lblUserRole.Name = "lblUserRole";
             lblUserRole.Size = new Size(94, 21);
             lblUserRole.TabIndex = 8;
@@ -243,7 +257,7 @@
             // 
             lblLoggedInUser.AutoSize = true;
             lblLoggedInUser.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLoggedInUser.Location = new Point(33, 159);
+            lblLoggedInUser.Location = new Point(13, 156);
             lblLoggedInUser.Name = "lblLoggedInUser";
             lblLoggedInUser.Size = new Size(132, 21);
             lblLoggedInUser.TabIndex = 7;
@@ -538,6 +552,7 @@
         private Label lblLoggedInUser;
         private SiticoneNetCoreUI.SiticoneButton btnEmployees;
         private SiticoneNetCoreUI.SiticoneButton btnActivityLog;
+        private Label label1;
     }
 
 }

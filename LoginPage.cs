@@ -30,18 +30,14 @@ namespace OneShotPOS
         {
 
         }
-        //ReceptionistDashboard dash = new ReceptionistDashboard();
-        //dash.Show();
-        //this.Hide();
-
-        //MainDashboard dashboard = new MainDashboard();
-        //dashboard.Show();
-        //this.Hide();
+       
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string userEmail = txtUsername.Text.Trim();
             string userPassword = txtPassword.Text;
-            string connectionString = "Data Source=\"C:\\Users\\morco\\Downloads\\testDB.db\"";
+            string dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "OSDB.db");
+
+            string connectionString = $"Data Source={dbPath}";
 
             string sql = "SELECT EmployeeID, Email, Role FROM TBL_EMPLOYEES WHERE Email = @email AND PasswordHash = @password;";
 
